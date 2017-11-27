@@ -17,7 +17,7 @@ class ApiController extends Controller
         $offers = Offer::select('id','image_url_original','cat_id')->orderBy('id','DESC')->where('status',1)->get();
 
         return '{
-  "actors":'.$offers.'}';
+  "offers":'.$offers.'}';
     }
 
     /**
