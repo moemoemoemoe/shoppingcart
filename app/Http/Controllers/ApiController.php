@@ -40,7 +40,7 @@ class ApiController extends Controller
      */
     public function single_offer($id)
     {
-        $offer =Offer::where('id',$id)->get();
+        $offer =Offer::select('id','title','content','image_url_original','price')->where('id',$id)->get();
         return $offer;
     }
 
