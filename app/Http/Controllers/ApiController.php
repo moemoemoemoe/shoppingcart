@@ -38,9 +38,10 @@ class ApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function single_offer($id)
     {
-        //
+        $offer =Offer::findOrFail($id);
+        return $offer;
     }
 
     /**
