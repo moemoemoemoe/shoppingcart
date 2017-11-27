@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/////////////////////////// Api Controller //////////////////////
 
+Route::get('api/get_offers', 'ApiController@get_offers')->name('get_offers');
+Route::get('api/spec_offer/{id}', 'ApiController@spec_offer')->name('spec_offer');
+
+///////////////////////////////////////////////////////////
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,3 +35,4 @@ Route::get('admin/view_offer/{id}', 'OffersController@view_offer')->name('view_o
 Route::post('admin/view_offer/{id}', 'OffersController@view_offer_update')->name('view_offer')->middleware('auth');
 
 Route::post('admin/delete_offer', 'OffersController@delete_offer')->name('delete_offer')->middleware('auth');
+///////////////////////////////////////////
