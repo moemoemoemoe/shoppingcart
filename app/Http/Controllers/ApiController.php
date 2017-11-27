@@ -40,7 +40,7 @@ class ApiController extends Controller
      */
     public function single_offer($id)
     {
-        $offer =Offer::findOrFail($id);
+        $offer =Offer::where('id',$id)->get();
         return $offer;
     }
 
