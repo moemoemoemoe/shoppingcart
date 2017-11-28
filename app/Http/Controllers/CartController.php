@@ -22,10 +22,10 @@ class CartController extends Controller
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();
-          return "[{".'"status":'.'"OK"'."}]";
+          return "[{".'"status":'.'"Uploaded Successfully"'."}]";
     }  catch(\Exception $e){
        // do task when error
-      return "[{".'"status":'.'"E"'."}]";
+      return "[{".'"status":'.'"Error Please try again"'."}]";
     }
     }
 
