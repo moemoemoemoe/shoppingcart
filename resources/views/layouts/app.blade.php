@@ -60,7 +60,9 @@
                      <li>
                           <a href="{{ route('manage_offer')}}"> Manage Offer </a>
                         </li>
-
+   <li>
+                          <a href="{{ route('view_cart_offer')}}"> Invoices </a>
+                        </li>
 
                          
                           
