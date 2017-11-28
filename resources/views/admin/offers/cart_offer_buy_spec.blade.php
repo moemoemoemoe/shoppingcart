@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading text-center" style="color: red;font-weight: 900">Username : {{$carts[0]->iduser}}</div>
-
+<span class="pull-right">{{$total_inv}}</span>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
                     @foreach($carts as $cart)

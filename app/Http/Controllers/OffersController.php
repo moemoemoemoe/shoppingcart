@@ -207,7 +207,14 @@ namespace App\Http\Controllers;
         {
        $carts = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->get();
 //return $carts;
-       return view('admin.offers.cart_offer_buy_spec',compact('carts'));
+       $total_inv =0;
+       for($i=0 ;$i<count($carts) ; $i++)
+       {
+$total_inv = $total_inv  + ($carts[$i]->qty * $carts[$i]->offer->price);
+
+       }
+       //return $total_inv;
+       return view('admin.offers.cart_offer_buy_spec',compact('carts','total_inv'));
 
         }
     }
