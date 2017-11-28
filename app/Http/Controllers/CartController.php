@@ -21,14 +21,14 @@ class CartController extends Controller
         try{
             foreach($user->data as $mydata)
 
-            {
+            { $inv_last = Cart::OrderBy('id','DESC')->limit(1);
 
                $cart = new Cart();
                $cart->offer_id = $mydata->Id;
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
-               $cart->invnum = $cart->id + 1;
+               $cart->invnum = $inv_last[0]->id + 1;
                $cart->save();
            }   
            return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
