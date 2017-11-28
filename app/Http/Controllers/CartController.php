@@ -24,7 +24,7 @@ class CartController extends Controller
             {
 
                $cart = new Cart();
-               $cart->json_cart = "a";
+               $cart->offer_id = $mydata->Id;
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;

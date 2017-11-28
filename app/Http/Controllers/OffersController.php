@@ -203,4 +203,11 @@ namespace App\Http\Controllers;
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
+         public function view_cart_offer_spec($invm)
+        {
+       $carts = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->get();
+       return $carts;
+       return view('admin.offers.cart_offer_buy_spec',compact('carts'));
+
+        }
     }

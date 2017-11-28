@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                    @foreach($carts as $cart)
-                   <span class="btn btn-primary">{{$cart->invnum}}</span>
+                   <a href="{!! route('view_cart_offer_spec', ['invm'=>$cart->invnum]) !!}"><span class="btn btn-primary">{{$cart->invnum}}</span></a>
                    @endforeach
 
                 </div>
