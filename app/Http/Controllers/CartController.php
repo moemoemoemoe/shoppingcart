@@ -13,6 +13,8 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function get_cart($data)
     {
         //$json = $r->input('datadata');
@@ -20,10 +22,10 @@ class CartController extends Controller
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();
-          return response()->json(['status' => 1, 'message' => 'Successfully uploaded']);
+          return "[{".'"status":'.'"OK"'."}]";
     }  catch(\Exception $e){
        // do task when error
-     return "["+response()->json(['status' => 0, 'message' => 'Somthing went wrong'])+"]";
+      return "[{".'"status":'.'"E"'."}]";
     }
     }
 
