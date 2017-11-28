@@ -36,7 +36,7 @@ class CartController extends Controller
      */
     public function get_all_cart()
     {
-        $cart = Cart::orderBy('id','DESC')->get();
+        $cart = Cart::orderBy('id','DESC')->get()->toArray();
         return $cart[0];
     }
 
