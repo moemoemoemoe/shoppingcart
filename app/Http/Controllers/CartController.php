@@ -29,7 +29,7 @@ class CartController extends Controller
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
-               $cart->invnum = $inv_last->invnum + 1;
+               $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->save();
            }   
            return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
