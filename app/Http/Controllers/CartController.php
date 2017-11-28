@@ -19,10 +19,6 @@ class CartController extends Controller
     {
         //$json = $r->input('datadata');
         try{
-            $json_data = json_decode($data, true);
-
-    // Use $field and $value here
-}
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();
