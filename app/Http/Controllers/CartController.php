@@ -14,11 +14,15 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-
+//{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data)
     {
         //$json = $r->input('datadata');
         try{
+            $json_data = json_decode($data, true);
+
+    // Use $field and $value here
+}
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();
@@ -37,7 +41,7 @@ class CartController extends Controller
     public function get_all_cart()
     {
         $cart = Cart::orderBy('id','DESC')->get();
-        return json_encode($cart[0]);
+        return json_encode($cart[0],true);
     }
     /**
      * Store a newly created resource in storage.
