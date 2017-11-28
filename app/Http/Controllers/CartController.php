@@ -15,7 +15,7 @@ class CartController extends Controller
     public function get_cart(Request $r)
     {
         $json = $r->input('datadata');
-        $cart = new Cart()
+        $cart = new Cart();
         $cart->json_cart = $json;
         $cart->save();
     }
