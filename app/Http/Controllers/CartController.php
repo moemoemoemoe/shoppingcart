@@ -15,7 +15,7 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data)
+    public function get_cart($data,$user)
     {
         $user = json_decode($data);
          try{
@@ -27,6 +27,7 @@ class CartController extends Controller
          $cart->json_cart = "a";
           $cart->qty = $mydata->qty;
            $cart->idoffer = $mydata->Id;
+            $cart->iduser = $user;
            $cart->save();
     }   
     return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
