@@ -64,7 +64,7 @@
                           <a href="{{ route('view_cart_offer')}}"> Invoices cart </a>
                         </li>
 
-                         
+                        
                           
                     </ul>
                 </li>
