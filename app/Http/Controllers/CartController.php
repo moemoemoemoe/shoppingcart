@@ -12,11 +12,11 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function get_cart(Request $r)
+    public function get_cart($data)
     {
         $json = $r->input('datadata');
         $cart = new Cart();
-        $cart->json_cart = $json;
+        $cart->json_cart = $data;
         $cart->save();
     }
 
