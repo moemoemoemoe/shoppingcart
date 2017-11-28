@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cart;
+use response;
 
 class CartController extends Controller
 {
@@ -15,9 +16,15 @@ class CartController extends Controller
     public function get_cart($data)
     {
         //$json = $r->input('datadata');
+        try{
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();
+          return response()->json(['status' => 1, 'message' => 'Successfully uploaded']);
+    }  catch(\Exception $e){
+       // do task when error
+     return "["+response()->json(['status' => 0, 'message' => 'Somthing went wrong'])+"]";
+    }
     }
 
     /**
