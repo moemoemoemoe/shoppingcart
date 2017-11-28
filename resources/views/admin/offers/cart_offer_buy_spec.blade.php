@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading text-center" style="color: red;font-weight: 900">Username : {{$carts[0]->iduser}}</div>
 
                 <div class="panel-body">
                     @foreach($carts as $cart)
