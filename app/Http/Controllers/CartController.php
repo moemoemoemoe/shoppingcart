@@ -16,28 +16,29 @@ class CartController extends Controller
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data,$userid)
-    {
+    {  $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
-         try{
-        foreach($user->data as $mydata)
+        try{
+            foreach($user->data as $mydata)
 
-    {
-        
-         $cart = new Cart();
-         $cart->json_cart = "a";
-          $cart->qty = $mydata->qty;
-           $cart->idoffer = $mydata->Id;
-            $cart->iduser = $userid;
-           $cart->save();
-    }   
-    return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
-    }  
-     catch(\Exception $e){
-    
-       return "[{".'"status":'.'"Error Please try again"'."}]";
+            {
+
+               $cart = new Cart();
+               $cart->json_cart = "a";
+               $cart->qty = $mydata->qty;
+               $cart->idoffer = $mydata->Id;
+               $cart->iduser = $userid;
+               $cart->invnum = $invoice_number;
+               $cart->save();
+           }   
+           return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
+       }  
+       catch(\Exception $e){
+
+         return "[{".'"status":'.'"Error Please try again"'."}]";
      }
-  
-    }
+
+ }
 
     /**
      * Show the form for creating a new resource.
