@@ -19,9 +19,10 @@ class CartController extends Controller
     {  $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
         try{
+            $inv_last = Cart::OrderBy('id','DESC')->limit(1);
             foreach($user->data as $mydata)
 
-            { $inv_last = Cart::OrderBy('id','DESC')->limit(1);
+            { 
 
                $cart = new Cart();
                $cart->offer_id = $mydata->Id;
