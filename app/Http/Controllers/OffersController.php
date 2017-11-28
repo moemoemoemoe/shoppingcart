@@ -199,7 +199,7 @@ namespace App\Http\Controllers;
         }
         public function view_cart_offer()
         {
-       $carts = Cart::select('invnum')->groupBy('invnum')->orderBy('id','ASC')->get();
+       $carts = Cart::select('invnum')->groupBy('invnum')->get();
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
