@@ -34,9 +34,10 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function get_all_cart()
     {
-        //
+        $cart = Cart::orderBy('id','DESC')->get();
+        return $cart[0];
     }
 
     /**
