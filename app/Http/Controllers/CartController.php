@@ -17,16 +17,35 @@ class CartController extends Controller
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data)
     {
-        //$json = $r->input('datadata');
-        try{
-        $cart = new Cart();
-        $cart->json_cart = $data;
-        $cart->save();
-          return "[{".'"status":'.'"Uploaded Successfully"'."}]";
-    }  catch(\Exception $e){
-       // do task when error
-      return "[{".'"status":'.'"Error Please try again"'."}]";
-    }
+        $user = json_decode($data);
+         try{
+        foreach($user->data as $mydata)
+
+    {
+         echo $mydata->Id . '\n';
+         $cart = new Cart();
+         $cart->json_cart = "a";
+          $cart->qty = $mydata->qty;
+           $cart->idoffer = $mydata->Id;
+
+         $cart->save();
+    }   
+    return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
+    }  
+     catch(\Exception $e){
+    //    // do task when error
+       return "[{".'"status":'.'"Error Please try again"'."}]";
+     }
+    //     //$json = $r->input('datadata');
+    //     try{
+    //     $cart = new Cart();
+    //     $cart->json_cart = $data;
+    //     $cart->save();
+    //       return "[{".'"status":'.'"Uploaded Successfully"'."}]";
+    // }  catch(\Exception $e){
+    //    // do task when error
+    //   return "[{".'"status":'.'"Error Please try again"'."}]";
+    // }
     }
 
     /**
