@@ -196,11 +196,9 @@ namespace App\Http\Controllers;
         }
         return Response::json(['status' => $status, 'message' => $message]);
 
-    
         }
         public function view_cart_offer()
         {
-
        $carts = Cart::select('invnum')->groupBy('invnum')->get();
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
