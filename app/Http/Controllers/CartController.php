@@ -14,7 +14,7 @@ class CartController extends Controller
      */
     public function get_cart($data)
     {
-        $json = $r->input('datadata');
+        //$json = $r->input('datadata');
         $cart = new Cart();
         $cart->json_cart = $data;
         $cart->save();

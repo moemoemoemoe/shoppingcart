@@ -17,7 +17,7 @@ Route::get('api/spec_offer/{id}', 'ApiController@spec_offer')->name('spec_offer'
 Route::get('api/single_offer/{id}', 'ApiController@single_offer')->name('single_offer');
 
 
-Route::get('api/get_cart', 'CartController@get_cart')->name('get_cart');
+Route::get('api/get_cart/{json}', 'CartController@get_cart')->name('get_cart');
 
 
 ///////////////////////////////////////////////////////////
