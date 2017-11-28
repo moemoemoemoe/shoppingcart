@@ -36,10 +36,9 @@ class CartController extends Controller
      */
     public function get_all_cart()
     {
-        $cart = Cart::orderBy('id','DESC')->get()->toArray();
-        return $cart[0];
+        $cart = Cart::orderBy('id','DESC')->get();
+        return json_encode($cart[0]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
