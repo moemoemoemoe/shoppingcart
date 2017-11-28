@@ -18,6 +18,8 @@ Route::get('api/single_offer/{id}', 'ApiController@single_offer')->name('single_
 
 
 Route::get('api/get_cart/{json}', 'CartController@get_cart')->name('get_cart');
+Route::get('api/get_all_cart', 'CartController@get_all_cart')->name('get_all_cart');
+
 
 
 ///////////////////////////////////////////////////////////
