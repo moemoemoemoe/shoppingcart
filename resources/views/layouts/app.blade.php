@@ -92,9 +92,9 @@
                 </div>
             </div>
         </nav>
-        <div class="row" style="padding-right:50px;padding-left: 50px">
+        <div class="row" style="padding-right:22%;padding-left: 22%">
                     @if (count($errors) > 0)
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" >
                         <ul>
                             @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
