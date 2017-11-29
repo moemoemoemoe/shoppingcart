@@ -10,7 +10,7 @@
                 <div class="panel-body">
                                                                                
 @foreach($offers as $offer)
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
                 <b>{{$offer->title}}</b> <span class="pull-right">
