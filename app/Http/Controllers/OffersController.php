@@ -132,7 +132,7 @@ namespace App\Http\Controllers;
             $title = $r->input('title');
             $content = $r->input('content');
             $price = $r->input('price');
-
+          $category = $r->input('cat_id');
 
             $photo = $r->file('photo');
 
@@ -162,6 +162,7 @@ namespace App\Http\Controllers;
                 $offer->image_url_original = config('app.my_url').$photo_name;
                }
                 $offer->price = $price;
+                  $offer->cat_id = $category;
 
                 $offer->save();
 
