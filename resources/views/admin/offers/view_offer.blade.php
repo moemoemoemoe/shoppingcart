@@ -16,7 +16,33 @@
                     <p>
                         <textarea type="text" name="content" placeholder="Description" class="form-control">{{$offers->content}}</textarea>
                     </p>
-                  
+                   <p>
+                        <b>Choose Category</b>
+                    </p>
+                    <p>
+                        <select class="form-control" name="cat_id" >
+                          @if($offers->cat_id == 1)
+                            <option value="1" class="selected">Clean</option>
+                          
+                            <option value="2">Shop</option>
+                            <option value="3">Fix</option>
+                            @endif
+                             @if($offers->cat_id == 2)
+                            <option value="1">Clean</option>
+                          
+                            <option value="2"  class="selected">Shop</option>
+                            <option value="3">Fix</option>
+                            @endif
+                              @if($offers->cat_id == 3)
+                            <option value="1">Clean</option>
+                          
+                            <option value="2" >Shop</option>
+                            <option value="3"  class="selected">Fix</option>
+                            @endif
+
+
+                        </select>
+                    </p>
                     <p>
         <b>Enter Price In L.L</b>
     </p>
