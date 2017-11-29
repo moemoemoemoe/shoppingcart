@@ -32,7 +32,7 @@
     </p>
 
                     <b>
-                        Choose a photo/s   350 * 520 
+                        Choose a photo/s   (350px * 520px)
                     </b>
                 </p>
                 <p>
