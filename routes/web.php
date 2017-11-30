@@ -80,3 +80,16 @@ Route::post('admin/home/generic_brand/brande_index', 'GenericBrandesController@b
 
 Route::get('admin/home/generic_brand/brande_index_view/{id}', 'GenericBrandesController@brande_index_view')->name('brande_index_view')->middleware('auth');
 Route::post('admin/home/generic_brand/brande_index_view/{id}', 'GenericBrandesController@brande_index_view_save')->name('brande_index_view')->middleware('auth');
+
+//////////////////////////////////////////////////////////////Item Controlller
+
+
+Route::get('admin/home/items/item_index', 'ItemController@item_index')->name('item_index')->middleware('auth');
+Route::post('admin/home/items/item_index', 'ItemController@item_index_save')->name('item_index')->middleware('auth');
+
+
+
+////////////////////////////////////////route for get dynamic ids
+Route::post('admin/item/show_zone', 'ShowIdController@show_zone')->name('show_zone')->middleware('auth');
+Route::post('admin/item/show_generic', 'ShowIdController@show_generic')->name('show_generic')->middleware('auth');
+Route::post('admin/item/show_brande', 'ShowIdController@show_brande')->name('show_brande')->middleware('auth');

@@ -4,20 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Room;
-use Redirect;
+use App\Zone;
+use App\Generic;
+use App\Brande;
 use Validator;
+use Redirect;
 
-class ItemController extends Controller
+class ShowIdController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function item_index()
+    public function show_zone(Request $r)
     {
-        $rooms = Room::orderBy('id','ASC')->get();
-        return view('admin.items.item_index',compact('rooms'));
+      $id = $r->input('id_room');
+      //return $id;
+      $zones =Zone::select('id','zone_name')->where('room_id',$id)->get();
+      $response = json_decode($zones, true);
+      
+      return $response;
+
     }
 
     /**
@@ -25,22 +28,32 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function show_generic(Request $r)
     {
-        //
-    }
+      $id = $r->input('id_zone');
+      //return $id;
+      $generics =Generic::select('id','generic_name')->where('zone_id',$id)->get();
+      $response = json_decode($generics, true);
+      
+      return $response;
 
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function show_brande(Request $r)
     {
-        //
-    }
+      $id = $r->input('id_generic');
+      //return $id;
+      $brandes =Brande::select('id','brande_name')->where('generic_id',$id)->get();
+      $response = json_decode($brandes, true);
+      
+      return $response;
 
+    }
     /**
      * Display the specified resource.
      *

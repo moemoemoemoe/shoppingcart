@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+<script src="https://cdn.ckeditor.com/4.7.3/standard-all/ckeditor.js"></script>
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -58,7 +58,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                         <li>
-                          <a href=""> <img src="{{asset('images/shop_manage_icons.png')}}" width="20px">Upload item </a>
+                          <a href="{{route('item_index')}}"> <img src="{{asset('images/shop_manage_icons.png')}}" width="20px">Upload item </a>
                         </li>
                      <li>
                           <a href=""><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Items </a>
@@ -173,7 +173,7 @@
 
         @yield('content')
     </div>
-
+<script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript">
@@ -218,6 +218,12 @@ setTimeout(function(){
            });
 
         }
+    </script>
+    <script type="text/javascript">
+        // We need to turn off the automatic editor creation first.
+        CKEDITOR.disableAutoInline = true;
+
+        CKEDITOR.replace( 'content_item' );
     </script>
 </body>
 </html>
