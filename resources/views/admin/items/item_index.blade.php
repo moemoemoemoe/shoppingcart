@@ -39,7 +39,7 @@
     </p>
     <p>
         <select class="form-control" name="zone_id" id="zone_id" onchange="show_generic(this);" >
-         <option value="-1" >--Select Room--</option>
+         <option value="-1" >--Select Zone--</option>
         </select>
     </p>
    <p>
