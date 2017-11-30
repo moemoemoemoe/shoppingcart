@@ -48,6 +48,29 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+
+
+                           <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                             <img src="{{asset('images/shop_icons.png')}}" width="25px">
+                            Shop<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href=""> <img src="{{asset('images/shop_manage_icons.png')}}" width="20px">Upload item </a>
+                        </li>
+                     <li>
+                          <a href=""><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Items </a>
+                        </li>
+  <!--  <li>
+                          <a href=""> Invoices cart </a>
+                        </li> -->
+
+                        
+                          
+                    </ul>
+                </li>
                        <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              <img src="{{asset('images/offers_icons.png')}}" width="25px">
@@ -99,7 +122,7 @@
                           <a href="{{route('generic_index')}}"><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Generics </a>
                         </li>
                      <li>
-                          <a href="{{route('brande_index')}}"> <img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Brandes </a>
+                          <a href="{{route('brande_index')}}"> <img src="{{asset('images/brand_edit_icons.png')}}" width="25px"> Manage Brandes </a>
                         </li>
    
 
