@@ -41,7 +41,7 @@
                 <div class="panel-body">
                                                                                
 @foreach($zones as $zone)
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
                 <b><span style="color: #4CAF50;font-weight: 900">{{$zone->zone_name}}</span></b>
