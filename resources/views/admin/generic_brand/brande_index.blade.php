@@ -19,7 +19,7 @@
                         Select One Or Multiple Generic To This Brande 
                     </b>
                 </p>
-        <select class="form-control" name="generic_id[]"  multiple="multiple">
+        <select class="form-control" name="generic_id[]"  multiple="multiple" style="height:150px">
       
 
             @foreach($generics as $generic)
