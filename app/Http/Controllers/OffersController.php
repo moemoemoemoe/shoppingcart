@@ -167,7 +167,7 @@ namespace App\Http\Controllers;
                 $offer->save();
 
 
-                return Redirect::back()->with('success', 'New Offer successfuly created');
+                return Redirect::back()->with('success', 'New Offer successfuly Updated');
 
 
             }

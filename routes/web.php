@@ -45,3 +45,29 @@ Route::post('admin/delete_offer', 'OffersController@delete_offer')->name('delete
 ///////////////////////////////////////////view_cart_offer///////////////
 Route::get('admin/view_cart_offer', 'OffersController@view_cart_offer')->name('view_cart_offer')->middleware('auth');
 Route::get('admin/view_cart_offer_spec/{invm}', 'OffersController@view_cart_offer_spec')->name('view_cart_offer_spec')->middleware('auth');
+
+///////////////////////////////////////////Home Structure////////////////////////////////
+Route::get('admin/home/structure/room_index', 'RoomController@room_index')->name('room_index')->middleware('auth');
+Route::post('admin/home/structure/room_index', 'RoomController@room_index_upload')->name('room_index')->middleware('auth');
+
+
+Route::get('admin/home/structure/room_index_view/{id}', 'RoomController@room_index_view')->name('room_index_view')->middleware('auth');
+Route::post('admin/home/structure/room_index_view/{id}', 'RoomController@room_index_view_save')->name('room_index_view')->middleware('auth');
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////Zone Controller
+
+Route::get('admin/home/structure/zone_index', 'ZoneController@zone_index')->name('zone_index')->middleware('auth');
+Route::post('admin/home/structure/zone_index', 'ZoneController@zone_index_save')->name('zone_index')->middleware('auth');
+
+Route::get('admin/home/structure/zone_index_view/{id}', 'ZoneController@zone_index_view')->name('zone_index_view')->middleware('auth');
+Route::post('admin/home/structure/zone_index_view/{id}', 'ZoneController@zone_index_view_save')->name('zone_index_view')->middleware('auth');
+
+//////////////////////////////////////////////Generic Controller
+
+
+Route::get('admin/home/generic_brand/generic_index', 'GenericBrandesController@generic_index')->name('generic_index')->middleware('auth');
+Route::post('admin/home/generic_brand/generic_index', 'GenericBrandesController@generic_index_save')->name('generic_index')->middleware('auth');
+
+
+Route::get('admin/home/structure/generic_index_view/{id}', 'GenericBrandesController@generic_index_view')->name('generic_index_view')->middleware('auth');
+Route::post('admin/home/structure/generic_index_view/{id}', 'GenericBrandesController@generic_index_view_save')->name('generic_index_view')->middleware('auth');
