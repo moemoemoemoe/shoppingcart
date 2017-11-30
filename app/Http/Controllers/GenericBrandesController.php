@@ -9,6 +9,7 @@ use Validator;
 use Redirect;
 use App\Zone;
 
+
 class GenericBrandesController extends Controller
 {
     /**
@@ -32,43 +33,43 @@ class GenericBrandesController extends Controller
      */
     public function generic_index_save(Request $r)
     {
-            $foreign_name = mt_rand(111111,999999);
-            $generic_name = $r->input('generic_name');
+        $foreign_name = mt_rand(111111,999999);
+        $generic_name = $r->input('generic_name');
 
-$zone_id =$r->input('zone_id');
+        $zone_id =$r->input('zone_id');
 
-            $photo = $r->file('photo');
+        $photo = $r->file('photo');
 
-            $data = ['generic_name' => $generic_name,'photo' => $photo];
+        $data = ['generic_name' => $generic_name,'photo' => $photo];
 
-            $rules = ['generic_name' => 'required' ,'photo'=> 'required'];
+        $rules = ['generic_name' => 'required' ,'photo'=> 'required'];
 
-            $v = Validator::make($data, $rules);
+        $v = Validator::make($data, $rules);
 
-            if($v->fails()){
-                return Redirect::Back()->withErrors($v);
-            }else
-            {
-                $destination = 'uploads/generic';
-                $photo_name = str_replace(' ', '_', $foreign_name);
-                $photo_name .= '.'.$photo->getClientOriginalExtension();
-                $photo->move($destination, $photo_name);
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+            $destination = 'uploads/generic';
+            $photo_name = str_replace(' ', '_', $foreign_name);
+            $photo_name .= '.'.$photo->getClientOriginalExtension();
+            $photo->move($destination, $photo_name);
 
-                $generic = new Generic();
-                $generic->generic_name = $generic_name;
-                
-                $generic->img_name = $photo_name;
+            $generic = new Generic();
+            $generic->generic_name = $generic_name;
 
-                $generic->image_url_original = config('app.my_url_geenric').$photo_name;
-               
- $generic->zone_id = $zone_id;
-                $generic->save();
+            $generic->img_name = $photo_name;
 
+            $generic->image_url_original = config('app.my_url_geenric').$photo_name;
 
-                return Redirect::back()->with('success', 'New Generic successfuly created');
+            $generic->zone_id = $zone_id;
+            $generic->save();
 
 
-            }
+            return Redirect::back()->with('success', 'New Generic successfuly created');
+
+
+        }
     }
 
     /**
@@ -95,7 +96,7 @@ $zone_id =$r->input('zone_id');
         return view('admin.generic_brand.generic_view',compact('generics','zones'));
     }
 
-   
+
     /**
      * Update the specified resource in storage.
      *
@@ -106,47 +107,47 @@ $zone_id =$r->input('zone_id');
     public function generic_index_view_save(Request $r, $id)
     {
         $foreign_name = mt_rand(111111,999999);
-            $generic_name = $r->input('generic_name');
+        $generic_name = $r->input('generic_name');
 
-$zone_id =$r->input('zone_id');
+        $zone_id =$r->input('zone_id');
 
-            $photo = $r->file('photo');
+        $photo = $r->file('photo');
 
-            $data = ['generic_name' => $generic_name];
+        $data = ['generic_name' => $generic_name];
 
-            $rules = ['generic_name' => 'required'];
+        $rules = ['generic_name' => 'required'];
 
-            $v = Validator::make($data, $rules);
+        $v = Validator::make($data, $rules);
 
-            if($v->fails()){
-                return Redirect::Back()->withErrors($v);
-            }else
-            {
-                  if($r->hasFile('photo')){
-                $destination = 'uploads/generic';
-                $photo_name = str_replace(' ', '_', $foreign_name);
-                $photo_name .= '.'.$photo->getClientOriginalExtension();
-                $photo->move($destination, $photo_name);
-}
-                $generic = Generic::findOrFail($id);
-                $generic->generic_name = $generic_name;
-                $generic->zone_id = $zone_id;
-                if($r->hasFile('photo')){
-                    unlink('uploads/generic/'.$generic->img_name);
-                $generic->img_name = $photo_name;
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+          if($r->hasFile('photo')){
+            $destination = 'uploads/generic';
+            $photo_name = str_replace(' ', '_', $foreign_name);
+            $photo_name .= '.'.$photo->getClientOriginalExtension();
+            $photo->move($destination, $photo_name);
+        }
+        $generic = Generic::findOrFail($id);
+        $generic->generic_name = $generic_name;
+        $generic->zone_id = $zone_id;
+        if($r->hasFile('photo')){
+            unlink('uploads/generic/'.$generic->img_name);
+            $generic->img_name = $photo_name;
 
-                $generic->image_url_original = config('app.my_url_geenric').$photo_name;
-               }
-              
-                 
-                $generic->save();
+            $generic->image_url_original = config('app.my_url_geenric').$photo_name;
+        }
 
 
-                return Redirect::back()->with('success', 'New Generic successfuly Updated');
+        $generic->save();
 
 
-            }
+        return Redirect::back()->with('success', 'New Generic successfuly Updated');
+
+
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -154,8 +155,104 @@ $zone_id =$r->input('zone_id');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function brande_index()
     {
-        //
+     $generics = Generic::with('zone')->orderBy('id','ASC')->get();
+
+     $brandes = Brande::orderBy('id','DESC')->get();
+
+     return view('admin.generic_brand.brande_index',compact('generics','brandes'));
+ }
+
+ /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+ public function brande_index_save(Request $r)
+ {
+
+
+
+    $brande_name = $r->input('brande_name');
+
+    $generic_id =$r->input('generic_id');
+
+
+    $data = ['brande_name' => $brande_name,'generic_id' =>$generic_id];
+
+    $rules = ['brande_name' => 'required','generic_id' =>'required'];
+    $v = Validator::make($data, $rules);
+    if($v->fails()){
+        return Redirect::Back()->withErrors($v);
+    }else
+    {
+
+$counts = Brande::where('brande_name',$brande_name)->where('generic_id',$generic_id)->orderBy('id','DESC')->count();
+if($counts >0 )
+{
+return Redirect::Back()->withErrors('You have entered same record allready exist');
+
+}
+
+foreach($generic_id as $a) {
+
+ $brande = new Brande();
+ $brande->brande_name= $brande_name ;
+$brande->generic_id = $a;
+$brande->save();
+
+
+}
+   return Redirect::back()->with('success', 'New Brande successfuly Created');
+      
     }
+}
+
+
+
+public function brande_index_view($id)
+{
+    $brandes = Brande::findOrFail($id);
+    $generics = Generic::with('zone')->orderBy('id','DESC')->get();
+
+return view('admin.generic_brand.brande_view',compact('brandes','generics'));
+
+
+}
+public function brande_index_view_save(Request $r , $id)
+{
+
+$brande_name = $r->input('brande_name');
+
+    $generic_id =$r->input('generic_id');
+    $data = ['brande_name' => $brande_name,'generic_id' =>$generic_id];
+
+    $rules = ['brande_name' => 'required','generic_id' =>'required'];
+    $v = Validator::make($data, $rules);
+    if($v->fails()){
+        return Redirect::Back()->withErrors($v);
+    }else
+    {
+$counts = Brande::where('brande_name',$brande_name)->where('generic_id',$generic_id)->orderBy('id','DESC')->count();
+if($counts >0)
+{
+return Redirect::Back()->withErrors('You have entered same record allready exist');
+
+}
+ $brande = Brande::findOrfail($id);
+ $brande->brande_name= $brande_name ;
+$brande->generic_id = $generic_id;
+$brande->save();
+
+
+
+   return Redirect::back()->with('success', 'New Brande successfuly Updated');
+      
+    }
+
+
+}
 }

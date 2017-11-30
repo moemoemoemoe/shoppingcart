@@ -5,37 +5,31 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Upload Generic</div>
+                <div class="panel-heading">Upload Brandes</div>
 
                 <div class="panel-body">
                     <form method="POST" enctype="multipart/form-data" class="well">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <p>
-                        <input type="text" name="generic_name" placeholder="Generic Name *" class="form-control" value="{{old('generic_name')}}">
+                        <input type="text" name="brande_name" placeholder="Brande Name *" class="form-control" value="{{old('brande_name')}}">
                     </p>
                    <p>
                     <p>
                     <b>
-                        Select Zone To This Generic 
+                        Select One Or Multiple Generic To This Brande 
                     </b>
                 </p>
-        <select class="form-control" name="zone_id"  >
+        <select class="form-control" name="generic_id[]"  multiple="multiple">
       
 
-            @foreach($zones as $zone)
-            <option value="{{$zone->id}}">{{$zone->zone_name}}      ->    ->    ->    ->      {{$zone->room->room_name}}</option>
+            @foreach($generics as $generic)
+            <option value="{{$generic->id}}">{{$generic->generic_name}} ->->->->-> {{$generic->zone->zone_name}} </option>
             @endforeach
         </select>
     </p>
                   
-                   <p>
-                    <b>
-                        Choose a Logo/s  
-                    </b>
-                </p>
-                <p>
-                    <input type="file" name="photo"  class="form-control" />
-                </p>
+                 
+             
                 <p>
                     <input type="submit" value="Save" class="btn btn-primary form-control">
                 </p>
@@ -49,25 +43,23 @@
  <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading text-center" style="color: red;font-weight: 900">{{count($generics)}} Generic/s</div>
+                <div class="panel-heading text-center" style="color: red;font-weight: 900">{{count($brandes)}} Brande/s</div>
 
                 <div class="panel-body">
                                                                                
-@foreach($generics as $generic)
+@foreach($brandes as $brande)
     <div class="col-md-2">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
-                <b><span style="color: #4CAF50;font-weight: 900">{{$generic->generic_name}}</span></b>
+                <b><span style="color: #4CAF50;font-weight: 900">{{$brande->brande_name}}</span></b>
             </div>
              <div class="panel-heading text-center">
-                <b><span style="color: black">{{$generic->zone->zone_name}}</span></b>
-            </div>
-            <div class="panel-body" style="height:80px; background: url('{{asset('uploads/generic/'.$generic->img_name)}}'); background-size: contain; background-position: center center;background-repeat: no-repeat;">
-                
+                <b><span style="color: black">{{$brande->generic->generic_name}}</span></b>
             </div>
           
+          
             <div class="panel-footer text-center">
-               <a href="{!! route('generic_index_view', ['id'=>$generic->id]) !!}" class="btn btn-primary form-control">Edit ...</a>
+                <a href="{!! route('brande_index_view', ['id'=>$brande->id]) !!}" class="btn btn-primary form-control">Edit ...</a>
             </div>
         </div>
     </div>

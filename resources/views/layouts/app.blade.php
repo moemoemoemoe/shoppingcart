@@ -99,7 +99,7 @@
                           <a href="{{route('generic_index')}}"><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Generics </a>
                         </li>
                      <li>
-                          <a href="{{route('zone_index')}}"> <img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Brandes </a>
+                          <a href="{{route('brande_index')}}"> <img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Brandes </a>
                         </li>
    
 
