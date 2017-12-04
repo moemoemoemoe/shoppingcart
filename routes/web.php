@@ -22,8 +22,9 @@ Route::get('api/logs', 'ApiController@logs')->name('logs');
 Route::get('api/get_cart/{json}/userid/{user}', 'CartController@get_cart')->name('get_cart');
 Route::get('api/get_all_cart', 'CartController@get_all_cart')->name('get_all_cart');
 
+////////////////////////////////////////////////route for zone and generics and brandes api
 
-
+Route::get('api/generics_api/{zone_id}', 'ApiController@generics_api')->name('generics_api');
 
 
 ///////////////////////////////////////////////////////////

@@ -79,9 +79,11 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function generics_api($zone_id)
     {
-        //
+       $generics= Generic::orderBy('id','ASC')->where('zone_id',$zone_id)->get();
+       return $generics;
+
     }
 
     /**
