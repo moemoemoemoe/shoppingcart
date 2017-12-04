@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Offer;
 use App\Generic;
+use App\Logs;
 
 class ApiController extends Controller
 {
@@ -63,9 +64,12 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function logs()
     {
         //
+
+        $logs = Logs::select('id','table_id','query')->orderBy('id','DESC')->where('status',1)->get();
+        return $logs;
     }
 
     /**
