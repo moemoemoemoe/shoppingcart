@@ -19,7 +19,9 @@ class DemoController extends Controller
      */
     public function demo_index()
     {
-        Session::forget('g_id');
+      
+         Session::forget('z_id');
+         Session::forget('g_id');
         return view('admin.demo.index');
     }
 
@@ -30,7 +32,9 @@ class DemoController extends Controller
      */
     public function demo_get_generic($zone_id)
     {
- Session::forget('g_id');
+         Session::forget('z_id');
+         Session::forget('g_id');
+         Session::put('z_id',$zone_id);
         $generics= Generic::orderBy('id','ASC')->where('zone_id',$zone_id)->get();
         return view('admin.demo.generics_view',compact('generics'));
     }
@@ -43,11 +47,15 @@ class DemoController extends Controller
      */
     public function brande_view_by_generic($generic_id)
     {
-Session::put('g_id',$generic_id);
 
-        $brandes= Brande::orderBy('id','ASC')->where('generic_id',$generic_id)->get();
+Session::put('g_id',$generic_id);
+$items = Item::with('brande')->where('room_id',1)->where('zone_id',Session::get('z_id'))->where('generic_id',$generic_id)->where('brand_id','!=',19)->get();
+$items_others = Item::with('brande')->where('room_id',1)->where('zone_id',Session::get('z_id'))->where('generic_id',$generic_id)->where('brand_id','=',19)->get();
+//return $items;
+
+       // $brandes= Brande::orderBy('id','ASC')->where('generic_id',$generic_id)->get();
        
-        return view('admin.demo.brande_view',compact('brandes'));
+        return view('admin.demo.item_view',compact('items','items_others'));
     }
  
 
