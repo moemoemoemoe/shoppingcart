@@ -55,6 +55,8 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
          'my_url' => env('MY_URL', 'http://test.arcazur.com/uploads/offers/'),
           'my_url_geenric' => env('my_url_geenric', 'http://test.arcazur.com/uploads/generic/'),
+            'my_url_items' => env('MY_URL_ITEMS', 'http://test.arcazur.com/uploads/items/'),
+          'my_url_child' => env('MY_URL_CHILDS', 'http://test.arcazur.com/uploads/items/childs/'),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

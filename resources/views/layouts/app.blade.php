@@ -49,7 +49,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
 
-
+ <li><a href="{{ route('demo_index') }}"><img src="{{asset('images/demo_icons.png')}}" width="30px">Demo</a></li>
                            <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              <img src="{{asset('images/shop_icons.png')}}" width="25px">

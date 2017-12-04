@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Room;
+use App\Item;
+use App\Sub;
 use Redirect;
 use Validator;
 
@@ -25,9 +27,118 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function item_index_save(Request $r)
+    {        
+//         $items_name = $r->input('item_child');
+//         $item_prices = $r->input('price_child');
+//         $photos = $r->file('photo_child');
+//         $content = $r->input('content_child');
+//         for($i=0;$i<count($names);$i++)
+//         {
+// if(empty($names[$i]) || empty($prices[$i]) || empty($photos[$i]) || empty($content[$i]))
+// {
+
+//   echo "hahhaha";
+// }
+// else
+// {
+//     echo "fi fi fi";
+// }
+
+//         }
+  $foreign_name = mt_rand(111111,999999);
+
+        $item_name = $r->input('item_name'); 
+        $item_content = $r->input('content_item');
+        $item_room = $r->input('room_id');
+        $item_zone = $r->input('zone_id');
+        $item_generic = $r->input('generic_id');
+        $item_brande = $r->input('brande_id');
+        $item_photo = $r->file('photo');
+        $item_price = $r->input('original_price');
+
+        $shild_name = $r->input('item_child');
+        $child_price = $r->input('price_child');
+        $child_photo = $r->file('photo_child');
+        $child_content = $r->input('content_child');
+
+if($item_room == -1 || $item_zone == -1 || $item_generic == -1)
+{
+      return redirect::route('item_index')->withErrors("Home Structure missing");
+}
+
+  $data = ['item_name' => $item_name,'photo'=> $item_photo, 'content_item' => $item_content,'brande_id'=>$item_brande];
+
+            $rules = ['item_name' => 'required' ,'content_item' => 'required','photo'=> 'required','brande_id' => 'required'];
+
+            $v = Validator::make($data, $rules);
+             if($v->fails()){
+                return Redirect::Back()->withErrors($v);
+            }
+            else
+            {
+                $destination = 'uploads/items';
+                $photo_name = str_replace(' ', '_', $foreign_name);
+                $photo_name .= '.'.$item_photo->getClientOriginalExtension();
+                $item_photo->move($destination, $photo_name);
+
+$item = new Item();
+ $item->name = $item_name ;
+ $item->content =  $item_content;
+ $item->room_id =  $item_room;
+ $item->zone_id =  $item_zone;
+ $item->generic_id = $item_generic;
+ $item->brand_id = $item_brande;
+ $item->img_name = $photo_name;
+  $item->status = 0;
+ $item->image_url_original =  config('app.my_url_items').$photo_name;
+if(!empty($item_price))
+{
+$item->price = $item_price;
+$item->has_sub = 0;
+$item->save();
+return Redirect::back()->with('success', 'New Item successfuly created');
+
+
+}else{
+
+$item->price = 0;
+$item->has_sub = 1;
+
+for($i=0;$i<count($shild_name);$i++)
+     {
+if(empty($shild_name[$i]) || empty($child_price[$i]) || empty($child_photo[$i]) || empty($child_content[$i]))
+ {
+    unlink('uploads/items/'.$photo_name);
+return Redirect::Back()->withErrors("this has  no child or some field created is empty");
+ }
+ else
+ {
+    $item->save();
+      $foreign_namea = mt_rand(111111,999999);
+$destination = 'uploads/items/childs';
+                $photo_namea = str_replace(' ', '_', $foreign_namea);
+                $photo_namea .= '.'.$child_photo[$i]->getClientOriginalExtension();
+                $child_photo[$i]->move($destination, $photo_namea);
+$subs =  new Sub();
+$subs->name_sub = $shild_name[$i];
+$subs->price = $child_price[$i];
+$subs->item_id =  $item->id;
+$subs->status = 0;
+$subs->img_name = $photo_namea;
+$subs->image_url_original = config('app.my_url_child').$photo_namea;
+$subs->content = $child_content[$i];
+
+$subs->save();
+}
+
+}
+return Redirect::back()->with('success', 'New Item successfuly created');
+
+}
+
+            }
+
     }
 
     /**

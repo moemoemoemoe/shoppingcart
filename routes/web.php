@@ -93,3 +93,19 @@ Route::post('admin/home/items/item_index', 'ItemController@item_index_save')->na
 Route::post('admin/item/show_zone', 'ShowIdController@show_zone')->name('show_zone')->middleware('auth');
 Route::post('admin/item/show_generic', 'ShowIdController@show_generic')->name('show_generic')->middleware('auth');
 Route::post('admin/item/show_brande', 'ShowIdController@show_brande')->name('show_brande')->middleware('auth');
+
+
+
+//////////////////////////////Demo routes
+
+Route::get('admin/demo/demo_index', 'DemoController@demo_index')->name('demo_index')->middleware('auth');
+Route::get('admin/demo/demo_get_generic/{zone_id}', 'DemoController@demo_get_generic')->name('demo_get_generic')->middleware('auth');
+
+Route::get('admin/demo/brande_view_by_generic/{generic_id}', 'DemoController@brande_view_by_generic')->name('brande_view_by_generic')->middleware('auth');
+
+Route::get('admin/demo/item_view_domo/{brand_id}', 'DemoController@item_view_domo')->name('item_view_domo')->middleware('auth');
+Route::get('admin/demo/child_view_domo/{item_id}', 'DemoController@child_view_domo')->name('child_view_domo')->middleware('auth');
+
+
+
+
