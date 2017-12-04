@@ -81,7 +81,7 @@ class ApiController extends Controller
      */
     public function generics_api($zone_id)
     {
-       $generics= Generic::orderBy('id','ASC')->where('zone_id',$zone_id)->get();
+       $generics= Generic::select('id','generic_name','image_url_original')->orderBy('id','ASC')->where('zone_id',$zone_id)->get();
        return $generics;
 
     }
