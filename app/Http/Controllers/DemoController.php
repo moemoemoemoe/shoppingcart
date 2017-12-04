@@ -49,7 +49,7 @@ class DemoController extends Controller
     {
 
 Session::put('g_id',$generic_id);
-$items = Item::with('brande')->where('room_id',1)->where('zone_id',Session::get('z_id'))->where('generic_id',$generic_id)->where('brand_id','!=',19)->get();
+$items = Item::with('brande')->where('zone_id',Session::get('z_id'))->where('generic_id',$generic_id)->where('brand_id','!=',19)->get();
 $items_others = Item::with('brande')->where('room_id',1)->where('zone_id',Session::get('z_id'))->where('generic_id',$generic_id)->where('brand_id','=',19)->get();
 //return $items;
 

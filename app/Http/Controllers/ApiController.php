@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offer;
+use App\Generic;
 
 class ApiController extends Controller
 {
@@ -50,9 +51,10 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function get_all_generics()
     {
-        //
+        $generics = Generic::select('id','generic_name','image_url_original','zone_id')->OrderBy('id','ASC')->get();
+        return $generics;
     }
 
     /**
