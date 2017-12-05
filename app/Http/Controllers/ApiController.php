@@ -95,7 +95,7 @@ class ApiController extends Controller
      */
     public function items_api($zone_id,$generic_id)
     {
-        $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original')->with('sub')->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->where('has_sub',1)->get();
+        $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original')->with('sub')->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->get();
         return $items;
 
     }
