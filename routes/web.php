@@ -25,6 +25,8 @@ Route::get('api/get_all_cart', 'CartController@get_all_cart')->name('get_all_car
 ////////////////////////////////////////////////route for zone and generics and brandes api
 
 Route::get('api/generics_api/{zone_id}', 'ApiController@generics_api')->name('generics_api');
+Route::get('api/items_api/{zone_id}/generic/{generic_id}', 'ApiController@items_api')->name('items_api');
+
 
 
 ///////////////////////////////////////////////////////////

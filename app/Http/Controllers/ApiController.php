@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Offer;
 use App\Generic;
 use App\Logs;
+use App\Item;
 
 class ApiController extends Controller
 {
@@ -92,8 +93,9 @@ class ApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function items_api($zone_id,$generic_id)
     {
-        //
+        $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original')->with('sub')->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->get()->toArray();
+        return $items;
     }
 }
