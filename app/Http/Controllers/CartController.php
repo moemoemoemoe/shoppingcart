@@ -32,6 +32,9 @@ class CartController extends Controller
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
                $cart->invnum = $inv_last[0]->invnum + 1;
+               $cart->type = $mydata->type;
+               $cart->type = $mydata->parent;
+
                $cart->save();
            }   
            return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
