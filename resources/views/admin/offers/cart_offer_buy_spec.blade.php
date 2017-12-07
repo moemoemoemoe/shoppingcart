@@ -6,6 +6,9 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading text-center" style="color: red;font-weight: 900">
+
+
+                    Username : ABCDEF
 <span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
