@@ -44,7 +44,7 @@
      @foreach($carts_sub_item as $cartchild)
   
        <tr border: 1px solid #ddd!important>
-        <td style="height:100px;width:100px; background: url('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}'); background-size: contai%; background-position: center center;border: 1px solid #ddd!important"></td>
+        <td style="height:100px;width:100px; background: url('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}'); background-size: contain; background-position: center center;border: 1px solid #ddd!important"></td>
         <td style="width:300px;border: 1px solid #ddd!important">{{ $cartchild->child->name_sub }}</td>
         <td style="width:200px;border: 1px solid #ddd!important">{{$cartchild->qty}}</td>
         <td style="width:350px;border: 1px solid #ddd!important">{{$cartchild->child->price}} L.L</td>
