@@ -211,7 +211,7 @@ namespace App\Http\Controllers;
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('invnum',$invm)->where('type',2)->get();
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('invnum',$invm)->where('type',3)->get();
 
-return $carts_sub_item;
+//return $carts_sub_item;
        $total_inv =0;
        for($i=0 ;$i<count($carts_offer) ; $i++)
        {
