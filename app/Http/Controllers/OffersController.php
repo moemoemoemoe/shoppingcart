@@ -206,11 +206,12 @@ namespace App\Http\Controllers;
         }
          public function view_cart_offer_spec($invm)
         {
+            $thetotalall = 0;
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('invnum',$invm)->where('type',2)->get();
-         $carts_sub_item = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',3)->get();
+         $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('invnum',$invm)->where('type',3)->get();
 
-return $carts_item;
+//return $carts_sub_item;
        $total_inv =0;
        for($i=0 ;$i<count($carts) ; $i++)
        {
@@ -223,8 +224,10 @@ $total_inv = $total_inv  + ($carts[$i]->qty * $carts[$i]->offer->price);
 $total_inv_item = $total_inv_item  + ($carts_item[$i]->qty * $carts_item[$i]->item->price);
 
        }
+
+       $thetotalall = $total_inv_item + $total_inv;
        //return $total_inv;
-       return view('admin.offers.cart_offer_buy_spec',compact('carts','total_inv'));
+       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall'));
 
         }
     }
