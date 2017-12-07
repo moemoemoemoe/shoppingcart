@@ -206,13 +206,21 @@ namespace App\Http\Controllers;
         }
          public function view_cart_offer_spec($invm)
         {
-       $carts = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
+       $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
+        $carts_item = Cart::with('item')->orderBy('id','DESC')->where('invnum',$invm)->where('type',2)->get();
+         $carts_sub_item = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
 
-//return $carts;
+return $carts_item;
        $total_inv =0;
        for($i=0 ;$i<count($carts) ; $i++)
        {
 $total_inv = $total_inv  + ($carts[$i]->qty * $carts[$i]->offer->price);
+
+       }
+       $total_inv_item =0;
+       for($i=0 ;$i<count($carts_item) ; $i++)
+       {
+$total_inv_item = $total_inv_item  + ($carts_item[$i]->qty * $carts_item[$i]->item->price);
 
        }
        //return $total_inv;
