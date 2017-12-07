@@ -33,7 +33,7 @@ class CartController extends Controller
                $cart->iduser = $userid;
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
-               $cart->type = $mydata->parent;
+               $cart->parent = $mydata->parent;
 
                $cart->save();
            }   
