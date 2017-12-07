@@ -218,6 +218,7 @@ namespace App\Http\Controllers;
 $total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
 
        }
+
        $total_inv_item =0;
        for($i=0 ;$i<count($carts_item) ; $i++)
        {
@@ -225,9 +226,16 @@ $total_inv_item = $total_inv_item  + ($carts_item[$i]->qty * $carts_item[$i]->it
 
        }
 
-       $thetotalall = $total_inv_item + $total_inv;
+        $total_inv_child =0;
+       for($i=0 ;$i<count($carts_sub_item) ; $i++)
+       {
+$total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_item[$i]->child->price);
+
+       }
+
+       $thetotalall = $total_inv_item + $total_inv +$total_inv_child;
        //return $total_inv;
-       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall'));
+       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item'));
 
         }
     }
