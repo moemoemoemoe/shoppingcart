@@ -206,7 +206,8 @@ namespace App\Http\Controllers;
         }
          public function view_cart_offer_spec($invm)
         {
-       $carts = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->get();
+       $carts = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
+
 //return $carts;
        $total_inv =0;
        for($i=0 ;$i<count($carts) ; $i++)
