@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading text-center" style="color: red;font-weight: 900">Username : {{$carts[0]->iduser}}
+                <div class="panel-heading text-center" style="color: red;font-weight: 900">Username : {{$carts_offer[0]->iduser}}
 <span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
-                    @foreach($carts as $cart)
+                    @foreach($carts_offer as $cart)
   
        <tr border: 1px solid #ddd!important>
         <td style="height:50px;width:50px; background: url('{{asset('uploads/offers/'.$cart->offer->img_name)}}'); background-size: 100%; background-position: center center;border: 1px solid #ddd!important"></td>
