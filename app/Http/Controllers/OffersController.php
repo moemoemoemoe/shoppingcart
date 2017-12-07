@@ -208,7 +208,7 @@ namespace App\Http\Controllers;
         {
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('invnum',$invm)->where('type',2)->get();
-         $carts_sub_item = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
+         $carts_sub_item = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',3)->get();
 
 return $carts_item;
        $total_inv =0;
