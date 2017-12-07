@@ -213,9 +213,9 @@ namespace App\Http\Controllers;
 
 //return $carts_sub_item;
        $total_inv =0;
-       for($i=0 ;$i<count($carts) ; $i++)
+       for($i=0 ;$i<count($carts_offer) ; $i++)
        {
-$total_inv = $total_inv  + ($carts[$i]->qty * $carts[$i]->offer->price);
+$total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
 
        }
        $total_inv_item =0;
