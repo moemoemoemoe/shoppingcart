@@ -16,7 +16,8 @@ class CartController extends Controller
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data,$userid)
-    {  $invoice_number = mt_rand(111111,999999);
+    { 
+     $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
         try{
             $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
@@ -34,6 +35,7 @@ class CartController extends Controller
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
+               $cart->original_invoice = $invoice_number;
 
                $cart->save();
            }   
