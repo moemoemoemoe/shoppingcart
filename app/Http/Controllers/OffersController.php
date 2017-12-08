@@ -200,16 +200,16 @@ namespace App\Http\Controllers;
         }
         public function view_cart_offer()
         {
-       $carts = Cart::select('invnum')->groupBy('invnum')->orderBy('invnum','Desc')->get();
+       $carts = Cart::select('original_invoice')->groupBy('original_invoice')->orderBy('id','Desc')->get();
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
          public function view_cart_offer_spec($invm)
         {
             $thetotalall = 0;
-       $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('invnum',$invm)->where('type',1)->get();
-        $carts_item = Cart::with('item')->orderBy('id','DESC')->where('invnum',$invm)->where('type',2)->get();
-         $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('invnum',$invm)->where('type',3)->get();
+       $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
+        $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
+         $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
 
 //return $carts_sub_item;
          if(count($carts_offer) == 0)
