@@ -200,7 +200,7 @@ namespace App\Http\Controllers;
         }
         public function view_cart_offer()
         {
-       $carts = Cart::select('original_invoice')->groupBy('original_invoice')->orderBy('id','Desc')->get();
+       $carts = Cart::select('original_invoice')->groupBy('original_invoice')->orderBy('original_invoice','Desc')->get();
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }

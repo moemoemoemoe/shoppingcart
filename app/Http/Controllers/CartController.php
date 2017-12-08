@@ -21,6 +21,7 @@ class CartController extends Controller
         $user = json_decode($data);
         try{
             $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
+            
           
 
             foreach($user->data as $mydata)
@@ -35,7 +36,7 @@ class CartController extends Controller
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
-               $cart->original_invoice = $invoice_number;
+               $cart->original_invoice =$inv_last[0]->original_invoice + 1;
 
                $cart->save();
            }   
