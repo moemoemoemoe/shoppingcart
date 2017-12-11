@@ -8,7 +8,8 @@
                 <div class="panel-heading text-center" style="color: red;font-weight: 900">
 
 
-                    Username : ABCDEF
+                    Username : {{$user_name[0]->iduser}}
+                    <span class="pull-left"> Email : {{$user_name[0]->email}}</span></div>
 <span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">

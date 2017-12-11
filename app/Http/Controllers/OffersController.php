@@ -206,10 +206,11 @@ namespace App\Http\Controllers;
         }
          public function view_cart_offer_spec($invm)
         {
-            $thetotalall = 0;
+        $thetotalall = 0;
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
+         $user_name = Cart::select('iduser','email')->where('original_invoice', $invm)->limit(1)->get();
 
 //return $carts_sub_item;
          if(count($carts_offer) == 0)
@@ -250,7 +251,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
        $thetotalall = $total_inv_item + $total_inv +$total_inv_child;
        //return $total_inv;
-       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item'));
+       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item','user_name'));
 
         }
     }
