@@ -19,7 +19,7 @@ class CartController extends Controller
     { 
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
-        try{
+        
             $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
             
           
@@ -32,7 +32,7 @@ class CartController extends Controller
                $cart->offer_id = $mydata->Id;
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
-               $cart->iduser = $userid;
+                $cart->iduser = $userid;
                 $cart->email = $email;
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
@@ -41,12 +41,7 @@ class CartController extends Controller
 
                $cart->save();
            }   
-           return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
-       }  
-       catch(\Exception $e){
-
-         return "[{".'"status":'.'"Error Please try again"'."}]";
-     }
+     
 
  }
 
