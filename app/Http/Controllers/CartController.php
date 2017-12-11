@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Cart;
 use response;
+use App\Customer;
 
 class CartController extends Controller
 {
@@ -15,8 +16,21 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data,$userid,$em)
+    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y)
     { 
+     $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
+     if(count($carts) == 0){ 
+$customer = new Customer();
+$customer->name = $userid ;
+$customer->email = $em ;
+$customer->phone =  $ad;
+$customer->address =  $phone;
+$customer->id_tablet =  $tab;
+$customer->coor_x =  $x;
+$customer->coor_y = $y;
+$customer->save();
+      }
+       
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
         try{
@@ -33,7 +47,7 @@ class CartController extends Controller
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
-                 $cart->email = $em;
+               $cart->email = $em;
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
