@@ -15,7 +15,7 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data,$userid,$email)
+    public function get_cart($data,$userid,$emailss)
     { 
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
@@ -33,7 +33,7 @@ class CartController extends Controller
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
-                $cart->email = $email;
+                $cart->email = $emailss;
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
