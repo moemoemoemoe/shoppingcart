@@ -14,7 +14,7 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-//{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
+//{"data":[{"Id":11,"qty":1,"type":2,"parent":2}]}
     public function get_cart($data,$userid,$email)
     { 
      $invoice_number = mt_rand(111111,999999);
