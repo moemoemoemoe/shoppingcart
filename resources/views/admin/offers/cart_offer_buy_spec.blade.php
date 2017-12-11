@@ -9,7 +9,7 @@
 
 
                     Username : {{$user_name[0]->iduser}}
-                    <span class="pull-left"> Email : {{$user_name[0]->email}}</span></div>
+                    <span class="pull-left"> Email : {{$user_name[0]->email}}</span>
 <span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
