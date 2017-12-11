@@ -33,6 +33,7 @@ class CartController extends Controller
                $cart->qty = $mydata->qty;
                $cart->idoffer = $mydata->Id;
                $cart->iduser = $userid;
+                 $cart->email = $userid;
                $cart->invnum = $inv_last[0]->invnum + 1;
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
