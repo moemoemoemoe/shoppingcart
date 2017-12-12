@@ -147,9 +147,10 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function item_manage()
     {
-        //
+        $items = Item::orderBy('id','DESC')->get();
+        return view('admin.items.item_manage',compact('items'));
     }
 
     /**
@@ -158,9 +159,10 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function child_index_view($id)
     {
-        //
+        $childs = Sub::orderBy('id','DESC')->where('item_id',$id)->get();
+        return view('admin.items.child_index_view',compact('childs'));
     }
 
     /**
@@ -169,9 +171,11 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function child_index_view_update($id)
     {
-        //
+        $child = Sub::findOrFail($id);
+        //return $child;
+        return view('admin.items.child_index_view_update',compact('child'));
     }
 
     /**
@@ -181,9 +185,50 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function child_index_view_update_save(Request $r, $id)
     {
-        //
+         $foreign_name = mt_rand(111111,999999);
+        $sub_title = $r->input('sub_title');
+        $sub_content =$r->input('sub_content');
+        $photo = $r->file('photo');
+        $price = $r->input('price');
+
+        $data = ['sub_title' => $sub_title,'sub_content' =>$sub_content, 'price' =>$price];
+
+        $rules = ['sub_title' => 'required','sub_content' => 'required','price' => 'required' ];
+
+        $v = Validator::make($data, $rules);
+
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+          if($r->hasFile('photo')){
+            $destination = 'uploads/items/childs';
+            $photo_name = str_replace(' ', '_', $foreign_name);
+            $photo_name .= '.'.$photo->getClientOriginalExtension();
+            $photo->move($destination, $photo_name);
+        }
+        $child = Sub::findOrFail($id);
+        $child->name_sub = $sub_title;
+        $child->content = $sub_content;
+        $child->price = $price;
+
+        if($r->hasFile('photo')){
+            unlink('uploads/items/childs/'.$child->img_name);
+            $child->img_name = $photo_name;
+
+            $child->image_url_original = config('app.my_url_child').$photo_name;
+        }
+
+
+        $child->save();
+
+
+        return Redirect::back()->with('success', 'New Item successfuly Updated');
+
+
+    }
     }
 
     /**
@@ -192,8 +237,56 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function item_view_no_child($id)
     {
-        //
+        $item = Item::findOrFail($id);
+        //return $child;
+        return view('admin.items.item_view_no_child',compact('item'));
+    }
+
+    public function item_view_no_child_save(Request $r, $id)
+    {
+       $foreign_name = mt_rand(111111,999999);
+        $sub_title = $r->input('sub_title');
+        $sub_content =$r->input('sub_content');
+        $photo = $r->file('photo');
+        $price = $r->input('price');
+
+        $data = ['sub_title' => $sub_title,'sub_content' =>$sub_content, 'price' =>$price];
+
+        $rules = ['sub_title' => 'required','sub_content' => 'required','price' => 'required' ];
+
+        $v = Validator::make($data, $rules);
+
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+          if($r->hasFile('photo')){
+            $destination = 'uploads/items';
+            $photo_name = str_replace(' ', '_', $foreign_name);
+            $photo_name .= '.'.$photo->getClientOriginalExtension();
+            $photo->move($destination, $photo_name);
+        }
+        $child = Item::findOrFail($id);
+        $child->name = $sub_title;
+        $child->content = $sub_content;
+        $child->price = $price;
+
+        if($r->hasFile('photo')){
+            unlink('uploads/items/'.$child->img_name);
+            $child->img_name = $photo_name;
+
+            $child->image_url_original = config('app.my_url_items').$photo_name;
+        }
+
+
+        $child->save();
+
+
+        return Redirect::back()->with('success', 'New Item successfuly Updated');
+
+
+    }
     }
 }

@@ -49,7 +49,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
 
- <li><a href="{{ route('demo_index') }}"><img src="{{asset('images/demo_icons.png')}}" width="30px">Demo</a></li>
+ <!-- <li><a href="{{ route('demo_index') }}"><img src="{{asset('images/demo_icons.png')}}" width="30px">Demo</a></li> -->
                            <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                              <img src="{{asset('images/shop_icons.png')}}" width="25px">
@@ -61,7 +61,7 @@
                           <a href="{{route('item_index')}}"> <img src="{{asset('images/shop_manage_icons.png')}}" width="20px">Upload item </a>
                         </li>
                      <li>
-                          <a href=""><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Items </a>
+                          <a href="{{route('item_manage')}}"><img src="{{asset('images/edit_icons.png')}}" width="20px"> Manage Items </a>
                         </li>
   <!--  <li>
                           <a href=""> Invoices cart </a>

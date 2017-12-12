@@ -94,6 +94,18 @@ Route::post('admin/home/generic_brand/brande_index_view/{id}', 'GenericBrandesCo
 Route::get('admin/home/items/item_index', 'ItemController@item_index')->name('item_index')->middleware('auth');
 Route::post('admin/home/items/item_index', 'ItemController@item_index_save')->name('item_index')->middleware('auth');
 
+Route::get('admin/home/items/item_manage', 'ItemController@item_manage')->name('item_manage')->middleware('auth');
+Route::get('admin/home/items/child_index_view/{id}', 'ItemController@child_index_view')->name('child_index_view')->middleware('auth');
+Route::get('admin/home/items/item_index_view/{id}', 'ItemController@item_index_view')->name('item_index_view')->middleware('auth');
+
+Route::get('admin/home/items/child_index_view_update/{id}', 'ItemController@child_index_view_update')->name('child_index_view_update')->middleware('auth');
+Route::post('admin/home/items/child_index_view_update/{id}', 'ItemController@child_index_view_update_save')->name('child_index_view_update')->middleware('auth');
+
+Route::get('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child')->name('item_view_no_child')->middleware('auth');
+Route::post('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child_save')->name('item_view_no_child')->middleware('auth');
+
+
+
 
 
 ////////////////////////////////////////route for get dynamic ids
