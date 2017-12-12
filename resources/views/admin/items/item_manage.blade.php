@@ -11,7 +11,7 @@
                   
                                                                                                  
 @foreach($items as $item)
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
                 <b><span style="color: #4CAF50;font-weight: 900">{{$item->name}}</span></b>
