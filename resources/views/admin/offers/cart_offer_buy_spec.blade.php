@@ -12,6 +12,13 @@
                     <span class="pull-left"> Email : {{$user_name[0]->email}}</span>
 <span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
 
+  <div class="panel-heading text-center" style="color: red;font-weight: 900">
+
+
+                    Delevery date : {{$date[0]->date}}
+                    <span class="pull-left"> Time : {{$time[0]->time}}</span>
+</div>
+
                <table style="text-align: center;border: 1px solid #ddd!important">
                 @if(count($carts_offer)==0)
                 @else
