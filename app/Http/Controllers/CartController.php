@@ -32,7 +32,7 @@ $customer->save();
       }
       if($cmnt == "")
       {
-        $comnts = "No Comment";
+        $cmnt = "No Comment";
       }
        
      $invoice_number = mt_rand(111111,999999);
@@ -59,7 +59,7 @@ $customer->save();
                $cart->original_invoice =$inv_last[0]->original_invoice + 1;
                $cart->date =  $date;
                $cart->time = $time;
-               $cart->comment =  $comnts;
+               $cart->comment =  $cmnt;
 
                $cart->save();
            }   
