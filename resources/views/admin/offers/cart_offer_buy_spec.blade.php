@@ -8,15 +8,15 @@
                 <div class="panel-heading text-center" style="color: red;font-weight: 900">
 
 
-                    Username : {{$user_name[0]->iduser}}
-                    <span class="pull-left"> Email : {{$user_name[0]->email}}</span>
-<span class="pull-right">Total: {{$thetotalall}} L.L</span></div>
+                   <span style="color: #000"> Username :  </span>{{$user_name[0]->iduser}}
+                    <span class="pull-left"> <span style="color: #000"> Email :</span> {{$user_name[0]->email}}</span>
+<span class="pull-right"> <span style="color: #000">Total:</span> {{$thetotalall}} L.L</span></div>
 
   <div class="panel-heading text-center" style="color: red;font-weight: 900">
 
 
-                    Delevery date : {{$user_name[0]->date}}
-                    <span class="pull-left"> Time : {{$user_name[0]->time}}</span>
+                     <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
+                    <span class="pull-left"> <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>
                     <span class="pull-right" onClick="showComment()">Show Comment</span></div>
 </div>
 
