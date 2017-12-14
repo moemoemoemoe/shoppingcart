@@ -17,6 +17,7 @@
 
                     Delevery date : {{$user_name[0]->date}}
                     <span class="pull-left"> Time : {{$user_name[0]->time}}</span>
+                    <span class="pull-right" onClick="showComment()">Show Comment</span></div>
 </div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
@@ -68,5 +69,33 @@
             </div>
         </div>
     </div>
+<div class="modal fade large_bootbox" id="modal-confirm-operator-message" tabindex="-1" role="dialog" style="z-index: 999999999">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button " class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
+          <h4 class="modal-title">
+
+          </h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-4" id="operator_logo">
+
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-8 ">
+            {{$user_name[0]->comment}}
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection

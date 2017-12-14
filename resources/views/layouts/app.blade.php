@@ -225,5 +225,15 @@ setTimeout(function(){
 
         CKEDITOR.replace( 'content_item' );
     </script>
+
+    <script type="text/javascript">
+        
+
+  function showComment()
+  {
+  $('#modal-confirm-operator-message').modal('show');
+
+  }
+    </script>
 </body>
 </html>
