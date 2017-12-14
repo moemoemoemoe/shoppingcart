@@ -16,7 +16,7 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y)
+    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt)
     { 
      $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
      if(count($carts) == 0){ 
@@ -52,6 +52,9 @@ $customer->save();
                $cart->type = $mydata->type;
                $cart->parent = $mydata->parent;
                $cart->original_invoice =$inv_last[0]->original_invoice + 1;
+               $cart->date =  $date;
+               $cart->time = $time;
+               $cart->comment =  $cmnt;
 
                $cart->save();
            }   
