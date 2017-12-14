@@ -23,8 +23,8 @@ class CartController extends Controller
 $customer = new Customer();
 $customer->name = $userid ;
 $customer->email = $em ;
-$customer->phone =  $ad;
-$customer->address =  $phone;
+$customer->phone =  $phone;
+$customer->address =  $ad;
 $customer->id_tablet =  $tab;
 $customer->coor_x =  $x;
 $customer->coor_y = $y;
