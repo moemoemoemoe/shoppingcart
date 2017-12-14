@@ -32,7 +32,7 @@ $customer->save();
       }
       if($cmnt == "")
       {
-        $comnts = "No Comment"
+        $comnts = "No Comment";
       }
        
      $invoice_number = mt_rand(111111,999999);
@@ -67,7 +67,7 @@ $customer->save();
        }  
        catch(\Exception $e){
 
-         return "[{".'"status":'.$e."}]";
+         return "[{".'"status":'.'"Error Please try again"'."}]";
      }
 
  }
