@@ -30,6 +30,10 @@ $customer->coor_x =  $x;
 $customer->coor_y = $y;
 $customer->save();
       }
+      if($cmnt == "")
+      {
+        $comnts = "No Comment"
+      }
        
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
@@ -41,6 +45,7 @@ $customer->save();
             foreach($user->data as $mydata)
 
             { 
+
 
                $cart = new Cart();
                $cart->offer_id = $mydata->Id;
@@ -54,7 +59,7 @@ $customer->save();
                $cart->original_invoice =$inv_last[0]->original_invoice + 1;
                $cart->date =  $date;
                $cart->time = $time;
-               $cart->comment =  $cmnt;
+               $cart->comment =  $comnts;
 
                $cart->save();
            }   
