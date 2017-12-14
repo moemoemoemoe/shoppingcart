@@ -15,8 +15,8 @@
   <div class="panel-heading text-center" style="color: red;font-weight: 900">
 
 
-                    Delevery date : {{$date[0]->date}}
-                    <span class="pull-left"> Time : {{$time[0]->time}}</span>
+                    Delevery date : {{$user_name[0]->date}}
+                    <span class="pull-left"> Time : {{$user_name[0]->time}}</span>
 </div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
