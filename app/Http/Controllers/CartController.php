@@ -30,10 +30,7 @@ $customer->coor_x =  $x;
 $customer->coor_y = $y;
 $customer->save();
       }
-      if($cmnt == "")
-      {
-        $cmnt = "No Comment";
-      }
+   
        
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
