@@ -7,6 +7,7 @@ use App\Offer;
 use App\Generic;
 use App\Logs;
 use App\Item;
+use App\Saver;
 
 class ApiController extends Controller
 {
@@ -98,5 +99,14 @@ class ApiController extends Controller
         $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original')->with('sub')->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->get();
         return $items;
 
+    }
+    public function get_savers()
+    {
+
+
+        $savers = Saver::select('id','url_original','type')->orderBy('id','DESC')->where('status',1)->get();
+
+        return '{
+  "savers":'.$savers.'}';
     }
 }
