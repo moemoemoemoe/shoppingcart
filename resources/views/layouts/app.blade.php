@@ -86,7 +86,9 @@
                      <li>
                           <a href="{{ route('manage_offer')}}"> Manage Offer </a>
                         </li>
-  
+    <li>
+                          <a href="{{ route('saver_index')}}"> Manage Screen Saver </a>
+                        </li>
 
                         
                           

@@ -57,6 +57,8 @@ return [
           'my_url_geenric' => env('my_url_geenric', 'http://test.arcazur.com/uploads/generic/'),
             'my_url_items' => env('MY_URL_ITEMS', 'http://test.arcazur.com/uploads/items/'),
           'my_url_child' => env('MY_URL_CHILDS', 'http://test.arcazur.com/uploads/items/childs/'),
+                    'my_url_saver' => env('MY_URL_SAVERS', 'http://test.arcazur.com/uploads/savers/'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

@@ -126,5 +126,14 @@ Route::get('admin/demo/item_view_domo/{brand_id}', 'DemoController@item_view_dom
 Route::get('admin/demo/child_view_domo/{item_id}', 'DemoController@child_view_domo')->name('child_view_domo')->middleware('auth');
 
 
+///////////////////////////////////////Saver controller
 
 
+
+
+Route::get('admin/savers/saver_index', 'ScreenSaverController@saver_index')->name('saver_index')->middleware('auth');
+Route::post('admin/savers/saver_index', 'ScreenSaverController@saver_index_save')->name('saver_index')->middleware('auth');
+Route::get('admin/savers/saver_index_publish/{id}', 'ScreenSaverController@saver_index_publish')->name('saver_index_publish')->middleware('auth');
+
+Route::get('admin/savers/saver_update/{id}', 'ScreenSaverController@saver_update')->name('saver_update')->middleware('auth');
+Route::post('admin/savers/saver_update/{id}', 'ScreenSaverController@saver_update_save')->name('saver_update')->middleware('auth');
