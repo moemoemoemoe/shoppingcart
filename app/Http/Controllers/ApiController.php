@@ -106,7 +106,7 @@ class ApiController extends Controller
 
         $savers = Saver::select('id','url_original','type')->orderBy('id','DESC')->where('status',1)->get();
 
-        return $savers;
-}
-
+        return '{
+  "savers":'.$savers.'}';
+    }
 }
