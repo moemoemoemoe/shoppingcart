@@ -17,8 +17,10 @@ Route::get('api/get_savers', 'ApiController@get_savers')->name('get_savers');
 
 Route::get('api/spec_offer/{id}', 'ApiController@spec_offer')->name('spec_offer');
 Route::get('api/single_offer/{id}', 'ApiController@single_offer')->name('single_offer');
-Route::get('api/get_all_generics', 'ApiController@get_all_generics')->name('get_all_generics');
-Route::get('api/logs', 'ApiController@logs')->name('logs');
+get_subsRoute::get('api/logs', 'ApiController@logs')->name('logs');
+
+Route::get('api/get_subs/', 'ApiController@get_subs')->name('get_subs');
+
 
 
 Route::get('api/get_cart/{json}/userid/{user}/{em}/{ad}/{phone}/{tab}/{x}/{y}/{date}/{time}/{cmnt}', 'CartController@get_cart')->name('get_cart');
