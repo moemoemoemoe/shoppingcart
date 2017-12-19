@@ -109,4 +109,12 @@ class ApiController extends Controller
      
   return $savers;
     }
+
+    public function get_subs()
+    {
+
+
+        $subs = App\Sub::OrderBy('id','DESC')->get();
+        return $subs;
+    }
 }
