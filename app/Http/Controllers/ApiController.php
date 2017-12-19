@@ -8,7 +8,7 @@ use App\Generic;
 use App\Logs;
 use App\Item;
 use App\Saver;
-
+use App\Sub;
 class ApiController extends Controller
 {
     /**
@@ -114,7 +114,7 @@ class ApiController extends Controller
     {
 
 
-        $subs = App\Sub::OrderBy('id','DESC')->get();
+        $subs = Sub::OrderBy('id','DESC')->get();
         return $subs;
     }
 }
