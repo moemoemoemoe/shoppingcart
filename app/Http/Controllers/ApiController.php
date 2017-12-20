@@ -117,4 +117,9 @@ class ApiController extends Controller
         $subs = Sub::OrderBy('id','DESC')->get();
         return $subs;
     }
+     public function single_search($id)
+    {
+        $search =Sub::select('id','name_sub','content','image_url_original','price')->where('id',$id)->get();
+        return $search;
+    }
 }
