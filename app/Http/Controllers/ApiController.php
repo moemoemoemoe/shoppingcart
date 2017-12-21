@@ -16,9 +16,9 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function get_offers()
+    public function get_offers($sty)
     {
-        $offers = Offer::select('id','image_url_original','cat_id')->orderBy('id','DESC')->where('status',1)->get();
+        $offers = Offer::select('id','image_url_original','cat_id')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
 
         return '{
   "offers":'.$offers.'}';

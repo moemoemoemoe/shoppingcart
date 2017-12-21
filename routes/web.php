@@ -12,7 +12,7 @@
 */
 /////////////////////////// Api Controller //////////////////////
 
-Route::get('api/get_offers', 'ApiController@get_offers')->name('get_offers');
+Route::get('api/get_offers/{sty}', 'ApiController@get_offers')->name('get_offers');
 Route::get('api/get_savers', 'ApiController@get_savers')->name('get_savers');
 
 Route::get('api/spec_offer/{id}', 'ApiController@spec_offer')->name('spec_offer');
