@@ -28,6 +28,17 @@
 
                         </select>
                     </p>
+                     <p>
+                        <b>Choose Type</b>
+                    </p>
+                    <p>
+                        <select class="form-control" name="type_id"  >
+                            <option value="1">Home </option>
+                            <option value="2">Office</option>
+                          
+
+                        </select>
+                    </p>
                     <p>
         <b>Enter Price In L.L</b>
     </p>

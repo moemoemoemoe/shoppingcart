@@ -10,10 +10,20 @@
                 <div class="panel-body">
                                                                                
 @foreach($offers as $offer)
+@if($offer->sty ==1)
     <div class="col-md-3">
+        @else
+          <div class="col-md-3" style="background-color: #fff000">
+        @endif
         <div class="panel panel-default">
             <div class="panel-heading text-center">
-                <b>{{$offer->title}}</b> <span class="pull-right">
+                @if($offer->sty ==1)
+                <b>{{$offer->title}}</b> 
+                @else
+                                <b><span style="color: red">{{$offer->title}}</span></b> 
+                                @endif
+
+                <span class="pull-right">
 
                 @if($offer->status == 1)
               <a href="{{route('publish_offer', $offer->id)}}">   <i class="fa fa-check text-success" title="Active .. press to unpublish"></i></a>
