@@ -12,8 +12,7 @@ class AddStyToOffers extends Migration
      * @return void
      */
     public function up()
-    
-         {
+   {
            Schema::table('offers', function($table) {
           $table->Integer('sty');
          
