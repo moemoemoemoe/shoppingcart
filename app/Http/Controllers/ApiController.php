@@ -114,12 +114,12 @@ class ApiController extends Controller
     {
 
 
-         $items = Item::select('id','name','content','has_sub','price','image_url_original')->with('sub')->get();
-        return $items;
+        $subs = Sub::OrderBy('id','DESC')->get();
+        return $subs;
     }
      public function single_search($id)
     {
-        $search =Sub::select('id','name_sub','content','image_url_original','price')->where('id',$id)->get();
+        $search =Sub::where('id',$id)->get();
         return $search;
     }
 }
