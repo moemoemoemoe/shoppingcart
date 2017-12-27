@@ -62,7 +62,7 @@
     @endforeach
   @endif
 </table>
-@foreach($drivers as driver)
+@foreach($drivers as $driver)
 
   <div class="col-md-3">
    <span >{{$driver->name}}</span>
