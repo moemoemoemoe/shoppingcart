@@ -13,54 +13,61 @@ class DriverController extends Controller
      */
  public function push()
     {
+         error_reporting(-1);
+        ini_set('display_errors', 'On');
+
          $res = array();
            $payload = array();
         $payload['team'] = 'India';
         $payload['score'] = '5.6';
 
-        $res['data']['title'] = 'hello title';
-        $res['data']['is_background'] = FALSE;
-        $res['data']['message'] = 'hello message hamieh';
-        $res['data']['image'] ='';
+         
+        $res['data']['title'] = 'Hello title';
+        $res['data']['is_background'] = False;
+        $res['data']['message'] = 'message';
+        $res['data']['image'] = 'http://api.androidhive.info/images/firebase_logo.png';
+        $res['data']['payload'] = $payload;
         $res['data']['timestamp'] = date('Y-m-d G:i:s');
 
-        $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
-        $message = 'hello hamieh';
-       $fields = array(
-            'to' => $to,
-            'data' => $res,
-        );
-        $api_key = 'AAAAk_ZIjvo:APA91bHCeVT1_EjwqZufv5qpxb2fbi-m2CguR47HwSOVLGOFZCoaAqvm_Ox0QyjeG_XQbsm3aFB8ZQcR8gf1ZfArn2vdttZBHcC021_A1pQmwFFDDEnqNs7JDkP8XEBeb_hxzSfsAqWI';
-        $url = 'https://fcm.googleapis.com/fcm/send';
-        $headers = array(
-            'Authorization: key='.$api_key,
-            'Content-Type: application/json'
-        );
-        // Open connection
-        $ch = curl_init();
+        return $res;
 
-        // Set the url, number of POST vars, POST data
-        curl_setopt($ch, CURLOPT_URL, $url);
+       //  $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
+       //  $message = 'hello hamieh';
+       // $fields = array(
+       //      'to' => $to,
+       //      'data' => $res,
+       //  );
+       //  $api_key = 'AAAAk_ZIjvo:APA91bHCeVT1_EjwqZufv5qpxb2fbi-m2CguR47HwSOVLGOFZCoaAqvm_Ox0QyjeG_XQbsm3aFB8ZQcR8gf1ZfArn2vdttZBHcC021_A1pQmwFFDDEnqNs7JDkP8XEBeb_hxzSfsAqWI';
+       //  $url = 'https://fcm.googleapis.com/fcm/send';
+       //  $headers = array(
+       //      'Authorization: key='.$api_key,
+       //      'Content-Type: application/json'
+       //  );
+       //  // Open connection
+       //  $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+       //  // Set the url, number of POST vars, POST data
+       //  curl_setopt($ch, CURLOPT_URL, $url);
 
-        // Disabling SSL Certificate support temporarly
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+       //  curl_setopt($ch, CURLOPT_POST, true);
+       //  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+       //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+       //  // Disabling SSL Certificate support temporarly
+       //  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-        // Execute post
-        $result = curl_exec($ch);
-        if ($result === FALSE) {
-            die('Curl failed: ' . curl_error($ch));
-        }
+       //  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
 
-        // Close connection
-        curl_close($ch);
+       //  // Execute post
+       //  $result = curl_exec($ch);
+       //  if ($result === FALSE) {
+       //      die('Curl failed: ' . curl_error($ch));
+       //  }
 
-        return $result;
+       //  // Close connection
+       //  curl_close($ch);
+
+       //  return $result;
 
 
     }
