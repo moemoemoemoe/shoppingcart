@@ -14,7 +14,7 @@ class DriverController extends Controller
  public function push()
     {
         $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
-        $message = 'hello hamieh'
+        $message = 'hello hamieh';
        $fields = array(
             'to' => $to,
             'data' => $message,
