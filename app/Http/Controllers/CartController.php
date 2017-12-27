@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Cart;
 use response;
 use App\Customer;
-
+use App\Driver;
 class CartController extends Controller
 {
     /**
