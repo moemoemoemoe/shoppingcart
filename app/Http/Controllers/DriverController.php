@@ -22,7 +22,7 @@ class DriverController extends Controller
         $api_key = 'AIzaSyArV9W17ukA6jLo_pniVXlyDGmyIGtUy5U';
         $url = 'https://fcm.googleapis.com/fcm/send';
         $headers = array(
-            'Authorization: key='. $api_key,
+            'Authorization: key='.$api_key,
             'Content-Type: application/json'
         );
         // Open connection
