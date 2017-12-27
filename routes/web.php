@@ -37,7 +37,7 @@ Route::get('api/items_api/{zone_id}/generic/{generic_id}', 'ApiController@items_
 
 ///////////////////////////////////////////////////////////driver
 
-Route::post('driver/push', 'DriverController@push')->name('push');
+Route::post('driver/push/{id}', 'DriverController@push')->name('push');
 Route::get('driver/save_driver/{name}/{mobile}/{email}/{pass}/{imei}/{reg}', 'DriverController@save_driver')->name('save_driver');
 
 

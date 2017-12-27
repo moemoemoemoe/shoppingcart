@@ -12,8 +12,11 @@ class DriverController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
- public function push()
+ public function push($id)
     {
+
+        $driver = Driver::findOrFail($id);
+        return $driver;
          error_reporting(-1);
         ini_set('display_errors', 'On');
 

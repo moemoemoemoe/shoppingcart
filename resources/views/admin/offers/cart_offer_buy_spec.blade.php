@@ -65,7 +65,7 @@
 @foreach($drivers as $driver)
 
   <div class="col-md-3">
-   <span >{{$driver->name}}</span>
+  <a href="{!! route('push', ['id'=>$driver->id]) !!}"> <span>{{$driver->name}}</span></a>
      </div>
 @endforeach
 
