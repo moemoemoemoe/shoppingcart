@@ -29,7 +29,7 @@ class DriverController extends Controller
         $res['data']['payload'] = $payload;
         $res['data']['timestamp'] = date('Y-m-d G:i:s');
 
-        return $res;
+      
 
         $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
         $message = 'hello hamieh';
