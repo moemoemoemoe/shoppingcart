@@ -23,7 +23,7 @@ class DriverController extends Controller
 
          
         $res['data']['title'] = 'Hello title';
-        $res['data']['is_background'] = TRUE;
+        $res['data']['is_background'] = FALSE;
         $res['data']['message'] = 'message hamieh';
         $res['data']['image'] = 'http://api.androidhive.info/images/minion.jpg';
         $res['data']['payload'] = $payload;
