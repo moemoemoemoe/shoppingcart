@@ -67,7 +67,7 @@ class DriverController extends Controller
         // Close connection
         curl_close($ch);
 
-        return $result;
+        return $res;
 
 
     }
