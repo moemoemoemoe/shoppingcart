@@ -35,7 +35,13 @@ Route::get('api/items_api/{zone_id}/generic/{generic_id}', 'ApiController@items_
 
 
 
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////driver
+
+Route::post('driver/push', 'DriverController@push')->name('push');
+
+
+
+/////////////////////////////
 Route::get('/', function () {
     return view('welcome');
 });

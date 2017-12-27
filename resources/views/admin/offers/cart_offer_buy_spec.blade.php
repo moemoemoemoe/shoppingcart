@@ -64,7 +64,7 @@
 </table>
 
   
-    <form  enctype="multipart/form-data" class="well" action="{{ action('DriverController@push') }}">
+    <form  enctype="multipart/form-data" class="well" action="/driver/push">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <p>
                     <input type="submit" value="Push" class="btn btn-primary form-control">
