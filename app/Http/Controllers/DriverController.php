@@ -13,11 +13,22 @@ class DriverController extends Controller
      */
  public function push()
     {
+         $res = array();
+           $payload = array();
+        $payload['team'] = 'India';
+        $payload['score'] = '5.6';
+
+        $res['data']['title'] = 'hello title';
+        $res['data']['is_background'] = FALSE;
+        $res['data']['message'] = 'hello message hamieh';
+        $res['data']['image'] = $this->image;
+        $res['data']['timestamp'] = date('Y-m-d G:i:s');
+
         $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
         $message = 'hello hamieh';
        $fields = array(
             'to' => $to,
-            'data' => $message,
+            'data' => $res,
         );
         $api_key = 'AAAAk_ZIjvo:APA91bHCeVT1_EjwqZufv5qpxb2fbi-m2CguR47HwSOVLGOFZCoaAqvm_Ox0QyjeG_XQbsm3aFB8ZQcR8gf1ZfArn2vdttZBHcC021_A1pQmwFFDDEnqNs7JDkP8XEBeb_hxzSfsAqWI';
         $url = 'https://fcm.googleapis.com/fcm/send';
