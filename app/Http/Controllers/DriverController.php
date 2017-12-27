@@ -16,7 +16,7 @@ class DriverController extends Controller
     {
 
         $driver = Driver::findOrFail($id);
-        return $driver;
+        return $driver[0]->name;
          error_reporting(-1);
         ini_set('display_errors', 'On');
 
