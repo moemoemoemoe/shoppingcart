@@ -16,7 +16,7 @@ class DriverController extends Controller
     {
 
         $driver = Driver::where('id',$id)->get();
-        return $driver[0]->name;
+        //return $driver[0]->name;
 
 $title = 'Hello '.$driver[0]->name;
 $message = 'Message for : '.$driver[0]->name;
