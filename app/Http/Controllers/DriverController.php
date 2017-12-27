@@ -23,13 +23,13 @@ class DriverController extends Controller
 
          
         $res['data']['title'] = 'Hello title';
-        $res['data']['is_background'] = False;
-        $res['data']['message'] = 'message';
-        $res['data']['image'] = 'http://api.androidhive.info/images/firebase_logo.png';
+        $res['data']['is_background'] = TRUE;
+        $res['data']['message'] = 'message hamieh';
+        $res['data']['image'] = 'http://api.androidhive.info/images/minion.jpg';
         $res['data']['payload'] = $payload;
         $res['data']['timestamp'] = date('Y-m-d G:i:s');
 
-      
+
 
         $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
         $message = 'hello hamieh';
