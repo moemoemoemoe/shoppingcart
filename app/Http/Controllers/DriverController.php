@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Driver;
 
 class DriverController extends Controller
 {
@@ -74,9 +75,38 @@ class DriverController extends Controller
 
 
 
-    public function index()
+    public function save_driver($name,$mobile,$email,$password,$imei,$reg)
     {
-        //
+        $driver_exist = Driver::where('imei',$imei)->get();
+        if(count($driver_exist) > 0)
+        {
+
+ return "[{".'"status":'.'"Error this device allready register"'."}]";
+
+
+        }
+        else
+        {
+$driver = new Driver();
+$driver->name = $name;
+$driver->mobile = $mobile;
+$driver->email = $email;
+$driver->password = $password;
+$driver->imei = $imei;
+$driver->reg_id = $reg;
+
+try {
+    $driver->save();
+    return "[{".'"status":'.'"Uploaded Successfully"'."}]"; 
+    
+} catch (Exception $e) {
+
+    return "[{".'"status":'.'"Error on Save please Try again"'."}]";
+}
+
+
+        }
+
     }
 
     /**
