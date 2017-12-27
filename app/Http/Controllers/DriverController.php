@@ -30,44 +30,44 @@ class DriverController extends Controller
         $res['data']['timestamp'] = date('Y-m-d G:i:s');
 
 
-return $res;
-       //  $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
-       //  $message = 'hello hamieh';
-       // $fields = array(
-       //      'to' => $to,
-       //      'data' => $res,
-       //  );
-       //  $api_key = 'AAAAk_ZIjvo:APA91bHCeVT1_EjwqZufv5qpxb2fbi-m2CguR47HwSOVLGOFZCoaAqvm_Ox0QyjeG_XQbsm3aFB8ZQcR8gf1ZfArn2vdttZBHcC021_A1pQmwFFDDEnqNs7JDkP8XEBeb_hxzSfsAqWI';
-       //  $url = 'https://fcm.googleapis.com/fcm/send';
-       //  $headers = array(
-       //      'Authorization: key='.$api_key,
-       //      'Content-Type: application/json'
-       //  );
-       //  // Open connection
-       //  $ch = curl_init();
+// return $res;
+        $to = 'e77URY-rhqQ:APA91bHVtj_oEf37m_PCjWUY3W1IuQsi3qGS7r9HoKs4uLwJqGML9CAbOhSsDXxa0zIH_rSuhcexVNj4gTMxhr4eu97VUqZMfKW-iyj5haK5a_lhijTe6NKc0zehhAHk_2quxO9P5Dek';
+        $message = 'hello hamieh';
+       $fields = array(
+            'to' => $to,
+            'data' => $res,
+        );
+        $api_key = 'AAAAk_ZIjvo:APA91bHCeVT1_EjwqZufv5qpxb2fbi-m2CguR47HwSOVLGOFZCoaAqvm_Ox0QyjeG_XQbsm3aFB8ZQcR8gf1ZfArn2vdttZBHcC021_A1pQmwFFDDEnqNs7JDkP8XEBeb_hxzSfsAqWI';
+        $url = 'https://fcm.googleapis.com/fcm/send';
+        $headers = array(
+            'Authorization: key='.$api_key,
+            'Content-Type: application/json'
+        );
+        // Open connection
+        $ch = curl_init();
 
-       //  // Set the url, number of POST vars, POST data
-       //  curl_setopt($ch, CURLOPT_URL, $url);
+        // Set the url, number of POST vars, POST data
+        curl_setopt($ch, CURLOPT_URL, $url);
 
-       //  curl_setopt($ch, CURLOPT_POST, true);
-       //  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-       //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-       //  // Disabling SSL Certificate support temporarly
-       //  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // Disabling SSL Certificate support temporarly
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-       //  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
 
-       //  // Execute post
-       //  $result = curl_exec($ch);
-       //  if ($result === FALSE) {
-       //      die('Curl failed: ' . curl_error($ch));
-       //  }
+        // Execute post
+        $result = curl_exec($ch);
+        if ($result === FALSE) {
+            die('Curl failed: ' . curl_error($ch));
+        }
 
-       //  // Close connection
-       //  curl_close($ch);
+        // Close connection
+        curl_close($ch);
 
-       //  return $result;
+        return $result;
 
 
     }
