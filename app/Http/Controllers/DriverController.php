@@ -15,7 +15,7 @@ class DriverController extends Controller
  public function push($id)
     {
 
-        $driver = Driver::findOrFail($id);
+        $driver = Driver::where('id',$id)->get();
         return $driver[0]->name;
          error_reporting(-1);
         ini_set('display_errors', 'On');
