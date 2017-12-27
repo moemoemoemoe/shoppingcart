@@ -17,6 +17,11 @@ class DriverController extends Controller
 
         $driver = Driver::where('id',$id)->get();
         return $driver[0]->name;
+
+$title = 'Hello '.$driver[0]->name;
+$message = 'Message for : '.$driver[0]->name;
+
+
          error_reporting(-1);
         ini_set('display_errors', 'On');
 
@@ -26,17 +31,17 @@ class DriverController extends Controller
         $payload['score'] = '1991';
 
          
-        $res['data']['title'] = 'Hello title';
+        $res['data']['title'] = $title;
         $res['data']['is_background'] = TRUE;
-        $res['data']['message'] = 'message hamieh test';
+        $res['data']['message'] = $message;
         $res['data']['image'] = 'http://api.androidhive.info/images/minion.jpg';
         $res['data']['payload'] = $payload;
         $res['data']['timestamp'] = date('Y-m-d G:i:s');
 
 
 // return $res;
-        $to = 'eTaFMH5tqZs:APA91bFDjRJDKFzrXYJbVNaORVoNt6ihtB9ctZvrGKFFj61fmH7Y-BNydxZr5WmaEmVULZ9bCIBtCWgOt6sI--pQj7pRyhkZH8TPKxBek2NKK_TJjk7mfVG72dSxNtuhqjJkPTL-UdsY';
-        $message = 'hello hamieh';
+        $to = $driver[0]->reg_id;
+       
        $fields = array(
             'to' => $to,
             'data' => $res,
