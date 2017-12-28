@@ -7,6 +7,7 @@ use App\Cart;
 use response;
 use App\Customer;
 use App\Driver;
+use App\Order;
 class CartController extends Controller
 {
     /**
@@ -18,6 +19,17 @@ class CartController extends Controller
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt)
     { 
+    $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
+
+        $order = new Order();
+        $order->inv_id = $inv_last[0]->original_invoice + 1;
+        $order->driver_id =0 ;
+        $order->status = 0 ;
+        $order->customer_id = $em ;
+        $order->role = "X";
+        $order->save();
+
+
      $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
      if(count($carts) == 0){ 
 $customer = new Customer();
@@ -35,7 +47,6 @@ $customer->save();
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
         try{
-            $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
             
           
 
@@ -60,6 +71,7 @@ $customer->save();
 
                $cart->save();
            }   
+
            return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
        }  
        catch(\Exception $e){
