@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
      public function driver(){
-    	return $this->hasMany('App\Driver','driver_id');
+    	return $this->belongsTo('App\Driver','driver_id');
     }
 }
