@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                    @foreach($carts as $cart)
-                   <a href="{!! route('view_cart_offer_spec', ['invm'=>$cart->inv_id]) !!}"><span class="btn btn-primary" style="margin: 10px">{{$cart->inv_id}}</span></a>
+                   <a href="{!! route('view_cart_offer_spec', ['invm'=>$cart->inv_id,'id'=>$cart->id]) !!}"><span class="btn btn-primary" style="margin: 10px">{{$cart->inv_id}}</span></a>
                    @endforeach
 
                 </div>
