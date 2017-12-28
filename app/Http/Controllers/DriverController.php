@@ -125,7 +125,8 @@ try {
      */
     public function view_cart_offer_spec_push(Request $r,$inv)
     {
-        $orders = Order::where('inv_id',$inv)->get();
+        $orders = Order::with('driver')->where('inv_id',$inv)->get();
+        return $orders;
         $id = $orders[0]->id;
       //  return $id;
 
@@ -136,6 +137,11 @@ $order->driver_id = $driver_id;
 $order->role = $role;
 $order->status = 1;
 $order->save();
+
+
+
+
+
 return redirect()->route('view_cart_offer');
 
 
