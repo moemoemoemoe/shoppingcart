@@ -21,6 +21,8 @@
                   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900"> {{$cart->role}}</span></div>
 @if($cart->status == 1)
                   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Assigned </span></div>
+                  @elseif($cart->status == 0)
+  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> No assigned </span></div>
                   @elseif($cart->status == 2)
   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Finish shop </span></div>
    @elseif($cart->status ==3)
