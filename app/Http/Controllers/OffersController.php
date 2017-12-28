@@ -204,7 +204,8 @@ namespace App\Http\Controllers;
         }
         public function view_cart_offer()
         {
-       $carts = Order::select('inv_id')->get();
+       $carts = Order::withe('driver')->select('inv_id')->get();
+       return $carts;
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
@@ -261,5 +262,5 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
         }
 
-        
+
     }
