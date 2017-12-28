@@ -134,6 +134,7 @@ $role = $r->input('role');
 $order = Order::findOrFail($id);
 $order->driver_id = $driver_id;
 $order->role = $role;
+$order->status = 1;
 $order->save();
 return redirect()->route('view_cart_offer');
 
