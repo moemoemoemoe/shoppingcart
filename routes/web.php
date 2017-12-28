@@ -65,7 +65,7 @@ Route::post('admin/view_offer/{id}', 'OffersController@view_offer_update')->name
 Route::post('admin/delete_offer', 'OffersController@delete_offer')->name('delete_offer')->middleware('auth');
 ///////////////////////////////////////////view_cart_offer///////////////
 Route::get('admin/view_cart_offer', 'OffersController@view_cart_offer')->name('view_cart_offer')->middleware('auth');
-Route::get('admin/view_cart_offer_spec/{invm}', 'OffersController@view_cart_offer_spec')->name('view_cart_offer_spec')->middleware('auth');
+Route::get('admin/view_cart_offer_spec/{invm}/{id}', 'OffersController@view_cart_offer_spec')->name('view_cart_offer_spec')->middleware('auth');
 Route::post('admin/view_cart_offer_spec/{invm}', 'DriverController@view_cart_offer_spec_push')->name('view_cart_offer_spec')->middleware('auth');
 
 
