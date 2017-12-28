@@ -198,14 +198,14 @@ $message = 'Message for : '.$driver[0]->name;
         // Close connection
         curl_close($ch);
 
-        return $result;
+       // return $result;
 
 
 
 
 
 
-//return redirect()->route('view_cart_offer');
+return redirect()->route('view_cart_offer');
 
 
     }
