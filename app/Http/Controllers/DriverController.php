@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Driver;
+use App\Order;
 
 class DriverController extends Controller
 {
@@ -126,7 +127,15 @@ try {
     {
 $driver_id = $r->input('driver_id');
 $role = $r->input('role');
-return $role.'hahaha'.$driver_id;
+$order = Order::where('inv_id',$inv)->get();
+$order->driver_id = $driver_id;
+$order->role = $role;
+$order->save();
+
+
+
+
+
     }
 
     /**
