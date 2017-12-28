@@ -141,7 +141,7 @@ $order->save();
         //return $driver[0]->name;
 
 $title = 'New Order For: '.$driver[0]->name;
-$message = 'Message for : '.$driver[0]->name;
+$message = 'You have a new order to :'.$role;
 
 
          error_reporting(-1);
