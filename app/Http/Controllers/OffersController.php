@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
     use Response;
     use App\Cart;
     use App\Driver;
+    use App\Order;
 
     class OffersController extends Controller
     {
@@ -203,7 +204,7 @@ namespace App\Http\Controllers;
         }
         public function view_cart_offer()
         {
-       $carts = Cart::select('original_invoice')->groupBy('original_invoice')->orderBy('original_invoice','Desc')->get();
+       $carts = Order::select('inv_id')->get();
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
