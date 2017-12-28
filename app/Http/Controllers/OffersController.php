@@ -205,7 +205,7 @@ namespace App\Http\Controllers;
         public function view_cart_offer()
         {
        $carts = Order::with('driver')->get();
-       return $carts;
+       //return $carts;
        return view('admin.offers.cart_offer_buy',compact('carts'));
 
         }
