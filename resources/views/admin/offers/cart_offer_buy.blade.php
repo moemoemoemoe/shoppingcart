@@ -21,6 +21,8 @@
                   <div class="col-md-3"><span  style="margin: 10px;font-weight: 900;color: red">{{$cart->created_at}}</span></div>
 @endif
 </div>
+
+<hr/>
                    @endforeach
 
                 
