@@ -66,6 +66,8 @@ Route::post('admin/delete_offer', 'OffersController@delete_offer')->name('delete
 ///////////////////////////////////////////view_cart_offer///////////////
 Route::get('admin/view_cart_offer', 'OffersController@view_cart_offer')->name('view_cart_offer')->middleware('auth');
 Route::get('admin/view_cart_offer_spec/{invm}', 'OffersController@view_cart_offer_spec')->name('view_cart_offer_spec')->middleware('auth');
+Route::post('admin/view_cart_offer_spec/{invm}', 'DriverController@view_cart_offer_spec_push')->name('view_cart_offer_spec')->middleware('auth');
+
 
 ///////////////////////////////////////////Home Structure////////////////////////////////
 Route::get('admin/home/structure/room_index', 'RoomController@room_index')->name('room_index')->middleware('auth');

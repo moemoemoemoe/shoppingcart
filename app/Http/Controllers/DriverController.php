@@ -122,9 +122,9 @@ try {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function view_cart_offer_spec_push(Request $r,$inv)
     {
-        //
+        return $inv;
     }
 
     /**

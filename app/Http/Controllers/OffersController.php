@@ -210,6 +210,7 @@ namespace App\Http\Controllers;
         }
          public function view_cart_offer_spec($invm)
         {
+
             $drivers = Driver::orderBy('id','DESC')->get();
         $thetotalall = 0;
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
@@ -259,4 +260,6 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
        return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item','user_name','drivers'));
 
         }
+
+        
     }
