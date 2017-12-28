@@ -50,18 +50,44 @@
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
         </p>
 
-        <!--Facebook-->
         <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
-        <!--Twitter-->
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
-        <!--Google +-->
         <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
 
     </div>
-    <!--/.Card content-->
+
 
 </div>
-<!--/.Card Regular-->
+<!--Card Regular-->
+<hr/>
+<div class="card card-cascade">
+
+    <!--Card image-->
+  <!--   <div class="view overlay hm-white-slight">
+        <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="img-fluid" alt="">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div> -->
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-center">
+        <!--Title-->
+        <h4 class="card-title"><strong>Billy Cullen</strong></h4>
+        <h5>Web developer</h5>
+
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
+        </p>
+
+        <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+        <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
+        <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
+
+    </div>
+    
+
+</div>
                         
                        
 </div>
