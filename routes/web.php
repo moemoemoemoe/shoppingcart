@@ -43,7 +43,13 @@ Route::get('driver/save_driver/{name}/{mobile}/{email}/{pass}/{imei}/{reg}', 'Dr
 
 
 
-/////////////////////////////
+/////////////////////////////webView
+
+Route::get('webview/orders/{email}', 'WebviewController@orders')->name('orders');
+
+
+
+////////////////////////////////
 Route::get('/', function () {
     return view('welcome');
 });
