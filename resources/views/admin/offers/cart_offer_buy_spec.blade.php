@@ -23,25 +23,25 @@
 <form method="POST" enctype="multipart/form-data" class="well">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <p>
-                        <select class="form-control" name="cat_id"  >
-                            <option value="1">Clean</option>
-                            <option value="2">Shop</option>
-                            <option value="3">Fix</option>
-
+                        <select class="form-control" name="driver_id">
+                          @foreach($drivers as $driver)
+                            <option value={{$driver->id}}>{{$driver->name}}</option>
+                            @endforeach
+                            
 
                         </select>
                     </p>
 <p>
                         <select class="form-control" name="cat_id"  >
-                            <option value="1">Clean</option>
-                            <option value="2">Shop</option>
-                            <option value="3">Fix</option>
+                            <option value="1">Picker and Delevery</option>
+                            <option value="2">Picker</option>
+                            <option value="3">Delevery</option>
 
 
                         </select>
                     </p>
                     <p>
-                    <input type="submit" value="Save" class="btn btn-primary form-control">
+                    <input type="submit" value="Push Order" class="btn btn-primary form-control">
                 </p>
                   </form>
                   </div>
