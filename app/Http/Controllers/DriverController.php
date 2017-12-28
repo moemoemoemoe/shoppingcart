@@ -137,7 +137,7 @@ $order->role = $role;
 $order->save();
 
 
-
+return redirect()->route('view_cart_offer');
 
 
     }
