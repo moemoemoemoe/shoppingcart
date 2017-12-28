@@ -50,7 +50,7 @@
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
         </p>
 
-        <a href="http://test.arcazur.com/admin/manage_offer" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+        <a href="http://test.arcazur.com/" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
         <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
 
