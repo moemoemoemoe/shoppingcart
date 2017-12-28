@@ -18,6 +18,33 @@
                      <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
                     <span class="pull-left"> <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>
                     <span class="pull-right" onClick="showComment()">Show Comment</span></div>
+
+                    <div class="panel-heading text-center" style="font-weight: 900">
+<form method="POST" enctype="multipart/form-data" class="well">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+<p>
+                        <select class="form-control" name="cat_id"  >
+                            <option value="1">Clean</option>
+                            <option value="2">Shop</option>
+                            <option value="3">Fix</option>
+
+
+                        </select>
+                    </p>
+<p>
+                        <select class="form-control" name="cat_id"  >
+                            <option value="1">Clean</option>
+                            <option value="2">Shop</option>
+                            <option value="3">Fix</option>
+
+
+                        </select>
+                    </p>
+                    <p>
+                    <input type="submit" value="Save" class="btn btn-primary form-control">
+                </p>
+                  </form>
+                  </div>
 </div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
