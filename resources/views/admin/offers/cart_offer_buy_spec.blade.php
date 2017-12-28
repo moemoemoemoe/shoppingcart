@@ -32,10 +32,10 @@
                         </select>
                     </p>
 <p>
-                        <select class="form-control" name="cat_id"  >
-                            <option value="1">Picker and Delevery</option>
-                            <option value="2">Picker</option>
-                            <option value="3">Delevery</option>
+                        <select class="form-control" name="role"  >
+                            <option value="Picker and Delevery">Picker and Delevery</option>
+                            <option value="Picker">Picker</option>
+                            <option value="Delevery">Delevery</option>
 
 
                         </select>

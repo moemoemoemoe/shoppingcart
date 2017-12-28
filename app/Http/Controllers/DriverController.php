@@ -124,7 +124,9 @@ try {
      */
     public function view_cart_offer_spec_push(Request $r,$inv)
     {
-        return $inv;
+$driver_id = $r->input('driver_id');
+$role = $r->input('role');
+return $role.'hahaha'.$driver_id;
     }
 
     /**
