@@ -89,12 +89,12 @@
     @endforeach
   @endif
 </table>
-@foreach($drivers as $driver)
+<!-- @foreach($drivers as $driver)
 
   <div class="col-md-3">
   <a href="{!! route('push', ['id'=>$driver->id]) !!}"> <span>{{$driver->name}}</span></a>
      </div>
-@endforeach
+@endforeach -->
 
 
 
