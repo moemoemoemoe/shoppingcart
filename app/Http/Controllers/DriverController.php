@@ -127,7 +127,7 @@ try {
     {
         $orders = Order::where('inv_id',$inv)->get();
         $id = $orders[0]->id;
-        return $id;
+      //  return $id;
 
 $driver_id = $r->input('driver_id');
 $role = $r->input('role');
