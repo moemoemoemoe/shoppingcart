@@ -20,7 +20,7 @@ class CartController extends Controller
     public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt)
     { 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
-     $customer = Custome::where('email',$em)->get();
+     $customer = Customer::where('email',$em)->get();
 
         $order = new Order();
         $order->inv_id = $inv_last[0]->original_invoice + 1;
