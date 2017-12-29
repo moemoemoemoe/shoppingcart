@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Driver;
 use App\Order;
 use Redirect;
-use Redirect;
 
 class WebviewController extends Controller
 {
