@@ -46,10 +46,58 @@ return view('webview.orders',compact('orders'));
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function view_order_by_driver($invm)
+        {
+
+   
+    $thetotalall = 0;
+       $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
+        $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
+         $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
+         
+//return $carts_sub_item;
+         if(count($carts_offer) == 0)
+         {
+            $total_inv =0;
+         }
+         else{
+
+       $total_inv =0;
+       for($i=0 ;$i<count($carts_offer) ; $i++)
+       {
+$total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
+
+       }
+   }
+     if(count($carts_item) == 0)
+         {
+            $total_inv_item =0;
+         }
+else{
+       $total_inv_item =0;
+       for($i=0 ;$i<count($carts_item) ; $i++)
+       {
+$total_inv_item = $total_inv_item  + ($carts_item[$i]->qty * $carts_item[$i]->item->price);
+
+       }
+}
+if(count($carts_sub_item) == 0)
+{ $total_inv_child =0;}
+else{
+        $total_inv_child =0;
+       for($i=0 ;$i<count($carts_sub_item) ; $i++)
+       {
+$total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_item[$i]->child->price);
+
+       }
+   }
+
+       $thetotalall = $total_inv_item + $total_inv +$total_inv_child;
+       //return $total_inv;
+       return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item'));
+
+        }
+
 
     /**
      * Display the specified resource.

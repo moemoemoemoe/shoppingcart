@@ -28,48 +28,49 @@
 
 
 
-
+  @if(count($carts_offer)==0)
+                @else
+                    @foreach($carts_offer as $cart)
+                
 
 <!--Card Regular-->
-@foreach($orders as $order)
 <div class="card card-cascade">
     <!--Card image-->
-  <!--   <div class="view overlay hm-white-slight">
-        <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="img-fluid" alt="">
+    <div class="view overlay hm-white-slight">
+        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid" alt="">
         <a>
             <div class="mask"></div>
         </a>
-    </div> -->
+    </div>
     <!--/.Card image-->
 
     <!--Card content-->
     <div class="card-body text-center">
         <!--Title-->
-        <h4 class="card-title"><strong># {{$order->inv_id}}</strong></h4>
-        <h5>{{$order->role}}</h5>
-
-        <p class="card-text">To: <span style="font-weight: 900;color: red">{{$order->customer->name}}</span> , adress : <span style="font-weight: 900;color: red">{{$order->customer->address}}</span> , mobile number : <span style="font-weight: 900;color: red">{{$order->customer->phone}}</span>
+        <h4 class="card-title"><strong>{{ $cart->offer->title }}</strong></h4>
+        <h5>{{$cart->qty}} </h5>
+        <h5>{{$cart->offer->price}} L.L </h5>
+<h5><?php echo $cart->qty * $cart->offer->price;  ?> L.L</h5>
+        <p class="card-text"></span>
         </p>
-@if($order->status == 1)
 
-        <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
     
-    @else
+ 
             <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>
 
-      @endif
     
         <!-- <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}"  type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a> -->
-        <a href="http://maps.google.com/maps?saddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}&daddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
-        <a href="{!! route('view_order_by_driver', ['inv'=>$order->inv_id]) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+        <a " type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
+        <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
 
     </div>
  
 
 </div>
 <hr/>
-@endforeach
-
+@enforeach
                         
                        
 </div>

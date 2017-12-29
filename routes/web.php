@@ -49,6 +49,9 @@ Route::get('webview/orders/{email}', 'WebviewController@orders')->name('orders')
 
 Route::get('webview/confirm_order/{id}', 'WebviewController@confirm_order')->name('confirm_order');
 
+Route::get('webview/view_order_by_driver/{inv}', 'WebviewController@view_order_by_driver')->name('view_order_by_driver');
+
+
 
 
 
