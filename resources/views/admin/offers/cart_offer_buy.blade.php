@@ -24,7 +24,7 @@
                   @elseif($cart->status == 0)
   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Not assigned </span></div>
   @elseif($cart->status == 2)
-  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red">Assigned Verify </span></div>
+  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: green">Assigned Verify </span></div>
                   @elseif($cart->status == 3)
   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Finish shop </span></div>
    @elseif($cart->status ==4)
