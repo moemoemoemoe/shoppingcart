@@ -72,7 +72,97 @@
 </div>
 <hr/>
 @endforeach
-        @endif                
+        @endif 
+        @if(count($carts_item)==0)
+                @else
+                    @foreach($carts_item as $cartitem)
+                
+
+<!--Card Regular-->
+<div class="card card-cascade">
+    <!--Card image-->
+   <center> <div class="view overlay hm-white-slight">
+        <img src="{{asset('uploads/items/'.$cartitem->item->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    </center>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-center">
+        <!--Title-->
+        <h4 class="card-title"><strong>{{ $cartitem->item->name }}</strong></h4>
+        <h5>QTY : {{$cartitem->qty}} </h5>
+        <h5>Price : {{$cartitem->item->price}} L.L </h5>
+<h5>Total : <?php echo $cartitem->qty * $cartitem->item->price;  ?> L.L</h5>
+        <p class="card-text"></span>
+        </p>
+
+
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+    
+ 
+       <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
+
+    
+      
+        <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
+       <!--  <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a> -->
+
+    </div>
+ 
+
+</div>
+<hr/>
+@endforeach
+        @endif    
+        @if(count($carts_sub_item)==0)
+                @else
+                    @foreach($carts_sub_item as $cartchild)
+                
+
+<!--Card Regular-->
+<div class="card card-cascade">
+    <!--Card image-->
+   <center> <div class="view overlay hm-white-slight">
+        <img src="{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    </center>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-center">
+        <!--Title-->
+        <h4 class="card-title"><strong>{{ $cartchild->child->name_sub}}</strong></h4>
+        <h5>QTY : {{$cartchild->qty}} </h5>
+        <h5>Price : {{$cartchild->child->price}} L.L </h5>
+<h5>Total : <?php echo $cartchild->qty * $cartchild->child->price;  ?> L.L</h5>
+        <p class="card-text"></span>
+        </p>
+
+
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+    
+ 
+       <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
+
+    
+      
+        <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
+       <!--  <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a> -->
+
+    </div>
+ 
+
+</div>
+<hr/>
+@endforeach
+        @endif                                           
                        
 </div>
 </div>
