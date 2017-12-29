@@ -55,7 +55,7 @@
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
         <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
 
-        <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-fa-eye"></i></a>
+        <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-eye"></i></a>
 
 
     </div>
