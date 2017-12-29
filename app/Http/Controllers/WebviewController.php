@@ -20,7 +20,7 @@ class WebviewController extends Controller
         $driver = Driver::where('email',$email)->get();
 
 
-        $orders = Order::whereDate('created_at','=','2017-12-28')->orderBy('id','DESC')->with('driver')->where('driver_id',$driver[0]->id)->get();
+        $orders = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('driver')->where('driver_id',$driver[0]->id)->get();
         return $orders;
         // $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $orders[0]->created_at)->format('Y-m-d');
         // return $date.' today is : '.date('Y-m-d');
