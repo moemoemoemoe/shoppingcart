@@ -212,8 +212,8 @@ namespace App\Http\Controllers;
          public function view_cart_offer_spec($invm)
         {
 
-            $drivers = Driver::orderBy('id','DESC')->get();
-        $thetotalall = 0;
+    $drivers = Driver::orderBy('id','DESC')->get();
+    $thetotalall = 0;
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();

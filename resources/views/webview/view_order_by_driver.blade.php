@@ -37,7 +37,7 @@
 <div class="card card-cascade">
     <!--Card image-->
     <div class="view overlay hm-white-slight">
-        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid" alt="">
+        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid " alt="" height="100px" style="text-align: center;">
         <a>
             <div class="mask"></div>
         </a>
@@ -48,9 +48,9 @@
     <div class="card-body text-center">
         <!--Title-->
         <h4 class="card-title"><strong>{{ $cart->offer->title }}</strong></h4>
-        <h5>{{$cart->qty}} </h5>
-        <h5>{{$cart->offer->price}} L.L </h5>
-<h5><?php echo $cart->qty * $cart->offer->price;  ?> L.L</h5>
+        <h5>QTY : {{$cart->qty}} </h5>
+        <h5>Price : {{$cart->offer->price}} L.L </h5>
+<h5>Total : <?php echo $cart->qty * $cart->offer->price;  ?> L.L</h5>
         <p class="card-text"></span>
         </p>
 
