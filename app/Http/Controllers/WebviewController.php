@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Driver;
 use App\Order;
 use Redirect;
-
+use Redirect;
 
 class WebviewController extends Controller
 {
@@ -33,9 +33,12 @@ return view('webview.orders',compact('orders'));
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function confirm_order($id)
     {
-        //
+        $order=Order::findOrFail($id);
+        $order->status = 2;
+        $order->save();
+        return Redirect::back();
     }
 
     /**
