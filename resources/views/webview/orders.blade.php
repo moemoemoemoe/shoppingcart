@@ -51,7 +51,6 @@
         <p class="card-text">To: <span style="font-weight: 900;color: red">{{$order->customer->name}}</span> , adress : <span style="font-weight: 900;color: red">{{$order->customer->address}}</span> , mobile number : <span style="font-weight: 900;color: red">{{$order->customer->phone}}</span>
         </p>
 
-        <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
         <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
 
