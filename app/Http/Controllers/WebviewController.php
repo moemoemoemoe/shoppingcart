@@ -18,7 +18,7 @@ class WebviewController extends Controller
     public function orders($email)
     {
         $orders = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('driver')->get();
-        //return $orders;
+        return $orders;
         // $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $orders[0]->created_at)->format('Y-m-d');
         // return $date.' today is : '.date('Y-m-d');
 return view('webview.orders');
