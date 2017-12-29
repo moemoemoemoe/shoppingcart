@@ -20,6 +20,8 @@
 <div class="container">                      
 <!--Card Wider-->
 <div class="row">
+    <div id="map_canvas" style="height: 100px; width=100px;"></div>
+  <script type="text/javascript">initialize();</script>
 <div class="card card-cascade wider">
 
 
