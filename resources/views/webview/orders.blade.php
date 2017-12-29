@@ -59,7 +59,7 @@
       @endif
     
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
-        <a onclick="window.location = 'geo:40.765819,-73.975866'" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
+        <a type="button" class="btn-floating btn-small btn-dribbble"><i  onclick="window.location = 'geo:40.765819,-73.975866'" class="fa fa-map"></i></a>
         <a type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
 
     </div>
