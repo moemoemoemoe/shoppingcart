@@ -18,7 +18,9 @@ class WebviewController extends Controller
     public function orders($email)
     {
         $orders = Order::orderBy('id','DESC')->with('driver')->get();
-        return $orders;
+        //return $orders;
+        $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $orders[0]->created_at)->format('Y-m-d');
+        return $date;
 return view('webview.orders');
         
     }
