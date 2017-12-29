@@ -59,7 +59,7 @@
       @endif
     
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
-        <a href="geo:{{$order->customer->coor_x}},{{$order->customer->coor_y}};u=35" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
+        <a href="maps:{{$order->customer->coor_x}},{{$order->customer->coor_y}};u=35" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
         <a type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
 
     </div>
