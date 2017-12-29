@@ -37,7 +37,7 @@
 <div class="card card-cascade">
     <!--Card image-->
     <div class="view overlay hm-white-slight">
-        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid " alt="" height="100px" style="text-align: center;">
+        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid" height="100px" style="text-align: center;">
         <a>
             <div class="mask"></div>
         </a>
