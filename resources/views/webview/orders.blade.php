@@ -59,11 +59,11 @@
       @endif
     
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
-        <a href="http://maps.google.com?q={{$order->customer->coor_x}},{{$order->customer->coor_y}}" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
+        <a href="https://www.google.pt/maps/dir//{{$order->customer->coor_x}},{{$order->customer->coor_y}}/@{{$order->customer->coor_x}},{{$order->customer->coor_y}},733m/data=!3m1!1e3!4m4!4m3!1m0!1m1!4e1?hl=en" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
         <a type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
 
     </div>
-
+ 
 
 </div>
 <hr/>
