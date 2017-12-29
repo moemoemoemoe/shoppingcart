@@ -32,7 +32,6 @@
 <!--Card Regular-->
 @foreach($orders as $order)
 <div class="card card-cascade">
-
     <!--Card image-->
   <!--   <div class="view overlay hm-white-slight">
         <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="img-fluid" alt="">
@@ -60,8 +59,7 @@
       @endif
     
         <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a>
-        <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
-
+        <a href="http://www.google.com/maps/place/{{$order->customer->coor_x}},{{$order->customer->coor_y}}" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
         <a type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
 
 
