@@ -17,6 +17,8 @@ class WebviewController extends Controller
      */
     public function orders($email)
     {
+        $orders = Order::orderBy('id','DESC')->with('driver')->get();
+        return $orders;
 return view('webview.orders');
         
     }
