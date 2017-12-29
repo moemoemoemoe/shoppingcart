@@ -30,6 +30,7 @@
 
 
 <!--Card Regular-->
+@foreach($orders as $order)
 <div class="card card-cascade">
 
     <!--Card image-->
@@ -44,10 +45,10 @@
     <!--Card content-->
     <div class="card-body text-center">
         <!--Title-->
-        <h4 class="card-title"><strong>Billy Cullen</strong></h4>
-        <h5>Web developer</h5>
+        <h4 class="card-title"><strong># {{$order->inv_id}}</strong></h4>
+        <h5>{{$order->role}}</h5>
 
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
+        <p class="card-text">To: <span style="font-weight: 900;color: red">$order->customer->name</span> , adress : <span style="font-weight: 900;color: red">$order->customer->address</span> , mobile number : <span style="font-weight: 900;color: red">$order->customer->phone</span>,
         </p>
 
         <a href="http://test.arcazur.com/" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
@@ -58,36 +59,9 @@
 
 
 </div>
-<!--Card Regular-->
 <hr/>
-<div class="card card-cascade">
+@endforeach
 
-    <!--Card image-->
-  <!--   <div class="view overlay hm-white-slight">
-        <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="img-fluid" alt="">
-        <a>
-            <div class="mask"></div>
-        </a>
-    </div> -->
-    <!--/.Card image-->
-
-    <!--Card content-->
-    <div class="card-body text-center">
-        <!--Title-->
-        <h4 class="card-title"><strong>Billy Cullen</strong></h4>
-        <h5>Web developer</h5>
-
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi sunt, quod quibusdam.
-        </p>
-
-        <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
-        <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
-        <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
-
-    </div>
-    
-
-</div>
                         
                        
 </div>
