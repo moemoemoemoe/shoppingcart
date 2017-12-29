@@ -70,7 +70,7 @@
 
 </div>
 <hr/>
-@enforeach
+@endforeach
         @endif                
                        
 </div>
