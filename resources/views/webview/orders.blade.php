@@ -48,7 +48,7 @@
         <h4 class="card-title"><strong># {{$order->inv_id}}</strong></h4>
         <h5>{{$order->role}}</h5>
 
-        <p class="card-text">To: <span style="font-weight: 900;color: red">{{$order->customer->name}}</span> , adress : <span style="font-weight: 900;color: red">{{order->customer->address}}</span> , mobile number : <span style="font-weight: 900;color: red">{{$order->customer->phone}}</span>,
+        <p class="card-text">To: <span style="font-weight: 900;color: red">{{$order->customer->name}}</span> , adress : <span style="font-weight: 900;color: red">{{$order->customer->address}}</span> , mobile number : <span style="font-weight: 900;color: red">{{$order->customer->phone}}</span>,
         </p>
 
         <a href="http://test.arcazur.com/" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
