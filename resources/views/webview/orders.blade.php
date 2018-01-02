@@ -97,7 +97,10 @@
 
 </div>
 @if($order->status == 4)
-<a type="button" class="btn btn-primary" style="z-index: 999999999;opacity: 1">Confirm if delivered!!</a>
+<a href="{!! route('confirm_order_delivered', ['id'=>$order->id]) !!}" type="button" class="btn btn-primary" style="z-index: 999999999;opacity: 1">Confirm if delivered!!</a>
+@endif
+@if($order->status == 5)
+<a type="button" class="btn btn-danger" style="z-index: 999999999;opacity: 1">Delivered</a>
 @endif
 <hr/>
 @endforeach

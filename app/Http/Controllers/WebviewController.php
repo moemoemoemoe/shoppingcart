@@ -170,9 +170,13 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function confirm_order_delivered($id)
     {
-        //
+          $order = Order::findOrFail($id);
+        $order->status = 5;
+        $order->save();
+       // / return Session::get('email');
+        return redirect()->route('orders', ['email' => Session::get('email')]);
     }
 
     /**
