@@ -25,6 +25,47 @@
 
 
 
+<div class="card card-cascade">
+    <!--Card image-->
+  <!--  <center> <div class="view overlay hm-white-slight">
+        <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
+        <a>
+            <div class="mask"></div>
+        </a>
+    </div>
+    </center> -->
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body">
+        <!--Title-->
+        <h4 class="card-title"><strong>{{ $thetotalall }} L.L</strong></h4>
+       <!--  <div class="row">
+       <div class="col-md-4"> QTY : {{$cart->qty}} </div>
+         <div class="col-md-4">Price : {{$cart->offer->price}} L.L </div>
+ <div class="col-md-4">Total : <?php echo $cart->qty * $cart->offer->price;  ?> L.L</div>
+</div> -->
+        <p class="card-text"></span>
+        </p>
+
+
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+    
+ 
+       <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
+
+    
+      
+        <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
+        <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+
+    </div>
+ 
+
+</div>
+<hr/>
+
+
 
 
 
@@ -46,12 +87,14 @@
     <!--/.Card image-->
 
     <!--Card content-->
-    <div class="card-body text-center">
+    <div class="card-body">
         <!--Title-->
         <h4 class="card-title"><strong>{{ $cart->offer->title }}</strong></h4>
-        <h5>QTY : {{$cart->qty}} </h5>
-        <h5>Price : {{$cart->offer->price}} L.L </h5>
-<h5>Total : <?php echo $cart->qty * $cart->offer->price;  ?> L.L</h5>
+        <div class="row">
+       <div class="col-md-4"> QTY : {{$cart->qty}} </div>
+         <div class="col-md-4">Price : {{$cart->offer->price}} L.L </div>
+ <div class="col-md-4">Total : <?php echo $cart->qty * $cart->offer->price;  ?> L.L</div>
+</div>
         <p class="card-text"></span>
         </p>
 
@@ -94,9 +137,11 @@
     <div class="card-body text-center">
         <!--Title-->
         <h4 class="card-title"><strong>{{ $cartitem->item->name }}</strong></h4>
-        <h5>QTY : {{$cartitem->qty}} </h5>
-        <h5>Price : {{$cartitem->item->price}} L.L </h5>
-<h5>Total : <?php echo $cartitem->qty * $cartitem->item->price;  ?> L.L</h5>
+         <div class="row">
+        <div class="col-md-4">QTY : {{$cartitem->qty}} </div>
+        <div class="col-md-4">Price : {{$cartitem->item->price}} L.L </div>
+<div class="col-md-4">Total : <?php echo $cartitem->qty * $cartitem->item->price;  ?> L.L</div>
+</div>
         <p class="card-text"></span>
         </p>
 
@@ -139,9 +184,11 @@
     <div class="card-body text-center">
         <!--Title-->
         <h4 class="card-title"><strong>{{ $cartchild->child->name_sub}}</strong></h4>
-        <h5>QTY : {{$cartchild->qty}} </h5>
-        <h5>Price : {{$cartchild->child->price}} L.L </h5>
-<h5>Total : <?php echo $cartchild->qty * $cartchild->child->price;  ?> L.L</h5>
+         <div class="row">
+        <div class="col-md-4">QTY : {{$cartchild->qty}} </div>
+        <div class="col-md-4">Price : {{$cartchild->child->price}} L.L </div>
+<div class="col-md-4">Total : <?php echo $cartchild->qty * $cartchild->child->price;  ?> L.L</div>
+</div>
         <p class="card-text"></span>
         </p>
 
