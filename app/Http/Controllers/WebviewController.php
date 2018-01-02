@@ -61,13 +61,13 @@ return view('webview.orders',compact('orders','counts'));
 $counts_in = Cart::where('original_invoice',$invm)->get();
 $counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
 
-if(count($counts_in) == count($counts_status) && $stat !=4)
+if(count($counts_in) == count($counts_status) && $stat <4)
 {
     $ready = 1;
 
 
 }
-elseif (count($counts_in) == count($counts_status) && $stat ==4) {
+elseif (count($counts_in) == count($counts_status) && $stat >= 4 ) {
     $ready= 2;
 }
 else{
