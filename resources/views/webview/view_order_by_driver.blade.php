@@ -40,11 +40,7 @@
     <div class="card-body">
         <!--Title-->
         <h4 class="card-title"><strong>{{ $thetotalall }} L.L</strong></h4>
-       <!--  <div class="row">
-       <div class="col-md-4"> QTY : {{$cart->qty}} </div>
-         <div class="col-md-4">Price : {{$cart->offer->price}} L.L </div>
- <div class="col-md-4">Total : <?php echo $cart->qty * $cart->offer->price;  ?> L.L</div>
-</div> -->
+      
         <p class="card-text"></span>
         </p>
 
