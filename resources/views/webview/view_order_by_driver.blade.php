@@ -115,7 +115,7 @@
     
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
-        @if($cart->status == 0)
+        @if($cart->status == 0 && $ready != 2)
         <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
         @else
                 <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
