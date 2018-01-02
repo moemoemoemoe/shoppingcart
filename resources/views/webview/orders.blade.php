@@ -94,7 +94,7 @@
         <!-- <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}"  type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a> -->
         <a href="http://maps.google.com/maps?saddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}&daddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
         @if($order->status <= 1)
-           <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+           <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye-slash"></i></a>
         @else
         <a href="{!! route('view_order_by_driver', ['inv'=>$order->inv_id]) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
         @endif
