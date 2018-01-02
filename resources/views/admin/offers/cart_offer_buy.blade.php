@@ -26,9 +26,9 @@
   @elseif($cart->status == 2)
   <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: green">Assigned Verify </span></div>
                   @elseif($cart->status == 3)
-  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Finish shop </span></div>
+  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Rejected </span></div>
    @elseif($cart->status ==4)
-  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Delevired </span></div>
+  <div class="col-md-2"><span  style="margin: 10px;font-weight: 900;color: red"> Finish shop  </span></div>
   @endif
 
                   <div class="col-md-3"><span  style="margin: 10px;font-weight: 900;color: red">{{$cart->created_at}}</span></div>
