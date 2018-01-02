@@ -56,7 +56,7 @@
 
 <!--Card Regular-->
 @foreach($orders as $order)
-@if($order->status == 4)
+@if($order->status >= 4)
 <div class="card card-cascade" style="opacity: 0.4">
     @else
     <div class="card card-cascade" >
