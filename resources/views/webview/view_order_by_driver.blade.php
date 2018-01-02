@@ -221,7 +221,7 @@
       
     <a href="#" id="pop">
      
-     <a src="{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+     <a onclick="show_image('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}')" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
 </a>
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -267,9 +267,11 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js" integrity="sha384-3ziFidFTgxJXHMDttyPJKDuTlmxJlwbSkojudK/CkRqKDOmeSbN6KLrGdrBQnT2n" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $("#pop").on("click", function() {
-   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+    function show_image(url)
+    {
+   
+   $('#imagepreview').attr(url, $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
    $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-});
+}
 </script>
 </body>
