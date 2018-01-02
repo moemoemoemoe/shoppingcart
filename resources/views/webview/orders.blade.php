@@ -28,7 +28,7 @@
     <div class="card-body text-center">
         <!--Title-->
         <strong>You Have: <span style="color: green">({{$counts}})</span> Pending Order/s</strong>
-         <strong>You Have: <span style="color: green">({{$orders_delivered
+         <strong>You Have: <span style="color: green">({{$countsdelivered
 }})</span> Pending delivered</strong>
         
 </div>
