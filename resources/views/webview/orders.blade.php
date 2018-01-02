@@ -96,6 +96,9 @@
  
 
 </div>
+@if($order->status == 4)
+<a type="button" class="btn btn-primary" style="z-index: 999999999;opacity: 1">Confirm if delivered!!</a>
+@endif
 <hr/>
 @endforeach
 
