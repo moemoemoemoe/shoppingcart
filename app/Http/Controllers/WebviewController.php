@@ -18,7 +18,7 @@ class WebviewController extends Controller
     public function orders($email)
     {
         $driver = Driver::where('email',$email)->get();
-return $driver;
+
 
         $orders = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
        //return $orders;
