@@ -30,8 +30,15 @@
     <div class="card-body">
         <!--Title-->
         <h4 class="card-title"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
-                <h4 class="card-title"><strong>~ <?php echo $thetotalall/1500 ; ?> $</strong></h4>
-
+        <p>
+            <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
+        </p>
+        <p>
+                    <span > <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>    
+                </p>
+                <p>
+<span > <span style="color: #000"> Time : </span>{{$user_name[0]->comment}}</span>   
+</p> 
       
         <p class="card-text"></span>
         </p>
