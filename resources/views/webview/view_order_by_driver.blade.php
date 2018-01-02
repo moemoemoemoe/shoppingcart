@@ -30,21 +30,23 @@
     <div class="card-body">
         <!--Title-->
         <h4 class="card-title"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
+                <h4 class="card-title"><strong>~ <?php echo $thetotalall/1500 ; ?> $</strong></h4>
+
       
         <p class="card-text"></span>
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
-    
+<!--         <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+ -->    
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
 
     
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
-        <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
-
+<!--         <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+ -->
     </div>
  
 
