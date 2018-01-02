@@ -18,6 +18,10 @@
                      <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
                     <span class="pull-left"> <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>
                     <span class="pull-right" onClick="showComment()">Show Comment</span></div>
+@if($order_status[0]->status == 2)
+ <div class="panel-heading text-center" style="font-weight: 900">
+<center><span style="color: blue;font-weight: 900">Allready Confirmed...!!</span></center></div>
+@else
 
                     <div class="panel-heading text-center" style="font-weight: 900">
 <form method="POST" enctype="multipart/form-data" class="well">
@@ -45,6 +49,7 @@
                 </p>
                   </form>
                   </div>
+                  @endif
 </div>
 
                <table style="text-align: center;border: 1px solid #ddd!important">
