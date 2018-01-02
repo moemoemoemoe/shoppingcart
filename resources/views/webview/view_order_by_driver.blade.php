@@ -36,13 +36,13 @@
 <!--Card Regular-->
 <div class="card card-cascade">
     <!--Card image-->
-   <center> <div class="view overlay hm-white-slight">
+  <!--  <center> <div class="view overlay hm-white-slight">
         <img src="{{asset('uploads/offers/'.$cart->offer->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
         <a>
             <div class="mask"></div>
         </a>
     </div>
-    </center>
+    </center> -->
     <!--/.Card image-->
 
     <!--Card content-->
@@ -81,13 +81,13 @@
 <!--Card Regular-->
 <div class="card card-cascade">
     <!--Card image-->
-   <center> <div class="view overlay hm-white-slight">
+  <!--  <center> <div class="view overlay hm-white-slight">
         <img src="{{asset('uploads/items/'.$cartitem->item->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
         <a>
             <div class="mask"></div>
         </a>
     </div>
-    </center>
+    </center> -->
     <!--/.Card image-->
 
     <!--Card content-->
@@ -126,13 +126,13 @@
 <!--Card Regular-->
 <div class="card card-cascade">
     <!--Card image-->
-   <center> <div class="view overlay hm-white-slight">
+  <!--  <center> <div class="view overlay hm-white-slight">
         <img src="{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}" class="img-fluid" height="100px" style="text-align: center; height: 150px;">
         <a>
             <div class="mask"></div>
         </a>
     </div>
-    </center>
+    </center> -->
     <!--/.Card image-->
 
     <!--Card content-->
