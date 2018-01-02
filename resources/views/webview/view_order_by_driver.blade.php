@@ -52,8 +52,18 @@
 
 </div>
 <hr/>
+@if($ready == 1)
+<div class="card card-cascade text-center">
+  
+    <div class="card-body">
+        
+        <a type="button" class="btn btn-primary">Send Order</a>
+    </div>
+ 
 
-
+</div>
+@else
+@endif
 
 
 

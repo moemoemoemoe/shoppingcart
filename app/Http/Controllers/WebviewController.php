@@ -49,6 +49,20 @@ return view('webview.orders',compact('orders'));
      */
    public function view_order_by_driver($invm)
         {
+$counts_in = Cart::where('original_invoice',$invm)->get();
+$counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
+
+if(count($counts_in) == count($counts_status))
+{
+    $ready = 1;
+
+
+}
+else{
+
+    $ready = 0;
+}
+
 
    
     $thetotalall = 0;
@@ -95,7 +109,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
        $thetotalall = $total_inv_item + $total_inv +$total_inv_child;
        //return $total_inv;
-       return view('webview.view_order_by_driver',compact('carts_offer','carts_item','thetotalall','carts_sub_item'));
+       return view('webview.view_order_by_driver',compact('carts_offer','carts_item','thetotalall','carts_sub_item','ready'));
 
         }
 
