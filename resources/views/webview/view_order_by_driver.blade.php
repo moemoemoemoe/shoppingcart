@@ -114,7 +114,7 @@
         </p>
 
 
-        <a href="#imagepreview" onclick="show_image('{{asset('uploads/offers/'.$cart->offer->img_name)}}')" id="imageresource"  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+        <a onclick="show_image('{{asset('uploads/offers/'.$cart->offer->img_name)}}')" id="imageresource"  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -167,7 +167,7 @@
         </p>
 
 
-        <a href="#imagepreview" onclick="show_image('{{asset('uploads/items/'.$cartitem->item->img_name)}}')" id="imageresource"   type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+        <a  onclick="show_image('{{asset('uploads/items/'.$cartitem->item->img_name)}}')" id="imageresource"   type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -221,7 +221,7 @@
       
     
      
-     <a href="#imagepreview" onclick="show_image('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}')" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i>
+     <a onclick="show_image('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}')" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i>
 </a>
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -289,7 +289,8 @@
    // var src = document.getElementById("imagepreview");
    // src.appendChild(url);
    //$('#imagepreview').attr(); // here asign the image to the modal when the user click the enlarge link
-   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+   $('#imagemodal').modal('show'); 
+   location.href = '#imagepreview';
 }
 </script>
 </body>
