@@ -106,9 +106,20 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function check_inv($id)
     {
-        //
+         $carts = Cart::findOrFail($id);
+     if($carts->status == '0')
+     {
+       $carts->status = '1';
+       $carts->save();
+       return Redirect::Back()->with('success', 'This Item is Published');
+     }
+     else{
+      $carts->status = '0';
+      $carts->save();
+      return Redirect::Back()->with('success', 'This Item is Unpublished');
+    }
     }
 
     /**
