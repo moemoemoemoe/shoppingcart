@@ -247,22 +247,37 @@
 </div>
 </div>
 </div>
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        
-      </div>
-      <div class="modal-body">
-        <img src="" id="imagepreview" style="width: 300px; height: 300px;" >
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+
+<div class="modal fade large_bootbox" id="imagemodal" tabindex="-1" role="dialog" style="z-index: 999999999">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button " class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+          <h4 class="modal-title">
+
+          </h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-4" id="operator_logo">
+
+            </div>
+            <div class="col-md-9 col-sm-8 col-xs-8 ">
+            <img src="" id="imagepreview" style="width: 300px; height: 300px;" >
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js" integrity="sha384-3ziFidFTgxJXHMDttyPJKDuTlmxJlwbSkojudK/CkRqKDOmeSbN6KLrGdrBQnT2n" crossorigin="anonymous"></script>
