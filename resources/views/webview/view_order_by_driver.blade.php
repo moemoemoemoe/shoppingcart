@@ -52,7 +52,7 @@
 
 </div>
 <hr/>
-@if($ready == 1 )
+@if($ready == 1)
 <div class="card card-cascade text-center">
   
     <div class="card-body">
@@ -62,7 +62,7 @@
  
 
 </div>
-@elseif($ready == 2 || $ready == 4 || $ready == 5)
+@elseif($ready == 2 )
 <div class="card card-cascade text-center">
   
     <div class="card-body">
