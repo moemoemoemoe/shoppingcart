@@ -114,7 +114,7 @@
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+        <a href="#imagepreview" onclick="show_image('{{asset('uploads/offers/'.$cart->offer->img_name)}}')" id="imageresource"  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -167,7 +167,7 @@
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+        <a href="#imagepreview" onclick="show_image('{{asset('uploads/items/'.$cartitem->item->img_name)}}')" id="imageresource"   type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -219,9 +219,9 @@
 
 
       
-    <a href="#" id="pop">
+    
      
-     <a onclick="show_image('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}')" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
+     <a href="#imagepreview" onclick="show_image('{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}')" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i>
 </a>
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
