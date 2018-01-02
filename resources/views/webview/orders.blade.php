@@ -27,7 +27,7 @@
   
     <div class="card-body text-center">
         <!--Title-->
-        <h4 class="card-title"><strong>You Have: <span style="color: green">{{$orders_pending}}</span> Pending Order/s</strong></h4>
+        <h4 class="card-title"><strong>You Have: <span style="color: green">{{$counts}}</span> Pending Order/s</strong></h4>
         
 </div>
         
