@@ -32,7 +32,12 @@
 
 <!--Card Regular-->
 @foreach($orders as $order)
-<div class="card card-cascade">
+@if($order->status == 4)
+<div class="card card-cascade" style="opacity: 0.2">
+    @else
+    <div class="card card-cascade" >
+        @endif
+
     <!--Card image-->
   <!--   <div class="view overlay hm-white-slight">
         <img src="https://mdbootstrap.com/img/Photos/Others/men.jpg" class="img-fluid" alt="">
