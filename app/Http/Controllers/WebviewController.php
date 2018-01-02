@@ -52,7 +52,7 @@ return view('webview.orders',compact('orders'));
      */
    public function view_order_by_driver($invm)
         {
-            $orderss = Order::where('inv_id')->get();
+            $orderss = Order::where('inv_id',$invm)->get();
             $invoice_number = $orderss[0]->id;
 $counts_in = Cart::where('original_invoice',$invm)->get();
 $counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
