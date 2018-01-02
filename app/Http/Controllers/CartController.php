@@ -17,7 +17,7 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt)
+    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt,$regid)
     { 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
      $customer = Customer::where('email',$em)->get();
@@ -41,6 +41,7 @@ $customer->address =  $ad;
 $customer->id_tablet =  $tab;
 $customer->coor_x =  $x;
 $customer->coor_y = $y;
+$customer->reg_id = $regid;
 $customer->save();
       }
    
