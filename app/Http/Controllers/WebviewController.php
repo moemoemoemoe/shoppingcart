@@ -8,6 +8,7 @@ use App\Order;
 use Redirect;
 use Session;
 use App\Cart;
+use App\Customer;
 
 class WebviewController extends Controller
 {
