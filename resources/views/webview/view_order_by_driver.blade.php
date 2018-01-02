@@ -52,12 +52,22 @@
 
 </div>
 <hr/>
-@if($ready == 1)
+@if($ready == 1 )
 <div class="card card-cascade text-center">
   
     <div class="card-body">
         
         <a href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
+    </div>
+ 
+
+</div>
+@elseif($ready == 2)
+<div class="card card-cascade text-center">
+  
+    <div class="card-body">
+        
+        <a type="button" class="btn btn-danger">All ready Confirmed</a>
     </div>
  
 
