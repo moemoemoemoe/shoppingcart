@@ -20,18 +20,8 @@ class CartController extends Controller
     public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt,$regid)
     { 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
-     $customer = Customer::where('email',$em)->get();
-
-        $order = new Order();
-        $order->inv_id = $inv_last[0]->original_invoice + 1;
-        $order->driver_id =0 ;
-        $order->status = 0 ;
-        $order->customer_id = $customer[0]->id;
-        $order->role = "X";
-        $order->save();
-
-
-     $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
+    
+ $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
      if(count($carts) == 0){ 
 $customer = new Customer();
 $customer->name = $userid ;
@@ -44,6 +34,17 @@ $customer->coor_y = $y;
 $customer->reg_id = $regid;
 $customer->save();
       }
+       $customer = Customer::where('email',$em)->get();
+        $order = new Order();
+        $order->inv_id = $inv_last[0]->original_invoice + 1;
+        $order->driver_id =0 ;
+        $order->status = 0 ;
+        $order->customer_id = $customer[0]->id;
+        $order->role = "X";
+        $order->save();
+
+
+    
    
        
      $invoice_number = mt_rand(111111,999999);
@@ -70,6 +71,7 @@ $customer->save();
                $cart->date =  $date;
                $cart->time = $time;
                $cart->comment =  $cmnt;
+
                $cart->status =  0;
 
 
