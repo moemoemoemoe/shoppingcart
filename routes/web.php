@@ -51,6 +51,9 @@ Route::get('webview/confirm_order/{id}', 'WebviewController@confirm_order')->nam
 
 Route::get('webview/view_order_by_driver/{inv}', 'WebviewController@view_order_by_driver')->name('view_order_by_driver');
 
+Route::get('webview/check_inv/{id}', 'WebviewController@check_inv')->name('check_inv');
+
+
 
 
 
