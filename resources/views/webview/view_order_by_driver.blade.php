@@ -255,7 +255,7 @@
         
       </div>
       <div class="modal-body">
-        <img src="" id="imagepreview" style=" height: 70%;" >
+        <img src="" id="imagepreview" style="width: 400px; height: 264px;" >
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -269,7 +269,7 @@
 <script type="text/javascript">
     function show_image(url)
     {
-       // window.alert(url);
+       // / window.alert(url);
         document.getElementById("imagepreview").src=url;
    // var src = document.getElementById("imagepreview");
    // src.appendChild(url);
