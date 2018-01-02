@@ -28,8 +28,10 @@
     <div class="card-body text-center">
         <!--Title-->
         <strong>You Have: <span style="color: green">({{$counts}})</span> Pending Order/s</strong>
+        <p>
          <strong>You Have: <span style="color: green">({{$countsdelivered
 }})</span> Pending delivered</strong>
+</p>
         
 </div>
         
