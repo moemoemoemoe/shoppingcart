@@ -34,12 +34,12 @@ $customer->coor_y = $y;
 $customer->reg_id = $regid;
 $customer->save();
       }
-       $customer = Customer::where('email',$em)->get();
+       $customers = Customer::where('email',$em)->get();
         $order = new Order();
         $order->inv_id = $inv_last[0]->original_invoice + 1;
         $order->driver_id =0 ;
         $order->status = 0 ;
-        $order->customer_id = $customer[0]->id;
+        $order->customer_id = $customers[0]->id;
         $order->role = "X";
         $order->save();
 

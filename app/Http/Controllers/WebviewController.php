@@ -30,7 +30,7 @@ class WebviewController extends Controller
          $countsdelivered = count($orders_delivered);
 
 
-     return $orders;
+       //return $orders;
         // $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $orders[0]->created_at)->format('Y-m-d');
         // return $date.' today is : '.date('Y-m-d');
 return view('webview.orders',compact('orders','counts','countsdelivered'));
