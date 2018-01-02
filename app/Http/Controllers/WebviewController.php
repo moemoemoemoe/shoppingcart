@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Driver;
 use App\Order;
 use Redirect;
+use Session;
 use App\Cart;
 
 class WebviewController extends Controller
@@ -17,6 +18,8 @@ class WebviewController extends Controller
      */
     public function orders($email)
     {
+      Session::put('email' , $email);
+
         $driver = Driver::where('email',$email)->get();
 
 
@@ -49,6 +52,8 @@ return view('webview.orders',compact('orders'));
      */
    public function view_order_by_driver($invm)
         {
+            $orderss = Order::where('inv_id')->get();
+            $invoice_number = $orderss[0]->id;
 $counts_in = Cart::where('original_invoice',$invm)->get();
 $counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
 
@@ -109,7 +114,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
        $thetotalall = $total_inv_item + $total_inv +$total_inv_child;
        //return $total_inv;
-       return view('webview.view_order_by_driver',compact('carts_offer','carts_item','thetotalall','carts_sub_item','ready'));
+       return view('webview.view_order_by_driver',compact('carts_offer','carts_item','thetotalall','carts_sub_item','ready','invoice_number'));
 
         }
 
@@ -142,9 +147,13 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function finish_order($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->status = 4;
+        $order->save();
+        return redirect()->route('orders', ['email' => Session::get('email');
+]);
     }
 
     /**

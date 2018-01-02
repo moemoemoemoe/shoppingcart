@@ -53,6 +53,9 @@ Route::get('webview/view_order_by_driver/{inv}', 'WebviewController@view_order_b
 
 Route::get('webview/check_inv/{id}', 'WebviewController@check_inv')->name('check_inv');
 
+Route::get('webview/finish_order/{id}', 'WebviewController@finish_order')->name('finish_order');
+
+
 
 
 

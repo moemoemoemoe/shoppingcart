@@ -57,7 +57,7 @@
   
     <div class="card-body">
         
-        <a type="button" class="btn btn-primary">Send Order</a>
+        <a href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
     </div>
  
 
