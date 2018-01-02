@@ -220,9 +220,8 @@
 
       
     <a href="#" id="pop">
-        <img id="imageresource" src="{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}" style="width: 400px; height: 264px;">
-     <a id="" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
-    Click to Enlarge
+     
+     <a src="{{asset('uploads/items/childs/'.$cartchild->child->img_name)}}" id="imageresource" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
 </a>
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
