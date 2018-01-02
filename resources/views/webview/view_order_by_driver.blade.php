@@ -290,7 +290,7 @@
    // src.appendChild(url);
    //$('#imagepreview').attr(); // here asign the image to the modal when the user click the enlarge link
    $('#imagemodal').modal('show'); 
-   location.href = '#imagepreview';
+   location.href = "#imagepreview";
 }
 </script>
 </body>
