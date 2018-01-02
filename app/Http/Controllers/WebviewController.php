@@ -168,7 +168,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
         $order->status = 4;
         $order->save();
 $customerid =  Session::get('customer_id');
-$customers = Customer::where('id',$customerid);
+$customers = Customer::where('id',$customerid)->get();
 $title = 'Oder On way';
 $message = 'On mY way max 20mns';
 
