@@ -62,7 +62,7 @@
  
 
 </div>
-@elseif($ready == 2)
+@elseif($ready == 2 || $ready == 4 || $ready == 5)
 <div class="card card-cascade text-center">
   
     <div class="card-body">
