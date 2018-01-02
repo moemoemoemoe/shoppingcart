@@ -24,7 +24,7 @@ class WebviewController extends Controller
 
 
         $orders = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
-        $orders_pending = Order::whereDate('created_at','=',date('Y-m-d'))->where('status','!=',4)->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
+        $orders_pending = Order::whereDate('created_at','=',date('Y-m-d'))->where('status','<',4)->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
         $counts = count($orders_pending);
 
        //return $orders;
