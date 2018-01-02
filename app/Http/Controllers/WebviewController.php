@@ -153,7 +153,6 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
         $order->status = 4;
         $order->save();
         return redirect()->route('orders', ['email' => Session::get('email')]);
-]);
     }
 
     /**
