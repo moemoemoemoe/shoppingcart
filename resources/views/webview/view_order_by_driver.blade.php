@@ -25,11 +25,11 @@
 
 
 
-<div class="card card-cascade">
+<div class="card card-cascade text-center">
   
     <div class="card-body">
         <!--Title-->
-        <h4 class="card-title"><strong>{{ $thetotalall }} L.L</strong></h4>
+        <h4 class="card-title"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
       
         <p class="card-text"></span>
         </p>
