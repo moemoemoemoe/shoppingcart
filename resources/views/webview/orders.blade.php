@@ -21,6 +21,30 @@
 <!--Card Wider-->
 <div class="row">
 
+
+
+<div class="card card-cascade">
+  
+    <div class="card-body text-center">
+        <!--Title-->
+        <h4 class="card-title"><strong>You Have: <span style="color: green">{{$orders_pending}}</span> Pending Order/s</strong></h4>
+        
+</div>
+        
+   </div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="card card-cascade wider">
 
 
@@ -33,7 +57,7 @@
 <!--Card Regular-->
 @foreach($orders as $order)
 @if($order->status == 4)
-<div class="card card-cascade" style="opacity: 0.2">
+<div class="card card-cascade" style="opacity: 0.4">
     @else
     <div class="card card-cascade" >
         @endif

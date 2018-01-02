@@ -24,10 +24,13 @@ class WebviewController extends Controller
 
 
         $orders = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
+        $orders_pending = Order::whereDate('created_at','=',date('Y-m-d'))->where('status','!=',4)->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
+        $counts = count($orders_pending);
+
        //return $orders;
         // $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $orders[0]->created_at)->format('Y-m-d');
         // return $date.' today is : '.date('Y-m-d');
-return view('webview.orders',compact('orders'));
+return view('webview.orders',compact('orders','orders_pending'));
         
     }
 
