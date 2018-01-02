@@ -25,11 +25,11 @@
 
 
 
-<div class="card card-cascade text-center">
+<div class="card card-cascade">
   
     <div class="card-body">
         <!--Title-->
-        <h4 class="card-title"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
+        <h4 class="card-title  text-center"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
         <p>
             <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
         </p>
@@ -37,7 +37,7 @@
                     <span > <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>    
                 </p>
                 <p>
-<span > <span style="color: #000"> Time : </span>{{$user_name[0]->comment}}</span>   
+<span > <span style="color: #000"> comment : </span>{{$user_name[0]->comment}}</span>   
 </p> 
       
         <p class="card-text"></span>
