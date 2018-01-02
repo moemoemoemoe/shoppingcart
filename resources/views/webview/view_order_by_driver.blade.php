@@ -255,7 +255,7 @@
         
       </div>
       <div class="modal-body">
-        <img src="" id="imagepreview" style="width: 400px; height: 264px;" >
+        <img src="" id="imagepreview" style="width: 300px; height: 300px;" >
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
