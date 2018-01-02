@@ -87,7 +87,7 @@
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -96,9 +96,9 @@
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
         @if($cart->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+        <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
         @else
-                <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-eye"></i></a>
+                <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
         @endif
 
@@ -139,7 +139,7 @@
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -148,9 +148,9 @@
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
  @if($cartitem->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cartitem->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+        <a href="{!! route('check_inv', ['id'=>$cartitem->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
         @else
-                <a href="{!! route('check_inv', ['id'=>$cartitem->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-eye"></i></a>
+                <a href="{!! route('check_inv', ['id'=>$cartitem->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
         @endif
     </div>
@@ -190,7 +190,7 @@
         </p>
 
 
-        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+        <a  type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-eye"></i></a>
     
  
        <!--      <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a> -->
@@ -199,9 +199,9 @@
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
         @if($cartchild->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cartchild->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
+        <a href="{!! route('check_inv', ['id'=>$cartchild->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
         @else
-                <a href="{!! route('check_inv', ['id'=>$cartchild->id]) !!}"   type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-eye"></i></a>
+                <a href="{!! route('check_inv', ['id'=>$cartchild->id]) !!}"   type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
         @endif
 
