@@ -69,6 +69,8 @@ $customer->save();
                $cart->date =  $date;
                $cart->time = $time;
                $cart->comment =  $cmnt;
+               $cart->status =  0;
+
 
                $cart->save();
            }   
