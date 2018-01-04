@@ -15,7 +15,7 @@ class ExcellController extends Controller
      */
     public function data(Request $request)
     {
-       $path = "excell\abcd.xls";
+       $path = "excell/abcd.xls";
       // return $path;
 
  
