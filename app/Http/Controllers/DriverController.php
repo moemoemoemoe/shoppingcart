@@ -33,7 +33,7 @@ $message = 'Message for : '.$driver[0]->name;
 
          
         $res['data']['title'] = $title;
-        $res['data']['is_background'] = TRUE;
+        $res['data']['is_background'] = FALSE;
         $res['data']['message'] = $message;
         $res['data']['image'] = 'http://api.androidhive.info/images/minion.jpg';
         $res['data']['payload'] = $payload;

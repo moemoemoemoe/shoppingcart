@@ -64,6 +64,9 @@ Route::get('webview/confirm_order_delivered/{id}', 'WebviewController@confirm_or
 
 
 ////////////////////////////////
+Route::get( 'dw/{filename}', 'ApiController@download');
+
+//////
 Route::get('/', function () {
     return view('welcome');
 });
