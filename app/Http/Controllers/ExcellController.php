@@ -28,7 +28,7 @@ $data = '{"data":'.$exc.'}';
  $user = json_decode($data);
         try{
             
- return $user->data;
+ //return $user->data;
 
             foreach($user->data as $mydata)
 
