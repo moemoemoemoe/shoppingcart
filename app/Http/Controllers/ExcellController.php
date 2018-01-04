@@ -23,7 +23,7 @@ $exc = Excel::load($path)->get();
      
 
 $data = '{"data":'.$exc.'}';
-//return $data;
+
   
  $user = json_decode($data);
         try{
