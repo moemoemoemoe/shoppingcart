@@ -15,7 +15,7 @@
                     </p>
                    <p>
                     <p>
-                    <b>
+                  <!--   <b>
                         Select Generic To This Brande 
                     </b>
                  </p>
@@ -26,7 +26,7 @@
                                 @endforeach
                             </select>
                         </p> 
-                  
+                   -->
                  
              
                 <p>
