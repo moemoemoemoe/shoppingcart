@@ -114,7 +114,7 @@ $data = '{"data":'.$exc.'}';
             if($i==0)
             {
 
-            $fake = new Fakeitem();
+            $fake = new Item();
             $fake->id = $exla[$i]->item_id;
             $fake->name = $exla[$i]->name;
             $fake->content = $exla[$i]->name;
@@ -126,7 +126,7 @@ $data = '{"data":'.$exc.'}';
             $fake->price = $exla[$i]->item_id;
             $fake->status = 0;
             $fake->img_name = $exla[$i]->image;
-            $fake->image_url_original = config('app.my_url_items_local').$exla[$i]->url;
+            $fake->image_url_original = config('app.my_url_items').$exla[$i]->image;
 
 $fake->save();
             }
@@ -137,7 +137,7 @@ $fake->save();
 {}
         else{
 
-            $fake = new Fakeitem();
+            $fake = new Item();
             $fake->id = $exla[$i]->item_id;
             $fake->name = $exla[$i]->name;
             $fake->content = $exla[$i]->name;
@@ -149,7 +149,7 @@ $fake->save();
             $fake->price = $exla[$i]->item_id;
             $fake->status = 0;
             $fake->img_name = $exla[$i]->image;
-            $fake->image_url_original = config('app.my_url_items_local').$exla[$i]->url;
+            $fake->image_url_original = config('app.my_url_items').$exla[$i]->image;
 
 $fake->save();
 }
