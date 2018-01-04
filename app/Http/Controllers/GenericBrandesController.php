@@ -178,12 +178,12 @@ class GenericBrandesController extends Controller
 
     $brande_name = $r->input('brande_name');
 
-    $generic_id =$r->input('generic_id');
+    // $generic_id =$r->input('generic_id');
 
 
-    $data = ['brande_name' => $brande_name,'generic_id' =>$generic_id];
+    $data = ['brande_name' => $brande_name];
 
-    $rules = ['brande_name' => 'required','generic_id' =>'required'];
+    $rules = ['brande_name' => 'required'];
     $v = Validator::make($data, $rules);
     if($v->fails()){
         return Redirect::Back()->withErrors($v);
@@ -227,16 +227,16 @@ public function brande_index_view_save(Request $r , $id)
 
 $brande_name = $r->input('brande_name');
 
-    $generic_id =$r->input('generic_id');
-    $data = ['brande_name' => $brande_name,'generic_id' =>$generic_id];
+    //$generic_id =$r->input('generic_id');
+    $data = ['brande_name' => $brande_name];
 
-    $rules = ['brande_name' => 'required','generic_id' =>'required'];
+    $rules = ['brande_name' => 'required'];
     $v = Validator::make($data, $rules);
     if($v->fails()){
         return Redirect::Back()->withErrors($v);
     }else
     {
-$counts = Brande::where('brande_name',$brande_name)->where('generic_id',$generic_id)->orderBy('id','DESC')->count();
+$counts = Brande::where('brande_name',$brande_name)->orderBy('id','DESC')->count();
 if($counts >0)
 {
 return Redirect::Back()->withErrors('You have entered same record allready exist');
@@ -244,7 +244,7 @@ return Redirect::Back()->withErrors('You have entered same record allready exist
 }
  $brande = Brande::findOrfail($id);
  $brande->brande_name= $brande_name ;
-$brande->generic_id = $generic_id;
+//$brande->generic_id = $generic_id;
 $brande->save();
 
 
