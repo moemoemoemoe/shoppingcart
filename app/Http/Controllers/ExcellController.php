@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Sub;
-use App\Item;
 use App\Excell;
+use App\Fakeitem;
 class ExcellController extends Controller
 {
     /**
@@ -24,25 +23,25 @@ $exc = Excel::load($path)->get();
      
 
 $data = '{"data":'.$exc.'}';
-
+//return $data;
   
  $user = json_decode($data);
         try{
             
- //return $user->data;
+ return $user->data;
 
             foreach($user->data as $mydata)
 
             { 
-                $exl =  new Sub();
-                $exl->name_sub =  $mydata->item ; 
-                $exl->content =  $mydata->item ; 
+                $exl =  new Excell();
+                $exl->name =  $mydata->item ; 
+                $exl->brand_id =  $mydata->brand_id ; 
                 $exl->price =  $mydata->price ; 
-                // $exl->room_id =  $mydata->room_id ; 
-                // $exl->zone_id =  $mydata->zone_id ; 
-                $exl->status = 0; 
-                $exl->img_name =  $mydata->image ; 
-                $exl->image_url_original =  config('app.my_url_child').$mydata->image ; 
+                $exl->room_id =  $mydata->room_id ; 
+                $exl->zone_id =  $mydata->zone_id ; 
+                $exl->generic_id =  $mydata->generic_id ; 
+                $exl->image =  $mydata->image ; 
+                $exl->url =  config('app.my_url_child').$mydata->image ; 
                 $exl->item_id = $mydata->item_id ; 
                 $exl->save();
                 //echo $mydata->item."<hr/>";
@@ -74,7 +73,7 @@ $data = '{"data":'.$exc.'}';
             if($i==0)
             {
 
-            $fake = new Item();
+            $fake = new Fakeitem();
             $fake->id = $exla[$i]->item_id;
             $fake->name = $exla[$i]->name;
             $fake->content = $exla[$i]->name;
@@ -86,7 +85,7 @@ $data = '{"data":'.$exc.'}';
             $fake->price = $exla[$i]->item_id;
             $fake->status = 0;
             $fake->img_name = $exla[$i]->image;
-            $fake->image_url_original = config('app.my_url_items').$exla[$i]->url;
+            $fake->image_url_original = config('app.my_url_items_local').$exla[$i]->url;
 
 $fake->save();
             }
@@ -97,7 +96,7 @@ $fake->save();
 {}
         else{
 
-            $fake = new Item();
+            $fake = new Fakeitem();
             $fake->id = $exla[$i]->item_id;
             $fake->name = $exla[$i]->name;
             $fake->content = $exla[$i]->name;
@@ -109,7 +108,7 @@ $fake->save();
             $fake->price = $exla[$i]->item_id;
             $fake->status = 0;
             $fake->img_name = $exla[$i]->image;
-            $fake->image_url_original = config('app.my_url_items').$exla[$i]->url;
+            $fake->image_url_original = config('app.my_url_items_local').$exla[$i]->url;
 
 $fake->save();
 }
