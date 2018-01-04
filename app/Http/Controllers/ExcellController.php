@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Excell;
 use App\Fakeitem;
+use App\Sub;
+use App\Item;
 class ExcellController extends Controller
 {
     /**
@@ -14,6 +16,47 @@ class ExcellController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function data(Request $request)
+    {
+       $path = "excell/abcd.xls";
+      // return $path;
+
+ 
+$exc = Excel::load($path)->get();
+     
+
+$data = '{"data":'.$exc.'}';
+
+  
+ $user = json_decode($data);
+        try{
+            
+ //return $user->data;
+
+            foreach($user->data as $mydata)
+
+            { 
+                $exl =  new Sub();
+                $exl->name_sub =  $mydata->item ; 
+                $exl->price =  $mydata->price ; 
+                $exl->content =  $mydata->item ; 
+                $exl->status =  0; 
+               
+                $exl->img_name =  $mydata->image ; 
+                $exl->image_url_original =  config('app.my_url_child').$mydata->image ; 
+                $exl->item_id = $mydata->item_id ; 
+                $exl->save();
+                //echo $mydata->item."<hr/>";
+            }
+        } catch(\Exception $e){
+
+         return "[{".'"status":'.'"Error Please try again"'."}]";
+     }
+                       
+      
+
+}
+
+ public function olddata(Request $request)
     {
        $path = "excell/abcd.xls";
       // return $path;
@@ -54,8 +97,6 @@ $data = '{"data":'.$exc.'}';
       
 
 }
-
-
 
     /**
      * Show the form for creating a new resource.
