@@ -14,11 +14,11 @@
                         <input type="text" name="brande_name" placeholder="Brande Name *" class="form-control" value="{{old('brande_name')}}">
                     </p>
                    <p>
-                    <p>
+                   <!--  <p>
                     <b>
                         Select One Or Multiple Generic To This Brande 
                     </b>
-                </p>
+                </p> -->
        <!--  <select class="form-control" name="generic_id[]"  multiple="multiple" style="height:150px">
       
 
