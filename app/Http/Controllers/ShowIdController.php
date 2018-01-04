@@ -46,9 +46,9 @@ class ShowIdController extends Controller
      */
     public function show_brande(Request $r)
     {
-      $id = $r->input('id_generic');
+      //$id = $r->input('id_generic');
       //return $id;
-      $brandes =Brande::select('id','brande_name')->where('generic_id',$id)->get();
+      $brandes =Brande::select('id','brande_name')->get();
       $response = json_decode($brandes, true);
       
       return $response;

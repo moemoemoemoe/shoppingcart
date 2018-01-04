@@ -197,15 +197,15 @@ return Redirect::Back()->withErrors('You have entered same record allready exist
 
 }
 
-foreach($generic_id as $a) {
+
 
  $brande = new Brande();
  $brande->brande_name= $brande_name ;
-$brande->generic_id = $a;
+// $brande->generic_id = $a;
 $brande->save();
 
 
-}
+
    return Redirect::back()->with('success', 'New Brande successfuly Created');
       
     }

@@ -19,13 +19,13 @@
                         Select One Or Multiple Generic To This Brande 
                     </b>
                 </p>
-        <select class="form-control" name="generic_id[]"  multiple="multiple" style="height:150px">
+       <!--  <select class="form-control" name="generic_id[]"  multiple="multiple" style="height:150px">
       
 
             @foreach($generics as $generic)
             <option value="{{$generic->id}}">{{$generic->generic_name}} ->->->->-> {{$generic->zone->zone_name}} </option>
             @endforeach
-        </select>
+        </select> -->
     </p>
                   
                  
@@ -53,9 +53,7 @@
             <div class="panel-heading text-center">
                 <b><span style="color: #4CAF50;font-weight: 900">{{$brande->brande_name}}</span></b>
             </div>
-             <div class="panel-heading text-center">
-                <b><span style="color: black">{{$brande->generic->generic_name}}</span></b>
-            </div>
+             
           
           
             <div class="panel-footer text-center">
