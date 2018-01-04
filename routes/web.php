@@ -67,6 +67,16 @@ Route::get('webview/confirm_order_delivered/{id}', 'WebviewController@confirm_or
 Route::get( 'dw/{filename}', 'ApiController@download');
 
 //////
+
+///////Excell//
+
+Route::get('data', 'ExcellController@data')->name('data');
+Route::get('add_to_fake_item', 'ExcellController@add_to_fake_item')->name('add_to_fake_item');
+
+
+
+
+//////////////////////
 Route::get('/', function () {
     return view('welcome');
 });
