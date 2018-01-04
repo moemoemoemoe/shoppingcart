@@ -190,7 +190,7 @@ class GenericBrandesController extends Controller
     }else
     {
 
-$counts = Brande::where('brande_name',$brande_name)->where('generic_id',$generic_id)->orderBy('id','DESC')->count();
+$counts = Brande::where('brande_name',$brande_name)->orderBy('id','DESC')->count();
 if($counts >0 )
 {
 return Redirect::Back()->withErrors('You have entered same record allready exist');
