@@ -49,7 +49,7 @@ $customer->save();
        
      $invoice_number = mt_rand(111111,999999);
         $user = json_decode($data);
-        try{
+       
             
           
 
@@ -80,10 +80,7 @@ $customer->save();
 
            return "[{".'"status":'.'"Uploaded Successfully"'."}]";   
        }  
-       catch(\Exception $e){
-
-         return "[{".'"status":'.'"Error Please try again"'."}]";
-     }
+      
 
  }
 
