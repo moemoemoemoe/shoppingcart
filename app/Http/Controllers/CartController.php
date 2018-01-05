@@ -21,7 +21,7 @@ class CartController extends Controller
     { 
      // return strlen($data);
       $data = $r->input('data');
-      
+      return $data;
 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
