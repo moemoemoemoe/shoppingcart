@@ -43,7 +43,7 @@ class CartController extends Controller
 
       $cmnt = $r->input('cmnt');
 
-
+return $em;
 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
