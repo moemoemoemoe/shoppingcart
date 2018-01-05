@@ -17,9 +17,34 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt,$regid)
+    public function get_cart(Request $r)
     { 
      // return strlen($data);
+      $data = $r->input('data');
+      $userid = $r->input('userid');
+
+      $em = $r->input('em');
+
+      $ad = $r->input('ad');
+
+      $phone = $r->input('phone');
+
+      $tab = $r->input('tab');
+
+      $regid = $r->input('regid');
+
+      $x = $r->input('x');
+
+      $y = $r->input('y');
+
+      $date = $r->input('date');
+
+      $time = $r->input('time');
+
+      $cmnt = $r->input('cmnt');
+
+
+
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
  $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();

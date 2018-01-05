@@ -25,7 +25,8 @@ Route::get('api/get_subs/', 'ApiController@get_subs')->name('get_subs');
 
 
 
-Route::get('api/get_cart/{json}/userid/{user}/{em}/{ad}/{phone}/{tab}/{x}/{y}/{date}/{time}/{cmnt}/{regid}', 'CartController@get_cart')->name('get_cart');
+Route::post('api/get_cart/', 'CartController@get_cart')->name('get_cart');
+
 Route::get('api/get_all_cart', 'CartController@get_all_cart')->name('get_all_cart');
 
 ////////////////////////////////////////////////route for zone and generics and brandes api
