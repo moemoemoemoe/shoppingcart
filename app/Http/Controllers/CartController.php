@@ -21,27 +21,27 @@ class CartController extends Controller
     { 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
- $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
-     if(count($carts) == 0){ 
-$customer = new Customer();
-$customer->name = $userid ;
-$customer->email = $em ;
-$customer->phone =  $phone;
-$customer->address =  $ad;
-$customer->id_tablet =  $tab;
-$customer->coor_x =  $x;
-$customer->coor_y = $y;
-$customer->reg_id = $regid;
-$customer->save();
-      }
-       $customers = Customer::where('email',$em)->get();
-        $order = new Order();
-        $order->inv_id = $inv_last[0]->original_invoice + 1;
-        $order->driver_id =0 ;
-        $order->status = 0 ;
-        $order->customer_id = $customers[0]->id;
-        $order->role = "X";
-        $order->save();
+//  $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
+//      if(count($carts) == 0){ 
+// $customer = new Customer();
+// $customer->name = $userid ;
+// $customer->email = $em ;
+// $customer->phone =  $phone;
+// $customer->address =  $ad;
+// $customer->id_tablet =  $tab;
+// $customer->coor_x =  $x;
+// $customer->coor_y = $y;
+// $customer->reg_id = $regid;
+// $customer->save();
+//       }
+//        $customers = Customer::where('email',$em)->get();
+//         $order = new Order();
+//         $order->inv_id = $inv_last[0]->original_invoice + 1;
+//         $order->driver_id =0 ;
+//         $order->status = 0 ;
+//         $order->customer_id = $customers[0]->id;
+//         $order->role = "X";
+//         $order->save();
 
 
     
