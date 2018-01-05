@@ -84,7 +84,7 @@ $customer->save();
        }  
        catch(\Exception $e){
 
-         return "[{".'"status":'.'"Error Please try again"'."}]";
+         return "[{".'"status":'.'"Error Please try again"'.$c."}]";
      }
 
  }
