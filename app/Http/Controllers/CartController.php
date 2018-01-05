@@ -17,7 +17,7 @@ class CartController extends Controller
      */
 
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
-    public function get_cart($userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt,$regid,Request $r)
+    public function get_cart(Request $r)
     { 
      // return strlen($data);
       $data = $r->input('data');
