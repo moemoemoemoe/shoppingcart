@@ -19,7 +19,7 @@ class CartController extends Controller
 //{"data":[{"Id":11,"qty":1},{"Id":13,"qty":4}]}
     public function get_cart($data,$userid,$em,$ad,$phone,$tab,$x,$y,$date,$time,$cmnt,$regid)
     { 
-     // return strlen($data);
+      return strlen($data);
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
  $carts = Cart::orderBy('id','DESC')->where('email',$em)->limit(1)->get();
