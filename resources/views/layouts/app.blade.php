@@ -140,10 +140,10 @@
 
                         <ul class="dropdown-menu" role="menu">
                         <li>
-                          <a href="{{route('room_index')}}"><img src="{{asset('images/customers.png')}}" width="20px"> Manage Customers </a>
+                          <a href="#"><img src="{{asset('images/customers.png')}}" width="20px"> Manage Customers </a>
                         </li>
                      <li>
-                          <a href="{{route('zone_index')}}"> <img src="{{asset('images/drivers_icon.png')}}" width="20px"> Manage Drivers </a>
+                          <a href="#"> <img src="{{asset('images/drivers_icon.png')}}" width="20px"> Manage Drivers </a>
                         </li>
    
 
