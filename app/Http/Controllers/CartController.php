@@ -104,7 +104,7 @@ $customer->save();
 // else{
 //         echo "fail"+$date;
 //         }
-$data = {"data":[{"Id":82,"qty":1,"type":3,"parent":1114328},{"Id":81,"qty":1,"type":3,"parent":1114327},{"Id":78,"qty":1,"type":3,"parent":1114325},{"Id":79,"qty":1,"type":3,"parent":1114326},{"Id":80,"qty":1,"type":3,"parent":1114326}]};
+$data = '{"data":[{"Id":82,"qty":1,"type":3,"parent":1114328},{"Id":81,"qty":1,"type":3,"parent":1114327},{"Id":78,"qty":1,"type":3,"parent":1114325},{"Id":79,"qty":1,"type":3,"parent":1114326},{"Id":80,"qty":1,"type":3,"parent":1114326}]}';
 
     $inv_last = Cart::OrderBy('id','DESC')->limit(1)->get();
     
