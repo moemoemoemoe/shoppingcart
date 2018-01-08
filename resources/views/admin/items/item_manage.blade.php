@@ -5,7 +5,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Manage items</div>
+                <div class="panel-heading">Manage items
+<center><span id="response"></span></center>
+                </div>
+                
+                
 
                 <div class="panel-body">
                   
@@ -13,8 +17,14 @@
 @foreach($items as $item)
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading text-center">
-                <b><span style="color: #4CAF50;font-weight: 900">{{$item->name}}</span></b>
+            <div class="panel-heading text-center" style="background-color: #ccc">
+                <b><span style="color: #4CAF50;font-weight: 900">
+                     <input type="text" name="item_name" id="ids_{{$item->id}}" placeholder="Item Name *" class="form-control" value=" {{$item->name}}">
+                     <span class="btn btn-info form-control" onclick="rename_item({{$item->id}})">Edit</span>
+                   
+
+
+                </span></b>
             </div>
             
             <div class="panel-body" style="height:80px; background: url('{{asset('uploads/items/'.$item->img_name)}}'); background-size: contain; background-position: center center;background-repeat: no-repeat;">
@@ -38,4 +48,48 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    
+    function rename_item(id)
+    {
+        var id_item =id;
+var a = document.getElementById('ids_'+id).value;
+     var item_name =a;       
+
+$.ajax({
+            url: '{{ route('update_the_item') }}',
+            type: 'POST',
+            data:{
+                _token: '{{ csrf_token() }}',
+                id_item: id_item,
+                item_name  :item_name
+            },
+            cache: false,
+            datatype: 'JSON',
+            success: function(data){
+               
+                if(data.status == 1){
+                    $('#response').html('this Item is successfully updated');
+                   
+setTimeout(function(){
+
+              
+                window.location.replace('http://localhost/shoppingcart/public/admin/home/items/item_manage');
+            }, 1000);
+
+                }else
+                {
+                   $('#response').html('Please Try Again');
+                }
+               },
+               error: function(){
+$('#response').html('Please Try Again');
+               }
+           });
+
+        
+    }
+</script>
+
 @endsection

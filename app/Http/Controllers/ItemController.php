@@ -8,6 +8,8 @@ use App\Item;
 use App\Sub;
 use Redirect;
 use Validator;
+    use Response;
+
 
 class ItemController extends Controller
 {
@@ -288,5 +290,22 @@ return Redirect::back()->with('success', 'New Item successfuly created');
 
 
     }
+    }
+    public function update_the_item(Request $r)
+    {
+$id = $r->input('id_item');
+$name = $r->input('item_name');
+try{
+$item = Item::findOrFail($id);
+$item->name = $name;
+$item->save();
+ $status = 1;
+            $message = 'Item successfuly Updated';
+}  catch(\Exception $e){
+ $status = -1;
+            $message = 'Try  again';
+     }
+
+ return Response::json(['status' => $status, 'message' => $message]);
     }
 }
