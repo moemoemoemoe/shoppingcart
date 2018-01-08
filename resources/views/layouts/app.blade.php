@@ -133,6 +133,24 @@
                           
                     </ul>
                 </li>
+                <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                          <img src="{{asset('images/drivers.png')}}" width="25px">C & D<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="{{route('room_index')}}"><img src="{{asset('images/customers.png')}}" width="20px"> Manage Customers </a>
+                        </li>
+                     <li>
+                          <a href="{{route('zone_index')}}"> <img src="{{asset('images/drivers_icon.png')}}" width="20px"> Manage Drivers </a>
+                        </li>
+   
+
+                        
+                          
+                    </ul>
+                </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
