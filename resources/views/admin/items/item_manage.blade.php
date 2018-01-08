@@ -75,7 +75,7 @@ $.ajax({
 setTimeout(function(){
 
               
-                window.location.replace('http://localhost/shoppingcart/public/admin/home/items/item_manage');
+                window.location.replace('http://test.arcazur.com/admin/home/items/item_manage');
             }, 1000);
 
                 }else
