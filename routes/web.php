@@ -26,7 +26,7 @@ Route::get('api/get_subs/', 'ApiController@get_subs')->name('get_subs');
 
 
 //Route::get('api/get_cart/{json}/userid/{user}/{em}/{ad}/{phone}/{tab}/{x}/{y}/{date}/{time}/{cmnt}/{regid}', 'CartController@get_cart')->name('get_cart');
-Route::post('api/get_cart/userid/{user}/{em}/{ad}/{phone}/{tab}/{x}/{y}/{date}/{time}/{cmnt}/{regid}', 'CartController@get_cart_post')->name('get_cart_post');
+Route::get('api/get_cart/userid/{user}/{em}/{ad}/{phone}/{tab}/{x}/{y}/{date}/{time}/{cmnt}/{regid}', 'CartController@get_cart_post')->name('get_cart_post');
 
 
 
