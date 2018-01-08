@@ -73,8 +73,11 @@
     </div>
 
     @endforeach
+
                 </div>
+  {!!$generics->links()!!} 
             </div>
+
         </div>
     </div> 
 </div>

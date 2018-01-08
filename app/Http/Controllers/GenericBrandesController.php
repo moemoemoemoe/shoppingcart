@@ -7,6 +7,7 @@ use App\Generic;
 use App\Brande;
 use Validator;
 use Redirect;
+use paginate;
 use App\Zone;
 
 
@@ -19,7 +20,7 @@ class GenericBrandesController extends Controller
      */
     public function generic_index()
     {
-        $generics = Generic::with('zone')->orderBy('id','ASC')->get();
+        $generics = Generic::with('zone')->orderBy('id','ASC')->paginate(2);
 
         $zones = Zone::with('room')->orderBy('id','DESC')->get();
 
