@@ -20,7 +20,7 @@ class GenericBrandesController extends Controller
      */
     public function generic_index()
     {
-        $generics = Generic::with('zone')->orderBy('id','ASC')->paginate(2);
+        $generics = Generic::with('zone')->orderBy('id','ASC')->paginate(8);
 
         $zones = Zone::with('room')->orderBy('id','DESC')->get();
 
