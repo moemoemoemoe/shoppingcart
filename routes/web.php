@@ -210,5 +210,8 @@ Route::post('admin/savers/saver_update/{id}', 'ScreenSaverController@saver_updat
 ////////////////////////////customer and driver controller 
 
 Route::get('admin/customer/customer_index', 'CustomerController@customer_index')->name('customer_index')->middleware('auth');
+Route::get('admin/customer/publish_driver/{id}', 'CustomerController@publish_driver')->name('publish_driver')->middleware('auth');
+
+
 
 

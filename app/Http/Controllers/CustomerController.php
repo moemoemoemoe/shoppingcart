@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Customer;
 use App\Driver;
+use Redirect;
 
 class CustomerController extends Controller
 {
@@ -26,9 +27,20 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function publish_driver($id)
     {
-        //
+        $driver = Driver::findOrFail($id);
+     if($driver->status == '0')
+     {
+       $driver->status = '1';
+       $driver->save();
+       return Redirect::Back()->with('success', 'This driver is Published');
+     }
+     else{
+      $driver->status = '0';
+      $driver->save();
+      return Redirect::Back()->with('success', 'This driver is Unpublished');
+    }
     }
 
     /**

@@ -18,6 +18,11 @@
     	<span class="pull-center" style="text-align: center!important">{{$driver->email}}</span>
     	<span class="pull-right">{{$driver->mobile}}</span>
 
+ @if($driver->status == 1)
+              <a href="{{route('publish_driver', $driver->id)}}">   <i class="fa fa-check text-success" title="Active .. press to unpublish"></i></a>
+@else              <a href="{{route('publish_driver', $driver->id)}}">  <i class="fa fa-times-circle" aria-hidden="true" title="Not Active..please publish it on click"></i></a>
+@endif
+
     </a>
    
     @endforeach
