@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">View Invoices</div>
+                <div class="panel-heading text-center" style="font-weight: 900">{{count($carts)}} Invoice</div>
 
               
                    @foreach($carts as $cart)
