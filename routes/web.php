@@ -71,7 +71,7 @@ Route::get('webview/confirm_order_delivered/{id}', 'WebviewController@confirm_or
 Route::get( 'dw/{filename}', 'ApiController@download');
 
 //////post test
-Route::post('testpost/testpost', 'DriverApiController@index')->name('index');
+Route::post('testpost/testpost', 'DriverApiController@index')->name('testpost');
 
 ///////Excell//
 
