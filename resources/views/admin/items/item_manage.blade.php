@@ -5,7 +5,17 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Manage items
+                <div class="panel-heading">
+                   <form method="POST" enctype="multipart/form-data" class="well" action="{{route('search_item')}}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <p>
+                        <input type="text" name="keyword" placeholder="Item Search" class="form-control" value="{{old('keyword')}}">
+                    </p>
+                                    <p>
+                    <input type="submit" value="Save" class="btn btn-primary form-control">
+                </p>
+                  </form>
+
 <center><span id="response"></span></center>
                 </div>
                 

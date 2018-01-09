@@ -308,4 +308,78 @@ $item->save();
 
  return Response::json(['status' => $status, 'message' => $message]);
     }
+
+    public function search_item(Request $r)
+    {
+        
+         $keyword = $r->input('keyword');
+          $data = ['keyword' => $keyword];
+
+        $rules = ['keyword' => 'required'];
+
+        $v = Validator::make($data, $rules);
+
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+            $items = Item::where('name',"LIKE","%$keyword%")->get();
+
+          return view('admin.items.item_manage',compact('items'));
+
+
+
+        }
+
+
+
+    }
+    public function child_index_view_add_new(Request $r,$item_id)
+    {
+
+        $item_child = $r->input('item_child');
+        $price_child = $r->input('price_child');
+        $child_photo = $r->file('child_photo');
+        $content_item = $r->input('content_item');
+
+         $data = ['item_child' => $item_child,'price_child' =>$price_child, 'content_item' =>$content_item,'child_photo'=>$child_photo];
+
+        $rules = ['item_child' => 'required','price_child' => 'required','content_item' => 'required','child_photo'=>'required'];
+
+        $v = Validator::make($data, $rules);
+
+        if($v->fails()){
+            return Redirect::Back()->withErrors($v);
+        }else
+        {
+$foreign_namea = mt_rand(111111,999999);
+$destination = 'uploads/items/childs';
+                $photo_namea = str_replace(' ', '_', $foreign_namea);
+                $photo_namea .= '.'.$child_photo->getClientOriginalExtension();
+                $child_photo->move($destination, $photo_namea);
+
+           $subs =  new Sub();
+$subs->name_sub = $item_child;
+$subs->price = $price_child;
+$subs->item_id =  $item_id;
+$subs->status = 0;
+$subs->img_name = $photo_namea;
+$subs->image_url_original = config('app.my_url_child').$photo_namea;
+$subs->content = $content_item;
+
+$subs->save();
+return Redirect::back()->with('success', 'New Child successfuly created');
+        }
+
+
+    }
+
+    public function child_index_view_delete($id)
+    {
+$sub = Sub::findOrFail($id);
+      $sub->delete();
+      return Redirect::back()->with('success' , 'Child was Deleted successfuly!!');
+
+
+    }
 }

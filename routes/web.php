@@ -149,16 +149,28 @@ Route::get('admin/home/items/item_index', 'ItemController@item_index')->name('it
 Route::post('admin/home/items/item_index', 'ItemController@item_index_save')->name('item_index')->middleware('auth');
 
 Route::get('admin/home/items/item_manage', 'ItemController@item_manage')->name('item_manage')->middleware('auth');
+
 Route::get('admin/home/items/child_index_view/{id}', 'ItemController@child_index_view')->name('child_index_view')->middleware('auth');
+
+Route::post('admin/home/items/child_index_view/{id}', 'ItemController@child_index_view_add_new')->name('child_index_view')->middleware('auth');
+
+
 Route::get('admin/home/items/item_index_view/{id}', 'ItemController@item_index_view')->name('item_index_view')->middleware('auth');
 
 Route::get('admin/home/items/child_index_view_update/{id}', 'ItemController@child_index_view_update')->name('child_index_view_update')->middleware('auth');
+Route::get('admin/home/items/child_index_view_delete/{id}', 'ItemController@child_index_view_delete')->name('child_index_view_delete')->middleware('auth');
+
+
+
 Route::post('admin/home/items/child_index_view_update/{id}', 'ItemController@child_index_view_update_save')->name('child_index_view_update')->middleware('auth');
 
 Route::get('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child')->name('item_view_no_child')->middleware('auth');
 Route::post('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child_save')->name('item_view_no_child')->middleware('auth');
 
 Route::post('admin/home/items/update_the_item', 'ItemController@update_the_item')->name('update_the_item')->middleware('auth');
+Route::post('admin/home/items/search_item', 'ItemController@search_item')->name('search_item')->middleware('auth');
+
+
 
 
 
@@ -192,3 +204,11 @@ Route::get('admin/savers/saver_index_publish/{id}', 'ScreenSaverController@saver
 
 Route::get('admin/savers/saver_update/{id}', 'ScreenSaverController@saver_update')->name('saver_update')->middleware('auth');
 Route::post('admin/savers/saver_update/{id}', 'ScreenSaverController@saver_update_save')->name('saver_update')->middleware('auth');
+
+
+
+////////////////////////////customer and driver controller 
+
+Route::get('admin/customer/customer_index', 'CustomerController@customer_index')->name('customer_index')->middleware('auth');
+
+
