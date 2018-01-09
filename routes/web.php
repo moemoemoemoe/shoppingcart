@@ -73,6 +73,7 @@ Route::get( 'dw/{filename}', 'ApiController@download');
 //////post test
 Route::post('testpost/testpost', 'DriverApiController@index')->name('testpost');
 
+
 ///////Excell//
 
 Route::get('data', 'ExcellController@data')->name('data');

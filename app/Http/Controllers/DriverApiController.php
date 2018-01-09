@@ -19,6 +19,7 @@ class DriverApiController extends Controller
         $test = new Testpost();
         $test->post = $input;
         $test->save();
+        return "a";
 
     }
 
