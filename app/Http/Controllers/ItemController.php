@@ -9,6 +9,7 @@ use App\Sub;
 use Redirect;
 use Validator;
     use Response;
+    use paginate;
 
 
 class ItemController extends Controller
@@ -151,7 +152,7 @@ return Redirect::back()->with('success', 'New Item successfuly created');
      */
     public function item_manage()
     {
-        $items = Item::orderBy('id','DESC')->get();
+        $items = Item::orderBy('id','DESC')->paginate(21);
         return view('admin.items.item_manage',compact('items'));
     }
 

@@ -54,6 +54,7 @@
 
     @endforeach
                 </div>
+                {!! $items->links() !!}
             </div>
         </div>
     </div>
