@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Testpost;
+
 
 class DriverApiController extends Controller
 {
@@ -11,9 +13,13 @@ class DriverApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $r)
     {
-        //
+        $input = $r->all();
+        $test = new Testpost();
+        $test->post = $input;
+        $test->save();
+
     }
 
     /**

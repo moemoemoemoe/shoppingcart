@@ -70,7 +70,8 @@ Route::get('webview/confirm_order_delivered/{id}', 'WebviewController@confirm_or
 ////////////////////////////////
 Route::get( 'dw/{filename}', 'ApiController@download');
 
-//////
+//////post test
+Route::post('testpost/testpost', 'DriverApiController@index')->name('index');
 
 ///////Excell//
 
@@ -215,4 +216,6 @@ Route::get('admin/customer/publish_driver/{id}', 'CustomerController@publish_dri
 
 Route::get('admin/customer/get_driver_report/{id}', 'CustomerController@get_driver_report')->name('get_driver_report')->middleware('auth');
 
+
+/////////////test post
 

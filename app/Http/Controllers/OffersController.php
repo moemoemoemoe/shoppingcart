@@ -31,6 +31,8 @@ namespace App\Http\Controllers;
          */
         public function add_offer_save(Request $r)
         {
+            // $input = $r->all();
+            // return $input;
             $foreign_name = mt_rand(111111,999999);
             $title = $r->input('title');
             $content = $r->input('content');
