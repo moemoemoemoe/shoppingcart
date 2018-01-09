@@ -213,5 +213,6 @@ Route::get('admin/customer/customer_index', 'CustomerController@customer_index')
 Route::get('admin/customer/publish_driver/{id}', 'CustomerController@publish_driver')->name('publish_driver')->middleware('auth');
 
 
+Route::get('admin/customer/get_driver_report/{id}', 'CustomerController@get_driver_report')->name('get_driver_report')->middleware('auth');
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 use App\Driver;
 use Redirect;
+use App\Order;
 
 class CustomerController extends Controller
 {
@@ -49,9 +50,12 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function get_driver_report($id)
     {
-        //
+         
+       $carts = Order::Orderby('id','DESC')->whereDate('created_at','=',date('Y-m-d'))->where('driver_id',$id)->with('driver')->get();
+       //return $carts;
+       return view('admin.offers.cart_offer_buy',compact('carts'));
     }
 
     /**

@@ -11,19 +11,19 @@
                     
 
                      <div class="list-group">
-    <a  class="list-group-item active text-center" style="font-weight: 900">{{count($drivers)}} Drivers</a>
+    <div  class="list-group-item active text-center" style="font-weight: 900">{{count($drivers)}} Drivers</div>
     @foreach($drivers as $driver)
-    <a href="#" class="list-group-item text-center">
-    	<span style="color: red;font-weight: 900" class="pull-left" >{{$driver->name}}</span>
+    <div class="list-group-item text-center">
+    	<span style="color: red;font-weight: 900" class="pull-left" ><a href="{{route('get_driver_report', $driver->id)}}">{{$driver->name}}</a></span>
     	<span class="pull-center" style="text-align: center!important">{{$driver->email}}</span>
     	<span class="pull-right">{{$driver->mobile}}</span>
 
  @if($driver->status == 1)
-              <a href="{{route('publish_driver', $driver->id)}}">   <i class="fa fa-check text-success" title="Active .. press to unpublish"></i></a>
-@else              <a href="{{route('publish_driver', $driver->id)}}">  <i class="fa fa-times-circle" aria-hidden="true" title="Not Active..please publish it on click"></i></a>
+              <a class="pull-left" style="padding-left: 20px" href="{{route('publish_driver', $driver->id)}}">   <i class="fa fa-check text-success" title="Active .. press to unpublish"></i></a>
+@else              <a class="pull-left" style="padding-left: 20px" href="{{route('publish_driver', $driver->id)}}">  <i class="fa fa-times-circle" aria-hidden="true" title="Not Active..please publish it on click"></i></a>
 @endif
 
-    </a>
+    </div>
    
     @endforeach
   </div>
