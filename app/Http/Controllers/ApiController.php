@@ -20,7 +20,7 @@ class ApiController extends Controller
 
     public function save_customer($name,$email,$mobile,$adress,$imei,$x,$y,$reg)
     {
-        $driver_exist = Customer::where('imei',$imei)->get();
+        $driver_exist = Customer::where('id_tablet',$imei)->get();
         if(count($driver_exist) > 0)
         {
 
