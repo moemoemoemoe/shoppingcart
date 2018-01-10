@@ -9,6 +9,7 @@ use App\Logs;
 use App\Item;
 use App\Saver;
 use App\Sub;
+use App\Customer;
 class ApiController extends Controller
 {
     /**
@@ -16,6 +17,42 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function save_customer($name,$email,$mobile,$adress,$imei,$x,$y,$reg)
+    {
+        $driver_exist = Customer::where('imei',$imei)->get();
+        if(count($driver_exist) > 0)
+        {
+
+ return "[{".'"status":'.'"Error this device allready register"'."}]";
+
+
+        }
+        else
+        {
+$driver = new Customer();
+$driver->name = $name;
+$driver->phone = $mobile;
+$driver->email = $email;
+$driver->address = $adress;
+$driver->id_tablet = $imei;
+$driver->coor_x = $x;
+$driver->coor_y = $y;
+$driver->reg_id = $reg;
+
+try {
+    $driver->save();
+    return "[{".'"status":'.'"Uploaded Successfully"'."}]"; 
+    
+} catch (Exception $e) {
+
+    return "[{".'"status":'.'"Error on Save please Try again"'."}]";
+}
+
+
+        }
+
+    }
     public function get_offers($sty)
     {
         $offers = Offer::select('id','image_url_original','cat_id')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
