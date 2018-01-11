@@ -43,12 +43,25 @@ return view('webview.orders',compact('orders','counts','countsdelivered'));
      *
      * @return \Illuminate\Http\Response
      */
-    public function confirm_order($id)
+    public function confirm_order(Request $R)
     {
-        $order=Order::findOrFail($id);
+
+        $id = $r->input('id_item');
+
+try{
+ $order=Order::findOrFail($id);
         $order->status = 2;
         $order->save();
-        return Redirect::back();
+ $status = 1;
+            $message = 'Item successfuly Updated';
+}  catch(\Exception $e){
+ $status = -1;
+            $message = 'Try  again';
+     }
+
+ return Response::json(['status' => $status, 'message' => $message]);
+       
+        //return Redirect::back();
     }
 
     /**

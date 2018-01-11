@@ -40,21 +40,7 @@
 
 
 
-
-
-
-
-
-
-
-
 <div class="card card-cascade wider">
-
-
-
-
-
-
 
 
 <!--Card Regular-->
@@ -84,7 +70,8 @@
         </p>
 @if($order->status == 1)
 
-        <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}" type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-check"></i></a>
+        <div type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></div>
+        <div id="response" style="color: red"></div>
     
     @else
             <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>
@@ -120,4 +107,41 @@
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js" integrity="sha384-3ziFidFTgxJXHMDttyPJKDuTlmxJlwbSkojudK/CkRqKDOmeSbN6KLrGdrBQnT2n" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    
+    function confirm_order(id)
+    {
+        var id_item =id;
+       
+
+$.ajax({
+            url: '{{ route('confirm_order') }}',
+            type: 'POST',
+            data:{
+                _token: '{{ csrf_token() }}',
+                id_item: id_item
+            },
+            cache: false,
+            datatype: 'JSON',
+            success: function(data){
+               
+                if(data.status == 1){
+                    $('#response').html('this Item is successfully updated');
+
+
+                }else
+                {
+                   $('#response').html('Please Try Again');
+                }
+               },
+               error: function(){
+$('#response').html('Please Try Again');
+               }
+           });
+
+        
+    }
+</script>
 </body>
