@@ -73,7 +73,7 @@
         </p>
 @if($order->status == 1)
 
-        <a id="confirm_{{order_id}}" type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
+        <a id="confirm_{{$order_id}}" type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
         
     
     @else
