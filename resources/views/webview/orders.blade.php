@@ -136,7 +136,7 @@ $.ajax({
                     $('#response').html('this order is successfully accepted');
                       
                    $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
-                   $('#eye_'+id).html(' <a href="{!! route('view_order_by_driver', ['inv'=>inv]) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>')
+                   $('#eye_'+id).html(' <a href="{!! route('view_order_by_driver', ['inv'=>"'+inv+'"]) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>')
 
 
                 }else
