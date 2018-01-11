@@ -120,7 +120,7 @@
     {
         var id_item =id;
                 var inv =inv;
-var url = '{{ route("view_order_by_drivert", ":inv") }}';
+var url = '{{ route("view_order_by_driver", ":inv") }}';
 url = url.replace(':inv', inv);
 
 
