@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Driver;
 use App\Order;
+use Response;
 use Redirect;
 use Session;
 use App\Cart;
