@@ -70,7 +70,7 @@
         </p>
 @if($order->status == 1)
 
-        <div type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></div>
+        <a type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
         <div id="response" style="color: red"></div>
     
     @else
