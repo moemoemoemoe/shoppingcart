@@ -182,7 +182,9 @@
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
  @if($cartitem->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cartitem->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+ <span id="confirm_{{$cartitem->id}}">
+        <a  onclick="check_inv({{$cartitem->id}})" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+    </span>
         @else
                 <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
@@ -236,7 +238,10 @@
       
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
         @if($cartchild->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cartchild->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+
+ <span id="confirm_{{$cartchild->id}}">
+        <a  onclick="check_inv({{$cartchild->id}})"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+    </span>
         @else
                 <a   type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
