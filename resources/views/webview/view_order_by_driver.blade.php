@@ -68,7 +68,7 @@
   
     <div class="card-body">
         
-        <a href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
+        <a id="send_ok" href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
     </div>
  
 
@@ -324,12 +324,18 @@ $.ajax({
             success: function(data){
                
                 if(data.status == 1){
-                    $('#response').html('this order is successfully accepted');
+                    $('#response').html('this item is successfully checked');
                       
                    $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
 
 
-                }else
+                }else if(data.status == 2)
+                {
+                     $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+$('#send_ok').show();
+                }
+
+                else
                 {
                    $('#response').html('Please Try Again');
                 }

@@ -73,6 +73,7 @@ try{
      */
    public function view_order_by_driver($invm)
         {
+            Session::put('invoice_checked',$invm);
 
             $orderss = Order::where('inv_id',$invm)->get();
             Session::put('customer_id',$orderss[0]->customer_id);
@@ -158,7 +159,10 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
     public function check_inv(Request $r)
     {
-         $id = $r->input('id_item');
+        $invm = Session::get('invoice_checked');
+
+ $id = $r->input('id_item');
+        
 
 try{
 $item = Cart::findOrFail($id);
@@ -171,7 +175,21 @@ $item->save();
             $message = 'Try  again';
      }
 
+
+  $counts_in = Cart::where('original_invoice',$invm)->get();
+$counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
+
+if($counts_in == $counts_statu)
+{
+    $status = 2;
+    $message = "finish checked";
+return Response::json(['status' => $status, 'message' => $message]);
+
+}
+else
+{
  return Response::json(['status' => $status, 'message' => $message]);
+}
     
     }
 
