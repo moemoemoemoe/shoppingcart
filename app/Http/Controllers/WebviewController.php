@@ -164,7 +164,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      if($carts->status == '0')
      {
       try{
- $order=Order::findOrFail($id);
+ $order=Cart::findOrFail($id);
         $order->status = 1;
         $order->save();
  $status = 1;
@@ -178,7 +178,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      }
      else{
        try{
- $order=Order::findOrFail($id);
+ $order=Cart::findOrFail($id);
         $order->status = 1;
         $order->save();
  $status = 0;
