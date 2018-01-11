@@ -42,6 +42,10 @@
       <p>
         <center>
     <div id="response" style="color: red"></div>
+    <p>
+                <a id="send_ok" href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary" style="display: none;">Send Order</a>
+
+    </p>
     </center>
 </p>
         <p class="card-text"></span>
@@ -68,7 +72,7 @@
   
     <div class="card-body">
         
-        <a id="send_ok" href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
+        <a  href="{!! route('finish_order', ['id'=>$invoice_number]) !!}" type="button" class="btn btn-primary">Send Order</a>
     </div>
  
 
@@ -328,6 +332,11 @@ $.ajax({
                       
                    $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
 
+
+                }
+                else if(data.status == 2)
+                {
+$(#send_ok).show();
 
                 }
 

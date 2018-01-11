@@ -159,9 +159,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
 
     public function check_inv(Request $r)
     {
-//         $invm = Session::get('invoice_checked');
-//         $counts_in = Cart::where('original_invoice',$invm)->get();
-// $counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
+
 
          $id = $r->input('id_item');
 
@@ -176,7 +174,18 @@ $item->save();
             $message = 'Try  again';
      }
 
+             $invm = Session::get('invoice_checked');
+        $counts_in = Cart::where('original_invoice',$invm)->get();
+$counts_status= Cart::where('original_invoice',$invm)->where('status',1)->get();
+if($counts_in == $counts_status)
+{
+return Response::json(['status' => 2, 'message' => "finish"]);
+
+}
+else
+{
  return Response::json(['status' => $status, 'message' => $message]);
+}
     
     }
 
