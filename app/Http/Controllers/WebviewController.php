@@ -154,26 +154,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    (Request $r)
-    {
-
-        $id = $r->input('id_item');
-
-try{
- $order=Order::findOrFail($id);
-        $order->status = 2;
-        $order->save();
- $status = 1;
-            $message = 'Item successfuly Updated';
-}  catch(\Exception $e){
- $status = -1;
-            $message = 'Try  again';
-     }
-
- return Response::json(['status' => $status, 'message' => $message]);
-       
-        //return Redirect::back();
-    }
+   
 
     public function check_inv(Request $r)
     {
