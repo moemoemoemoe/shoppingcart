@@ -160,6 +160,7 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
     {
          $id = $r->input('id_item');
          $carts = Cart::findOrFail($id);
+         return $carts;
      if($carts->status == '0')
      {
       try{
