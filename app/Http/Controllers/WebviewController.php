@@ -87,7 +87,7 @@ else{
        $carts_offer = Cart::with('offer')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',1)->get();
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
-          $user_name = Cart::select('date','time','comment')->where('original_invoice', $invm)->limit(1)->get();
+          $user_name = Cart::select('the_date','the_time','comment')->where('original_invoice', $invm)->limit(1)->get();
          
          
 //return $carts_sub_item;

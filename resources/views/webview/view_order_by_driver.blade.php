@@ -31,10 +31,10 @@
         <!--Title-->
         <h4 class="card-title  text-center"><strong>Total: {{ $thetotalall }} L.L</strong></h4>
         <p>
-            <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
+            <span style="color: #000">Delevery date :</span> {{$user_name[0]->the_date}}
         </p>
         <p>
-                    <span > <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>    
+                    <span > <span style="color: #000"> Time : </span>{{$user_name[0]->the_time}}</span>    
                 </p>
                 <p>
 <span > <span style="color: #000"> comment : </span>{{$user_name[0]->comment}}</span>   
