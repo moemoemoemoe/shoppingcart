@@ -159,14 +159,11 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
     public function check_inv(Request $r)
     {
          $id = $r->input('id_item');
-         $carts = Cart::findOrFail($id);
-         return $carts;
-     if($carts->status == '0')
-     {
-      try{
- $order=Cart::findOrFail($id);
-        $order->status = 1;
-        $order->save();
+
+try{
+$item = Cart::findOrFail($id);
+$item->status = 1;
+$item->save();
  $status = 1;
             $message = 'Item successfuly Updated';
 }  catch(\Exception $e){
@@ -175,21 +172,6 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      }
 
  return Response::json(['status' => $status, 'message' => $message]);
-     }
-     else{
-       try{
- $order=Cart::findOrFail($id);
-        $order->status = 1;
-        $order->save();
- $status = 0;
-            $message = 'Item successfuly Updated';
-}  catch(\Exception $e){
- $status = -1;
-            $message = 'Try  again';
-     }
-
- return Response::json(['status' => $status, 'message' => $message]);
-     }
     
     }
 

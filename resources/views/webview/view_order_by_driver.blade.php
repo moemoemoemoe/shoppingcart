@@ -309,7 +309,7 @@
     
     function check_inv(id)
     {
-        var id_item =id;
+        var id_item = id;
        
 
 $.ajax({
