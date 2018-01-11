@@ -32,6 +32,9 @@
          <strong>You Have: <span style="color: green">({{$countsdelivered
 }})</span> Pending delivered</strong>
 </p>
+<p>
+    <div id="response" style="color: red"></div>
+</p>
         
 </div>
         
@@ -71,7 +74,7 @@
 @if($order->status == 1)
 
         <a type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
-        <div id="response" style="color: red"></div>
+        
     
     @else
             <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>
