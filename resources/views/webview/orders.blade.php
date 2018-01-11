@@ -73,7 +73,7 @@
         </p>
 @if($order->status == 1)
 
-        <a type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
+        <a id="confirm_{{order_id}}" type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
         
     
     @else
@@ -132,6 +132,7 @@ $.ajax({
                
                 if(data.status == 1){
                     $('#response').html('this Item is successfully updated');
+                    document.getElementById('confirm_'+id).htm(' <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
 
 
                 }else
