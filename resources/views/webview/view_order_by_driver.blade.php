@@ -336,7 +336,7 @@ $.ajax({
                 }
                 else if(data.status == 2)
                 {
-$(#send_ok).show();
+$('#send_ok').show();
 
                 }
 
