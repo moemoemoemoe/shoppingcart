@@ -72,12 +72,12 @@
         <p class="card-text">To: <span style="font-weight: 900;color: red">{{$order->customer->name}}</span> , adress : <span style="font-weight: 900;color: red">{{$order->customer->address}}</span> , mobile number : <span style="font-weight: 900;color: red">{{$order->customer->phone}}</span>
         </p>
 @if($order->status == 1)
-
-        <a id="confirm_{{$order->id}}" type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
-        
+<div id="confirm_{{$order->id}}">
+        <a  type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
+        </div>
     
     @else
-            <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>
+            <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>
 
       @endif
     
@@ -131,9 +131,9 @@ $.ajax({
             success: function(data){
                
                 if(data.status == 1){
-                    $('#response').html('this Item is successfully updated');
-                       $('#confirm_'+id).hide();
-                   $('#confirm_'+id).html('<a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+                    $('#response').html('this order is successfully accepted');
+                      
+                   $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger"><i class="fa fa-check"></i></a>');
 
 
                 }else
