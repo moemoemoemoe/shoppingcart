@@ -43,7 +43,7 @@ return view('webview.orders',compact('orders','counts','countsdelivered'));
      *
      * @return \Illuminate\Http\Response
      */
-    public function confirm_order(Request $R)
+    public function confirm_order(Request $r)
     {
 
         $id = $r->input('id_item');
