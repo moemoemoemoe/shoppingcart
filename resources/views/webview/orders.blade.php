@@ -73,7 +73,7 @@
         </p>
 @if($order->status == 1)
 <span id="confirm_{{$order->id}}">
-        <a  type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}})"><i class="fa fa-check"></i></a>
+        <a  type="button" class="btn-floating btn-small btn-fb" onclick="confirm_order({{$order->id}},{{$order->inv_id}})"><i class="fa fa-check"></i></a>
         </span>
     
     @else
@@ -84,7 +84,7 @@
         <!-- <a href="{!! route('confirm_order', ['id'=>$order->id]) !!}"  type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-ban"></i></a> -->
         <a href="http://maps.google.com/maps?saddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}&daddr={{$order->customer->coor_x}},{{$order->customer->coor_y}}" type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a>
         @if($order->status <= 1)
-           <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye-slash"></i></a>
+           <a id="eye_{{$order->id}}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye-slash"></i></a>
         @else
         <a href="{!! route('view_order_by_driver', ['inv'=>$order->inv_id]) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>
         @endif
@@ -114,9 +114,11 @@
 
 <script type="text/javascript">
     
-    function confirm_order(id)
+    function confirm_order(id,inv)
     {
         var id_item =id;
+                var inv =inv;
+
        
 
 $.ajax({
@@ -134,6 +136,7 @@ $.ajax({
                     $('#response').html('this order is successfully accepted');
                       
                    $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+                   $('#eye_'+id).html(' <a href="{!! route(view_order_by_driver, [inv=>'+inv+']) !!}" type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-eye"></i></a>')
 
 
                 }else
