@@ -62,6 +62,7 @@ Route::post('webview/check_inv', 'WebviewController@check_inv')->name('check_inv
 Route::get('webview/finish_order/{id}', 'WebviewController@finish_order')->name('finish_order');
 Route::get('webview/confirm_order_delivered/{id}', 'WebviewController@confirm_order_delivered')->name('confirm_order_delivered');
 
+Route::get('webview/order_driver_api/{email}', 'WebviewController@order_driver_api')->name('order_driver_api');
 
 
 

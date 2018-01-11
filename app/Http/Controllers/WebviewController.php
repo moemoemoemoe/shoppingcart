@@ -39,6 +39,15 @@ return view('webview.orders',compact('orders','counts','countsdelivered'));
         
     }
 
+    public function order_driver_api($email)
+    {
+
+      $driver = Driver::where('email',$email)->get();
+
+ $orders_delivered = Order::whereDate('created_at','=',date('Y-m-d'))->where('status',5)->orderBy('id','DESC')->with('driver')->with('customer')->where('driver_id',$driver[0]->id)->get();
+ return $orders_delivered;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
