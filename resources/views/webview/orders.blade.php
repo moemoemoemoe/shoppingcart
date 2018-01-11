@@ -132,7 +132,7 @@ $.ajax({
                
                 if(data.status == 1){
                     $('#response').html('this Item is successfully updated');
-                    document.getElementById('confirm_'+id).html(' <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+                   $('#confirm_'+id).html(' <a  type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
 
 
                 }else
