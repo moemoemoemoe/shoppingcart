@@ -15,8 +15,8 @@
   <div class="panel-heading text-center" style="color: red;font-weight: 900">
 
 
-                     <span style="color: #000">Delevery date :</span> {{$user_name[0]->date}}
-                    <span class="pull-left"> <span style="color: #000"> Time : </span>{{$user_name[0]->time}}</span>
+                     <span style="color: #000">Delevery date :</span> {{$user_name[0]->the_date}}
+                    <span class="pull-left"> <span style="color: #000"> Time : </span>{{$user_name[0]->the_time}}</span>
                     <span class="pull-right" onClick="showComment()">Show Comment</span></div>
 @if($order_status[0]->status == 2 || $order_status[0]->status == 4 || $order_status[0]->status == 5)
  <div class="panel-heading text-center" style="font-weight: 900">
