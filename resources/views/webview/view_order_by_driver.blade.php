@@ -336,6 +336,8 @@ $.ajax({
                 }
                 else if(data.status == 2)
                 {
+                $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+
 $('#send_ok').show();
 
                 }
