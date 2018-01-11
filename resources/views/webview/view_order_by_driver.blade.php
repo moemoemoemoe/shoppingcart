@@ -39,7 +39,11 @@
                 <p>
 <span > <span style="color: #000"> comment : </span>{{$user_name[0]->comment}}</span>   
 </p> 
-      
+      <p>
+        <center>
+    <div id="response" style="color: red"></div>
+    </center>
+</p>
         <p class="card-text"></span>
         </p>
 
@@ -124,7 +128,9 @@
         <!-- <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-map"></i></a> -->
 
         @if($cart->status == 0)
-        <a href="{!! route('check_inv', ['id'=>$cart->id]) !!}"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+        <span id="confirm_{{$cart->id}}">
+        <a  onclick="check_inv({{$cart->id}})"  type="button" class="btn-floating btn-small btn-primary" style="background-color: green"><i class="fa fa-check"></i></a>
+</span>
         @else
                 <a  type="button" class="btn-floating btn-small btn-primary" style="background-color: red"><i class="fa fa-check"></i></a>
 
@@ -292,5 +298,43 @@
    $('#imagemodal').modal('show'); 
    
 }
+</script>
+
+<script type="text/javascript">
+    
+    function check_inv(id)
+    {
+        var id_item =id;
+       
+
+$.ajax({
+            url: '{{ route('check_inv') }}',
+            type: 'POST',
+            data:{
+                _token: '{{ csrf_token() }}',
+                id_item: id_item
+            },
+            cache: false,
+            datatype: 'JSON',
+            success: function(data){
+               
+                if(data.status == 1){
+                    $('#response').html('this order is successfully accepted');
+                      
+                   $('#confirm_'+id).html(' <a type="button" class="btn-floating btn-small btn-danger" style="background-color: red"><i class="fa fa-check"></i></a>');
+
+
+                }else
+                {
+                   $('#response').html('Please Try Again');
+                }
+               },
+               error: function(){
+$('#response').html('Please Try Again');
+               }
+           });
+
+        
+    }
 </script>
 </body>

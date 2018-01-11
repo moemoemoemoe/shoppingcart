@@ -154,20 +154,61 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function check_inv($id)
+    (Request $r)
     {
+
+        $id = $r->input('id_item');
+
+try{
+ $order=Order::findOrFail($id);
+        $order->status = 2;
+        $order->save();
+ $status = 1;
+            $message = 'Item successfuly Updated';
+}  catch(\Exception $e){
+ $status = -1;
+            $message = 'Try  again';
+     }
+
+ return Response::json(['status' => $status, 'message' => $message]);
+       
+        //return Redirect::back();
+    }
+
+    public function check_inv(Request $r)
+    {
+         $id = $r->input('id_item');
          $carts = Cart::findOrFail($id);
      if($carts->status == '0')
      {
-       $carts->status = '1';
-       $carts->save();
-       return Redirect::Back()->with('success', 'This Item is Published');
+      try{
+ $order=Order::findOrFail($id);
+        $order->status = 1;
+        $order->save();
+ $status = 1;
+            $message = 'Item successfuly Updated';
+}  catch(\Exception $e){
+ $status = -1;
+            $message = 'Try  again';
+     }
+
+ return Response::json(['status' => $status, 'message' => $message]);
      }
      else{
-      $carts->status = '0';
-      $carts->save();
-      return Redirect::Back()->with('success', 'This Item is Unpublished');
-    }
+       try{
+ $order=Order::findOrFail($id);
+        $order->status = 1;
+        $order->save();
+ $status = 0;
+            $message = 'Item successfuly Updated';
+}  catch(\Exception $e){
+ $status = -1;
+            $message = 'Try  again';
+     }
+
+ return Response::json(['status' => $status, 'message' => $message]);
+     }
+    
     }
 
     /**
