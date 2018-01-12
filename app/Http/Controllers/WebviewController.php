@@ -127,16 +127,16 @@ return $carts_offer;
        for($i=0 ;$i<count($carts_offer) ; $i++)
        {
 $total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
-if($printers_count==0)
-{
-$printer_sv = new Printer();
-$printer_sv->inv_id = $invm ;
-$printer_sv->name =  ;
-$printer_sv->qty = ;
-$printer_sv->total = ;
+// if($printers_count==0)
+// {
+// $printer_sv = new Printer();
+// $printer_sv->inv_id = $invm ;
+// $printer_sv->name =  ;
+// $printer_sv->qty = ;
+// $printer_sv->total = ;
 
 
-}
+// }
 
        }
    }
