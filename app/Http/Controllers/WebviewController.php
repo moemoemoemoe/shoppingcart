@@ -330,8 +330,9 @@ $message = 'On mY way max 20mns';
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function order_driver_print($inv)
     {
-        //
+        $printer = Printer::orderBy('id','DESC')->get();
+        return $printer;
     }
 }
