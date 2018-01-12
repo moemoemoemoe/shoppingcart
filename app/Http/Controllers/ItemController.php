@@ -326,7 +326,7 @@ $item->save();
             return Redirect::Back()->withErrors($v);
         }else
         {
-            $items = Item::where('name',"LIKE","%$keyword%")->get();
+            $items = Item::where('name',"LIKE","%$keyword%")->paginate(20);
 
           return view('admin.items.item_manage',compact('items'));
 
