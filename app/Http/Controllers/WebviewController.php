@@ -113,7 +113,7 @@ else{
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
           $user_name = Cart::select('the_date','the_time','comment')->where('original_invoice', $invm)->limit(1)->get();
           $printers = Printer::where('inv_id',$invm)->get();
-          $printers_count = count($printer);
+          $printers_count = count($printers);
          
          
 return $carts_offer;
