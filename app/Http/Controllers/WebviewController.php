@@ -10,7 +10,7 @@ use Redirect;
 use Session;
 use App\Cart;
 use App\Customer;
-
+use App\Printer;
 class WebviewController extends Controller
 {
     /**
@@ -112,9 +112,11 @@ else{
         $carts_item = Cart::with('item')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',2)->get();
          $carts_sub_item = Cart::with('child')->orderBy('id','DESC')->where('original_invoice',$invm)->where('type',3)->get();
           $user_name = Cart::select('the_date','the_time','comment')->where('original_invoice', $invm)->limit(1)->get();
+          $printers = Printer::where('inv_id',$invm)->get();
+          $printers_count = count($printer);
          
          
-//return $carts_sub_item;
+return $carts_offer;
          if(count($carts_offer) == 0)
          {
             $total_inv =0;
@@ -125,6 +127,16 @@ else{
        for($i=0 ;$i<count($carts_offer) ; $i++)
        {
 $total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
+if($printers_count==0)
+{
+$printer_sv = new Printer();
+$printer_sv->inv_id = $invm ;
+$printer_sv->name =  ;
+$printer_sv->qty = ;
+$printer_sv->total = ;
+
+
+}
 
        }
    }
