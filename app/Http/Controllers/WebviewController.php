@@ -134,7 +134,7 @@ $printer_sv->inv_id = $invm ;
 $printer_sv->name =  $carts_offer[$i]->offer->title ;
 $printer_sv->qty = $carts_offer[$i]->qty;
 $printer_sv->total = $carts_offer[$i]->qty * $carts_offer[$i]->offer->price;
-
+$printer_sv->save();
 
 }
 
@@ -156,7 +156,7 @@ $printer_sv->inv_id = $invm ;
 $printer_sv->name =  $carts_item[$i]->item->name ;
 $printer_sv->qty = $carts_item[$i]->qty;
 $printer_sv->total = $carts_item[$i]->qty * $carts_item[$i]->item->price;
-
+$printer_sv->save();
 
 }
        }
@@ -175,7 +175,7 @@ $printer_sv->inv_id = $invm ;
 $printer_sv->name =  $carts_sub_item[$i]->child->name_sub ;
 $printer_sv->qty = $carts_sub_item[$i]->qty;
 $printer_sv->total = $carts_sub_item[$i]->qty * $carts_sub_item[$i]->child->price;
-
+$printer_sv->save();
 
 }
        }
