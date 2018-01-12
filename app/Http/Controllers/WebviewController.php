@@ -44,7 +44,7 @@ return view('webview.orders',compact('orders','counts','countsdelivered'));
 
       $driver = Driver::where('email',$email)->get();
 
- $orders_delivered = Order::whereDate('created_at','=',date('Y-m-d'))->where('status',5)->orderBy('id','DESC')->with('customer')->where('driver_id',$driver[0]->id)->get();
+ $orders_delivered = Order::whereDate('created_at','=',date('Y-m-d'))->orderBy('id','DESC')->with('customer')->where('driver_id',$driver[0]->id)->get();
  return $orders_delivered;
     }
 
