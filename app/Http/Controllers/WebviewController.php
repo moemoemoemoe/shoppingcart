@@ -332,7 +332,7 @@ $message = 'On mY way max 20mns';
      */
     public function order_driver_print($inv)
     {
-        $printer = Printer::orderBy('id','DESC')->wherwe('inv_id',$inv)->get();
+        $printer = Printer::orderBy('id','DESC')->where('inv_id',$inv)->get();
         return $printer;
     }
 }
