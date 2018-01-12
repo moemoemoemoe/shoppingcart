@@ -116,7 +116,7 @@ else{
           $printers_count = count($printers);
          
          
-return $carts_offer;
+//return $carts_offer;
          if(count($carts_offer) == 0)
          {
             $total_inv =0;
@@ -127,16 +127,16 @@ return $carts_offer;
        for($i=0 ;$i<count($carts_offer) ; $i++)
        {
 $total_inv = $total_inv  + ($carts_offer[$i]->qty * $carts_offer[$i]->offer->price);
-// if($printers_count==0)
-// {
-// $printer_sv = new Printer();
-// $printer_sv->inv_id = $invm ;
-// $printer_sv->name =  ;
-// $printer_sv->qty = ;
-// $printer_sv->total = ;
+if($printers_count==0)
+{
+$printer_sv = new Printer();
+$printer_sv->inv_id = $invm ;
+$printer_sv->name =  $carts_offer[$i]->offer->title ;
+$printer_sv->qty = $carts_offer[$i]->qty;
+$printer_sv->total = $carts_offer[$i]->qty * $carts_offer[$i]->offer->price;
 
 
-// }
+}
 
        }
    }
@@ -149,7 +149,16 @@ else{
        for($i=0 ;$i<count($carts_item) ; $i++)
        {
 $total_inv_item = $total_inv_item  + ($carts_item[$i]->qty * $carts_item[$i]->item->price);
+if($printers_count==0)
+{
+$printer_sv = new Printer();
+$printer_sv->inv_id = $invm ;
+$printer_sv->name =  $carts_item[$i]->item->name ;
+$printer_sv->qty = $carts_item[$i]->qty;
+$printer_sv->total = $carts_item[$i]->qty * $carts_item[$i]->item->price;
 
+
+}
        }
 }
 if(count($carts_sub_item) == 0)
@@ -159,7 +168,16 @@ else{
        for($i=0 ;$i<count($carts_sub_item) ; $i++)
        {
 $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_item[$i]->child->price);
+if($printers_count==0)
+{
+$printer_sv = new Printer();
+$printer_sv->inv_id = $invm ;
+$printer_sv->name =  $carts_sub_item[$i]->child->name_sub ;
+$printer_sv->qty = $carts_sub_item[$i]->qty;
+$printer_sv->total = $carts_sub_item[$i]->qty * $carts_sub_item[$i]->child->price;
 
+
+}
        }
    }
 
