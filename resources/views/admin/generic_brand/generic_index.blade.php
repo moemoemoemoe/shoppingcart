@@ -69,6 +69,9 @@
             <div class="panel-footer text-center">
                <a href="{!! route('generic_index_view', ['id'=>$generic->id]) !!}" class="btn btn-primary form-control">Edit ...</a>
             </div>
+            <div class="panel-footer text-center">
+               <a href="{!! route('generic_index_view_delete', ['id'=>$generic->id]) !!}" class="btn btn-danger form-control">Delete</a>
+            </div>
         </div>
     </div>
 

@@ -139,6 +139,7 @@ Route::post('admin/home/generic_brand/generic_index', 'GenericBrandesController@
 
 Route::get('admin/home/structure/generic_index_view/{id}', 'GenericBrandesController@generic_index_view')->name('generic_index_view')->middleware('auth');
 Route::post('admin/home/structure/generic_index_view/{id}', 'GenericBrandesController@generic_index_view_save')->name('generic_index_view')->middleware('auth');
+Route::get('admin/home/structure/generic_index_view_delete/{id}', 'GenericBrandesController@generic_index_view_delete')->name('generic_index_view_delete')->middleware('auth');
 
 
 

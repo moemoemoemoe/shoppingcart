@@ -79,9 +79,11 @@ class GenericBrandesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function generic_index_view_delete($id)
     {
-        //
+          $item = Generic::findOrFail($id);
+      $item->delete();
+      return Redirect::back()->with('success' , 'Generic was Deleted successfuly!!');
     }
 
     /**
