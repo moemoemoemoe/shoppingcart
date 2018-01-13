@@ -203,13 +203,15 @@ $.ajax({
       $('#zone_id').append(option);
     }
     var JSONObject = JSON.parse(JSON.stringify(response));
+    
     for(i=0;i<count;i++)
-    {
+    { 
      var option=$('<option></option>');
      option.attr('value',JSONObject[i]["id"]);
      option.text(JSONObject[i]["zone_name"]);
      $('#zone_id').append(option);
    }
+   $('#zone_id').append('<option value="-1">---choose--</option>');
    $('#loading').hide();
 
  },error:function(){
@@ -252,6 +254,7 @@ $.ajax({
      option.text(JSONObject[i]["generic_name"]);
      $('#generic_id').append(option);
    }
+    $('#generic_id').append('<option value="-1">---choose--</option>');
    $('#loading').hide();
 
  },error:function(){
