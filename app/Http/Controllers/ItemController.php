@@ -246,6 +246,20 @@ return Redirect::back()->with('success', 'New Item successfuly created');
         //return $child;
         return view('admin.items.item_view_no_child',compact('item'));
     }
+     public function   item_view_no_child_delete($id)
+    {
+   $item = Item::findOrFail($id);
+      $item->delete();
+      return Redirect::back()->with('success' , 'Item was Deleted successfuly!!');
+
+
+
+     
+        //return $child;
+       
+    }
+
+  
 
     public function item_view_no_child_save(Request $r, $id)
     {

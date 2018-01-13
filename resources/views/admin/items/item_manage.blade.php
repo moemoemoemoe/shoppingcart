@@ -44,9 +44,15 @@
              <div class="panel-footer text-center">
                <a href="{!! route('item_view_no_child', ['id'=>$item->id]) !!}" class="btn btn-primary form-control">Edit ...</a>
             </div>
+             <div class="panel-footer text-center">
+               <a href="{!! route('item_view_no_child_delete', ['id'=>$item->id]) !!}" class="btn btn-danger form-control">Delete</a>
+            </div>
           @else
             <div class="panel-footer text-center">
                <a href="{!! route('child_index_view', ['id'=>$item->id]) !!}" class="btn btn-primary form-control" style="background-color: green">View Sub</a>
+            </div>
+             <div class="panel-footer text-center">
+               <a href="{!! route('item_view_no_child_delete', ['id'=>$item->id]) !!}" class="btn btn-danger form-control">Delete</a>
             </div>
             @endif
         </div>

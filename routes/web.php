@@ -174,6 +174,10 @@ Route::post('admin/home/items/child_index_view_update/{id}', 'ItemController@chi
 
 Route::get('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child')->name('item_view_no_child')->middleware('auth');
 Route::post('admin/home/items/item_view_no_child/{id}', 'ItemController@item_view_no_child_save')->name('item_view_no_child')->middleware('auth');
+Route::get('admin/home/items/item_view_no_child_delete/{id}', 'ItemController@item_view_no_child_delete')->name('item_view_no_child_delete')->middleware('auth');
+
+
+
 
 Route::post('admin/home/items/update_the_item', 'ItemController@update_the_item')->name('update_the_item')->middleware('auth');
 Route::post('admin/home/items/search_item', 'ItemController@search_item')->name('search_item')->middleware('auth');
