@@ -271,10 +271,10 @@ $end_date = $r->input('end_date');
 //return $end_date;
        // $carts = Order::Orderby('id','DESC')->whereDate('created_at','=',date('Y-m-d'))->with('driver')->get();
 
-  $carts = Order::whereDate('created_at','>=',$start_date)->whereDate('created_at','<=',$end_date)->orderBy('id', 'Desc')->with('driver')->get();
+  $carts = Order::->orderBy('id', 'Desc')->whereDate('created_at','>=',$start_date)->whereDate('created_at','<=',$end_date)->with('driver')->get();
  return view('admin.offers.cart_offer_buy',compact('carts'));
 
-            
+
         }
 
 
