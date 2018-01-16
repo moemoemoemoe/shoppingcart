@@ -21,7 +21,7 @@
                 <div ><input type="submit" width= "200px" name="submit" value="Search" class="btn btn-primary form-control"></div>
                 </form>
               <p>
-                <div class="panel-heading" style="font-weight: 900">{{count($carts_notassigned)}} Invoice no set. //  {{count($carts_assigned)}} Invoice set .// {{count($carts_assigned_verified)}} Invoice verified. //  {{count($carts_finish_shop)}} Invoice finish shop not deliverd. //  {{count($carts_delivered)}} Invoice Deliverd</div>
+                <div class="panel-heading" style="font-weight: 900">{{count($carts_notassigned)}} Invoice not set. //  {{count($carts_assigned)}} Invoice set .// {{count($carts_assigned_verified)}} Invoice verified. //  {{count($carts_finish_shop)}} Invoice finish shop not deliverd. //  {{count($carts_delivered)}} Invoice Deliverd</div>
            
               <hr/>
               </p>
