@@ -113,7 +113,7 @@ Route::get('admin/view_cart_offer', 'OffersController@view_cart_offer')->name('v
 Route::get('admin/view_cart_offer_spec/{invm}', 'OffersController@view_cart_offer_spec')->name('view_cart_offer_spec')->middleware('auth');
 Route::post('admin/view_cart_offer_spec/{invm}', 'DriverController@view_cart_offer_spec_push')->name('view_cart_offer_spec')->middleware('auth');
 Route::post('admin/invoice_adv_search', ['as' => 'invoice_adv_search', 'uses' => 'OffersController@invoice_adv_search']);
-Route::post('admin/view_cart_offer_stat', ['as' => 'view_cart_offer_stat', 'uses' => 'OffersController@view_cart_offer_stat']);
+Route::get('admin/view_cart_offer_stat', ['as' => 'view_cart_offer_stat', 'uses' => 'OffersController@view_cart_offer_stat']);
 
 
 
