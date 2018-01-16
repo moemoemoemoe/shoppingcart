@@ -277,6 +277,25 @@ $end_date = $r->input('end_date');
 
 
         }
+        public function view_cart_offer_stat()
+        {
+
+
+  $carts_notassigned = Order::Orderby('id','DESC')->where('status',0)->with('driver')->get();
+ $carts_assigned = Order::Orderby('id','DESC')->where('status',1)->with('driver')->get();
+  $carts_assigned_verified = Order::Orderby('id','DESC')->where('status',2)->with('driver')->get();
+    $carts_finish_shop = Order::Orderby('id','DESC')->where('status',4)->with('driver')->get();
+        $carts_delivered = Order::Orderby('id','DESC')->where('status',5)->with('driver')->get();
+
+
+
+
+
+       //return $carts;
+       return view('admin.offers.cart_offer_stat',compact('carts_notassigned','carts_assigned','carts_assigned_verified','carts_finish_shop','carts_delivered'));
+
+
+        }
 
 
     }
