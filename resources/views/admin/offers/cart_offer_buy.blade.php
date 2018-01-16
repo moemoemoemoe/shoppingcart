@@ -5,7 +5,24 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
+              <div class="panel-body">
+                   <form method="POST" enctype="multipart/form-data" action="{{route('invoice_adv_search')}}" class="well"><input type="hidden" name="_token" value="{{ csrf_token() }}">
+<div class='input-group date' id='datetimepicker1'>
+ 
+            
+                <input type='text' placeholder="Start Date" name="start_date" class="form-control"  required autofocus/>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><br/>
+                <div class='input-group date' id='datetimepicker1'>
+ 
+                <input type='text' placeholder="End Date" name="end_date" class="form-control"  required autofocus/>
+                
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div>
+                <hr/>
+                <div ><input type="submit" width= "200px" name="submit" value="Search" class="btn btn-primary form-control"></div>
+                </form>
+              <p>
                 <div class="panel-heading text-center" style="font-weight: 900">{{count($carts)}} Invoice</div>
+              </p>
 
               
                    @foreach($carts as $cart)

@@ -264,6 +264,18 @@ $total_inv_child = $total_inv_child  + ($carts_sub_item[$i]->qty * $carts_sub_it
        return view('admin.offers.cart_offer_buy_spec',compact('carts_offer','carts_item','thetotalall','carts_sub_item','user_name','drivers','order_status'));
 
         }
+        public function invoice_adv_search(Request $r)
+        {
+$start_date = $r->input('start_date');
+$end_date = $r->input('end_date');
+//return $end_date;
+       // $carts = Order::Orderby('id','DESC')->whereDate('created_at','=',date('Y-m-d'))->with('driver')->get();
+
+  $carts = Order::whereDate('created_at','>=',$start_date)->whereDate('created_at','<=',$end_date)->orderBy('id', 'Desc')->with('driver')->get();
+ return view('admin.offers.cart_offer_buy',compact('carts'));
+
+            
+        }
 
 
     }
