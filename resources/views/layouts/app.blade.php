@@ -65,7 +65,7 @@
                           <a href="{{route('view_cart_offer')}}"> <img src="{{asset('images/invoices_icons.png')}}" width="20px">Invoices cart </a>
                         </li>
                      <li>
-                          <a href="{{route('view_cart_offer')}}"><img src="{{asset('images/stat_icon.png')}}" width="20px"> Inv Statistics </a>
+                          <a href="{{route('view_cart_offer_stat')}}"><img src="{{asset('images/stat_icon.png')}}" width="20px"> Inv Statistics </a>
                         </li>
   <!--  <li>
                           <a href=""> Invoices cart </a>
