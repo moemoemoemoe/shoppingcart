@@ -65,8 +65,7 @@ try {
     {
         $offers = Offer::select('id','image_url_original')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
 
-        return '{
-  "offers":'.$offers.'}';
+        return $offers;
     }
 
     /**
