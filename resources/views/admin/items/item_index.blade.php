@@ -33,6 +33,13 @@
                   </textarea>
 
                 </p>
+                 <p>
+                  <select class="form-control" name="vat" >
+                     <option value="0">No Vat</option>
+                     <option value="1">With Vat</option>
+                  
+                  </select>
+                </p>
               </div>
               <div class="col-md-4">
                 <p>

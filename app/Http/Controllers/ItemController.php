@@ -50,6 +50,7 @@ class ItemController extends Controller
 
 //         }
   $foreign_name = mt_rand(111111,999999);
+       $vat = $r->input('vat');
 
         $item_name = $r->input('item_name'); 
         $item_content = $r->input('content_item');
@@ -94,10 +95,14 @@ $item = new Item();
  $item->brand_id = $item_brande;
  $item->img_name = $photo_name;
   $item->status = 0;
+  $item->vat = $vat;
  $item->image_url_original =  config('app.my_url_items').$photo_name;
 if(!empty($item_price))
 {
+  if($vat == 0)
+  {
 $item->price = $item_price;
+}else{$item->price = $item_price + $item_price*0.11;}
 $item->has_sub = 0;
 $item->save();
 return Redirect::back()->with('success', 'New Item successfuly created');
@@ -125,7 +130,10 @@ $destination = 'uploads/items/childs';
                 $child_photo[$i]->move($destination, $photo_namea);
 $subs =  new Sub();
 $subs->name_sub = $shild_name[$i];
+if($vat == 0)
+{
 $subs->price = $child_price[$i];
+}else{$subs->price = $child_price[$i]+ $child_price[$i]*0.11 ;}
 $subs->item_id =  $item->id;
 $subs->status = 0;
 $subs->img_name = $photo_namea;
