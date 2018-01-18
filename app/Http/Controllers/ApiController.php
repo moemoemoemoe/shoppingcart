@@ -63,7 +63,7 @@ try {
 
       public function get_offers_all($sty)
     {
-        $offers = Offer::select('id','title','image_url_original')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
+        $offers = Offer::select('id','image_url_original')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
 
         return '{
   "offers":'.$offers.'}';
