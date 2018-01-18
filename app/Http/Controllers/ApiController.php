@@ -61,6 +61,14 @@ try {
   "offers":'.$offers.'}';
     }
 
+      public function get_offers_all($sty)
+    {
+        $offers = Offer::select('id','title','image_url_original')->orderBy('id','DESC')->where('sty',$sty)->where('status',1)->get();
+
+        return '{
+  "offers":'.$offers.'}';
+    }
+
     /**
      * Show the form for creating a new resource.
      *
