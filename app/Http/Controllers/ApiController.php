@@ -9,6 +9,7 @@ use App\Logs;
 use App\Item;
 use App\Saver;
 use App\Sub;
+use App\Order;
 use App\Customer;
 class ApiController extends Controller
 {
@@ -182,5 +183,13 @@ try {
             // Error
             exit( 'Requested file does not exist on our server!' );
         }
+    }
+    public function get_last_invoice($email)
+    {
+
+$customer = Customer::where('email',$email)->get();
+$order = Order::where('customer_id',$customer[0]->id)->OrderBy('id','DESC')->limit(1)->get();
+return $order;
+        
     }
 }
