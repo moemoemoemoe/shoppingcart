@@ -188,7 +188,7 @@ try {
     {
 
 $customer = Customer::where('email',$email)->get();
-$order = Order::where('customer_id',$customer[0]->id)->OrderBy('id','DESC')->limit(1)->get();
+$order = Order::where('customer_id',$customer[0]->id)->whereDate('created_at','=',date('Y-m-d'))->OrderBy('id','DESC')->limit(1)->get();
 return $order;
         
     }
