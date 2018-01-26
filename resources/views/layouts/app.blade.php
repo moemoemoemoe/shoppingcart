@@ -266,12 +266,22 @@ setTimeout(function(){
 
         }
     </script>
+     <script type="text/javascript">
+        // We need to turn off the automatic editor creation first.
+        CKEDITOR.disableAutoInline = true;
+      CKEDITOR.replace('content_item');
+    </script>
+
     <script type="text/javascript">
         // We need to turn off the automatic editor creation first.
         CKEDITOR.disableAutoInline = true;
-
-        CKEDITOR.replace( 'content_item' );
+    CKEDITOR.replace('content_item_fr');
+     
+        CKEDITOR.replace('content_item_ar');
+        CKEDITOR.replace('content_item_fil');
+        CKEDITOR.replace('content_item_am');
     </script>
+
 
     <script type="text/javascript">
         

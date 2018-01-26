@@ -139,9 +139,10 @@ try {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function items_api($zone_id,$generic_id)
+    public function items_api($zone_id,$generic_id,$lang)
     {
-        $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original','vat')->with('sub')->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->get();
+
+        $items = Item::select('id','name','content','brand_id','has_sub','price','image_url_original','vat')->with('sub_'.$lang)->with('brande')->where('zone_id',$zone_id)->where('generic_id',$generic_id)->get();
         return $items;
 
     }

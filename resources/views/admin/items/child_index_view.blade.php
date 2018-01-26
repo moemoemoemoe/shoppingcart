@@ -13,7 +13,7 @@
                     </p>
                      <p>
                          <textarea cols="80" id="content_item" name="content_item" rows="10" >
-                    {{old('content_child')}}
+                    {{old('content_item')}}
                   </textarea>                    </p>
                                     <p>
                    <p> <input type="text" name="price_child" placeholder=" Price" class="form-control" value="{{old('price_child')}}"></p>
@@ -44,7 +44,9 @@
             <div class="panel-body" style="height:80px; background: url('{{asset('uploads/items/childs/'.$child->img_name)}}'); background-size: contain; background-position: center center;background-repeat: no-repeat;">
                 
             </div>
-
+   <div class="panel-footer text-center">
+               <a href="{!! route('child_index_view_lang', ['id'=>$child->id]) !!}" class="btn btn-default form-control" style="background-color: green;color: #fff">Setup Lang</a>
+            </div>
              <div class="panel-footer text-center">
                <a href="{!! route('child_index_view_update', ['id'=>$child->id]) !!}" class="btn btn-primary form-control">Edit ...</a>
             </div>
@@ -52,7 +54,7 @@
              <div class="panel-footer text-center">
                <a href="{!! route('child_index_view_delete', ['id'=>$child->id]) !!}" class="btn btn-danger form-control">Delete</a>
             </div>
-          
+       
         </div>
     </div>
 

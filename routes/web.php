@@ -39,7 +39,7 @@ Route::get('api/get_all_cart', 'CartController@get_all_cart')->name('get_all_car
 ////////////////////////////////////////////////route for zone and generics and brandes api
 
 Route::get('api/generics_api/{zone_id}', 'ApiController@generics_api')->name('generics_api');
-Route::get('api/items_api/{zone_id}/generic/{generic_id}', 'ApiController@items_api')->name('items_api');
+Route::get('api/items_api/{zone_id}/generic/{generic_id}/{lang}', 'ApiController@items_api')->name('items_api');
 
 
 
@@ -168,6 +168,9 @@ Route::get('admin/home/items/item_manage', 'ItemController@item_manage')->name('
 Route::get('admin/home/items/child_index_view/{id}', 'ItemController@child_index_view')->name('child_index_view')->middleware('auth');
 
 Route::post('admin/home/items/child_index_view/{id}', 'ItemController@child_index_view_add_new')->name('child_index_view')->middleware('auth');
+
+Route::get('admin/home/items/child_index_view_lang/{id}', 'LangController@child_index_view_lang')->name('child_index_view_lang')->middleware('auth');
+Route::post('admin/home/items/child_index_view_lang/{id}', 'LangController@child_index_view_lang_save')->name('child_index_view_lang')->middleware('auth');
 
 
 Route::get('admin/home/items/item_index_view/{id}', 'ItemController@item_index_view')->name('item_index_view')->middleware('auth');
