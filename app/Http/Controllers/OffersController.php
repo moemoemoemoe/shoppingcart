@@ -297,5 +297,79 @@ $end_date = $r->input('end_date');
 
         }
 
+           public function update_qty(Request $r)
+        {
+            $id = $r->input('id_item');
+            $qty = $r->input('qty');
+
+          
+
+            try
+            {
+  $carts = Cart::findOrFail($id);
+  $carts->qty = $qty;
+  $carts->save();
+   $status = 1;
+ $message = 'Qty updated';
+
+
+            }
+            catch (\Exception $e)
+            {
+ $status = -1;
+ $message = 'Somthing went Wrong';
+
+            }
+
+ return Response::json(['status' => $status, 'message' => $message]);
+
+
+
+
+        }
+        public function delete_cart_user(Request $r)
+        {
+ $id = $r->input('id_item');
+ $invoice = $r->input('original_invoice');
+
+
+
+    try
+            {
+  $carts = Cart::findOrFail($id);
+  $carts->delete();
+   $status = 1;
+ $message = 'Item Deleted';
+
+
+            }
+            catch (\Exception $e)
+            {
+ $status = -1;
+ $message = 'Somthing went Wrong';
+
+            }
+
+    $carts= Cart::where('original_invoice',$invoice)->get();
+    if(count($carts) == 0)
+    {
+  $carts = Order::where('inv_id',$invoice)->delete();
+        $carts = Cart::where('original_invoice',$invoice)->delete();
+$status = 0;
+$message = 'All is Deleted';
+
+// return Redirect::to('http://supermarko.arcazur.com/admin/view_cart_offer');
+
+
+    }
+
+ return Response::json(['status' => $status, 'message' => $message]);
+
+
+
+
+        }
+
+
 
     }
